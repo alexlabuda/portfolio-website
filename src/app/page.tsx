@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from './utils/paths';
+import ParticlesBackground from '@/app/components/ParticlesBackground';
 
 export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <ParticlesBackground />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="md:flex md:items-center md:space-x-12">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
