@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alex Labuda - Data Science Portfolio
 
-## Getting Started
+This is my professional portfolio website showcasing my work as a Senior Data Scientist specializing in machine learning, predictive modeling, unsupervised learning, time-series forecasting, media mix modeling, and MLOps.
 
-First, run the development server:
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment**: GitHub Pages via GitHub Actions
+
+## Features
+
+- Responsive design optimized for all devices
+- Modern, minimalistic UI focused on content
+- Optimized for SEO
+- Static site generation for fast loading and easy hosting
+- Continuous deployment via GitHub Actions
+
+## Local Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio-website.git
+cd portfolio-website
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Generate a production build
+npm run build
+```
 
-## Learn More
+This will create an optimized production build in the `out` directory, ready for deployment.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by GitHub Actions using the workflow defined in `.github/workflows/deploy.yml`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To manually deploy:
 
-## Deploy on Vercel
+```bash
+# Build the site
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Deploy to GitHub Pages
+# (requires GitHub Pages configuration)
+git push origin main
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+- `/src/app`: Core application pages and layouts
+- `/src/components`: Reusable UI components
+- `/public`: Static assets like images
+- `/src/styles`: Global styles and Tailwind configuration
+
+## Customization
+
+To customize the site:
+
+1. Update content in the appropriate page files
+2. Add or modify components as needed
+3. Update metadata in `layout.tsx` files
+4. Add your own images in the `/public/images` directory
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For any questions or inquiries, please reach out to me at:
+
+- Email: alexlabuda@gmail.com
+- LinkedIn: [linkedin.com/in/alex-labuda](https://www.linkedin.com/in/alex-labuda)
