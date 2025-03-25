@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export const metadata = {
   title: 'Contact | Alex Labuda',
   description: 'Get in touch with Alex Labuda - Senior Data Scientist, ML Engineer, and Tableau Developer',

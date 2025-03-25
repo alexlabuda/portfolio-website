@@ -46,8 +46,8 @@ export default function AboutPage() {
                 business value and improve decision-making.
               </p>
               <p>
-                I'm passionate about translating complex technical concepts into actionable insights 
-                and creating interactive visualizations that tell compelling data stories. I'm currently 
+                I&apos;m passionate about translating complex technical concepts into actionable insights 
+                and creating interactive visualizations that tell compelling data stories. I&apos;m currently 
                 open to new data science opportunities where I can leverage my expertise to solve 
                 challenging problems.
               </p>

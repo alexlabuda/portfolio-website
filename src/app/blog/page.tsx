@@ -40,7 +40,7 @@ export default function BlogPage() {
               </h2>
               <p className="mt-3 text-gray-600 line-clamp-3">
                 A comprehensive guide to creating scalable, event-driven machine learning pipelines 
-                using Google Cloud Platform's Vertex AI. Learn how to set up real-time inference, 
+                using Google Cloud Platform&apos;s Vertex AI. Learn how to set up real-time inference, 
                 model monitoring, and automated retraining workflows.
               </p>
               <div className="mt-6">
