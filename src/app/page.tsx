@@ -43,6 +43,7 @@ export default function Home() {
                   height={800}
                   priority
                   className="w-full h-full object-cover"
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
             </div>
