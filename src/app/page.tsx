@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from './utils/paths';
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
               <div className="h-full w-full bg-gray-200 rounded-lg overflow-hidden shadow-md relative">
                 {/* Using Image component from Next.js for optimization */}
                 <Image
-                  src="/portfolio-website/images/alex-labuda-portrait.jpg"
+                  src={getAssetPath('/images/alex-labuda-portrait.jpg')}
                   alt="Alex Labuda - Senior Data Scientist & Machine Learning Engineer"
                   width={800}
                   height={800}

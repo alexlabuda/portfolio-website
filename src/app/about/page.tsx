@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '../utils/paths';
 
 export const metadata = {
   title: 'About Me | Alex Labuda',
@@ -13,7 +14,7 @@ export default function AboutPage() {
         <div className="text-center mb-12">
           <div className="mb-6 inline-block rounded-full overflow-hidden border-4 border-indigo-100 w-32 h-32 relative">
             <Image 
-              src="/images/profile-photo.jpg"
+              src={getAssetPath('/images/profile-photo.jpg')}
               alt="Alex Labuda"
               fill
               style={{ objectFit: "cover" }}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '../utils/paths';
 
 export const metadata = {
   title: 'Projects | Alex Labuda',
@@ -24,7 +25,7 @@ export default function ProjectsPage() {
             <div className="lg:w-1/2">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 relative">
                 <Image 
-                  src="/images/ml-pipeline-project.jpg"
+                  src={getAssetPath('/images/ml-pipeline-project.jpg')}
                   alt="Event-Driven ML Pipeline with Vertex AI"
                   fill
                   style={{ objectFit: "cover" }}

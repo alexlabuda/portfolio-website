@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '../utils/paths';
 
 export const metadata = {
   title: 'Blog | Alex Labuda',
@@ -22,7 +23,7 @@ export default function BlogPage() {
           <div className="bg-white overflow-hidden shadow rounded-lg">
             <div className="relative h-48 bg-gray-200">
               <Image
-                src="/images/ml-pipeline-blog.jpg"
+                src={getAssetPath('/images/ml-pipeline-blog.jpg')}
                 alt="ML Pipeline Architecture"
                 fill
                 style={{ objectFit: "cover" }}
@@ -58,7 +59,7 @@ export default function BlogPage() {
           <div className="bg-white overflow-hidden shadow rounded-lg">
             <div className="relative h-48 bg-gray-200">
               <Image
-                src="/images/time-series-forecast.jpg"
+                src={getAssetPath('/images/time-series-forecast.jpg')}
                 alt="Time Series Forecasting"
                 fill
                 style={{ objectFit: "cover" }}
