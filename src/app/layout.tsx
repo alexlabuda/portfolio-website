@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import MobileMenuButton from "./components/MobileMenuButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,14 @@ export default function RootLayout({
                   Alex Labuda
                 </Link>
               </div>
-              <div className="flex items-center space-x-8">
+              
+              {/* Mobile menu button */}
+              <div className="flex md:hidden">
+                <MobileMenuButton />
+              </div>
+              
+              {/* Desktop navigation */}
+              <div className="hidden md:flex md:items-center md:space-x-8">
                 <Link href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </Link>
@@ -53,6 +61,27 @@ export default function RootLayout({
               </div>
             </div>
           </nav>
+          
+          {/* Mobile menu, show/hide based on menu state */}
+          <div className="hidden md:hidden" id="mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+              <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                Home
+              </Link>
+              <Link href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                Projects
+              </Link>
+              <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                About
+              </Link>
+              <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                Blog
+              </Link>
+              <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                Contact
+              </Link>
+            </div>
+          </div>
         </header>
         <main className="flex-grow">
           {children}
