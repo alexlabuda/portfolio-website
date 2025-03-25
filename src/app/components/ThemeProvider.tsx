@@ -1,11 +1,11 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
-// Define theme type to include multiple theme options
+// Define theme type (keeping for compatibility)
 type Theme = 'system' | 'light' | 'dark' | 'blue' | 'green' | 'purple' | 'orange';
 
-// Create a theme configuration type
+// Create a theme configuration type (keeping for compatibility)
 interface ThemeConfig {
   name: Theme;
   label: string;
@@ -24,63 +24,22 @@ type ThemeContextType = {
 // Create predefined theme configurations
 const themeConfigs: ThemeConfig[] = [
   { 
-    name: 'system', 
-    label: 'System',
-    bgClass: '', // Uses system preference
-    textClass: '',
-    accentClass: 'indigo'
-  },
-  { 
     name: 'light', 
     label: 'Light',
     bgClass: 'bg-white',
     textClass: 'text-gray-900',
     accentClass: 'indigo'
   },
-  { 
-    name: 'dark', 
-    label: 'Dark',
-    bgClass: 'bg-gray-900',
-    textClass: 'text-white',
-    accentClass: 'indigo'
-  },
-  { 
-    name: 'blue', 
-    label: 'Blue',
-    bgClass: 'blue bg-white',
-    textClass: 'text-blue-900',
-    accentClass: 'blue'
-  },
-  { 
-    name: 'green', 
-    label: 'Green',
-    bgClass: 'green bg-white',
-    textClass: 'text-green-900',
-    accentClass: 'green'
-  },
-  { 
-    name: 'purple', 
-    label: 'Purple',
-    bgClass: 'purple bg-white',
-    textClass: 'text-purple-900',
-    accentClass: 'purple'
-  },
-  { 
-    name: 'orange', 
-    label: 'Orange',
-    bgClass: 'orange bg-white',
-    textClass: 'text-orange-900',
-    accentClass: 'orange'
-  },
 ];
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('system');
+  // Always use light theme
+  const theme: Theme = 'light';
 
-  // Apply theme changes
-  const applyTheme = (newTheme: Theme) => {
+  // Apply the light theme on initial render
+  useEffect(() => {
     const root = document.documentElement;
     const body = document.body;
     
@@ -88,62 +47,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     root.classList.remove('dark');
     root.classList.remove('blue', 'green', 'purple', 'orange');
     
-    // For light/dark mode
-    if (newTheme === 'dark') {
-      root.classList.add('dark');
-    } else if (newTheme === 'system') {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.classList.add('dark');
-      }
-    }
-    
-    // Add color theme class
-    if (newTheme !== 'light' && newTheme !== 'dark' && newTheme !== 'system') {
-      root.classList.add(newTheme);
-    }
-    
-    // Update body background and text colors based on the theme
-    if (newTheme === 'dark' || (newTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      body.classList.remove('bg-white', 'text-gray-900');
-      body.classList.add('bg-gray-900', 'text-gray-100');
-    } else {
-      body.classList.remove('bg-gray-900', 'text-gray-100');
-      body.classList.add('bg-white', 'text-gray-900');
-    }
-    
-    // Store theme preference
-    localStorage.setItem('theme', newTheme);
+    // Set light theme classes
+    body.classList.remove('bg-gray-900', 'text-gray-100');
+    body.classList.add('bg-white', 'text-gray-900');
+  }, []);
+
+  // Dummy setter (maintained for compatibility but doesn't do anything)
+  const setTheme = () => {
+    // Does nothing - theme is fixed
   };
-
-  // Set theme with side effects
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-    applyTheme(newTheme);
-  };
-
-  // On first render, check if a theme is stored in localStorage
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null;
-    if (storedTheme && themeConfigs.some(c => c.name === storedTheme)) {
-      setThemeState(storedTheme);
-      applyTheme(storedTheme);
-    } else {
-      // Default to system preference
-      setThemeState('system');
-      applyTheme('system');
-    }
-
-    // Set up listener for system preference changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => {
-      if (theme === 'system') {
-        applyTheme('system');
-      }
-    };
-    
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeConfigs }}>
