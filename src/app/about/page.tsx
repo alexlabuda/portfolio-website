@@ -41,7 +41,7 @@ export default function AboutPage() {
               <p>
                 I have strong technical skills in Python, R, SQL, and Tableau, with practical experience 
                 implementing MLOps practices and working with cloud platforms like Google Cloud Platform 
-                and Vertex AI. Throughout my career, I've worked on projects in marketing analytics, 
+                and Vertex AI. Throughout my career, I&apos;ve worked on projects in marketing analytics, 
                 customer segmentation, and recommendation systems, delivering solutions that drive 
                 business value and improve decision-making.
               </p>
