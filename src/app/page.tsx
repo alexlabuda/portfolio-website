@@ -37,7 +37,7 @@ export default function Home() {
               <div className="h-full w-full bg-gray-200 rounded-lg overflow-hidden shadow-md relative">
                 {/* Using Image component from Next.js for optimization */}
                 <Image
-                  src="/images/alex-labuda-portrait.jpg"
+                  src="/portfolio-website/images/alex-labuda-portrait.jpg"
                   alt="Alex Labuda - Senior Data Scientist & Machine Learning Engineer"
                   width={800}
                   height={800}
