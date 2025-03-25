@@ -25,10 +25,11 @@ export default function ProjectsPage() {
             <div className="lg:w-1/2">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 relative">
                 <Image 
-                  src={getAssetPath('/images/ml-pipeline-project.jpg')}
+                  src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
                   alt="Event-Driven ML Pipeline with Vertex AI"
                   fill
                   style={{ objectFit: "cover" }}
+                  priority
                 />
               </div>
             </div>
