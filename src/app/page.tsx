@@ -38,7 +38,7 @@ export default function Home() {
                 {/* Using Image component from Next.js for optimization */}
                 <Image
                   src="/images/alex-labuda-portrait.jpg"
-                  alt="Alex Labuda - Senior Data Scientist"
+                  alt="Alex Labuda - Senior Data Scientist & Machine Learning Engineer"
                   width={800}
                   height={800}
                   priority
