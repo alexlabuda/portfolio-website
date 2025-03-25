@@ -201,10 +201,20 @@ export default function ParticlesBackground() {
       const initParticles = () => {
         if (!(window as any).particlesJS) return;
         
+        // Check if we're on a mobile device
+        const isMobile = window.innerWidth < 768;
+        
+        // Adjust particle settings based on device type
+        const particleCount = isMobile ? 40 : 120; // Fewer particles on mobile
+        const particleSize = isMobile ? 3 : 4.5; // Smaller particles on mobile
+        const moveSpeed = isMobile ? 1 : 2; // Slower movement on mobile
+        const lineOpacity = isMobile ? 0.15 : 0.25; // Less visible lines on mobile
+        const lineDistance = isMobile ? 120 : 150; // Shorter connection distance on mobile
+        
         (window as any).particlesJS('particles-js', {
           "particles": {
             "number": {
-              "value": 120,
+              "value": particleCount,
               "density": {
                 "enable": true,
                 "value_area": 800
@@ -231,7 +241,7 @@ export default function ParticlesBackground() {
               }
             },
             "size": {
-              "value": 4.5,
+              "value": particleSize,
               "random": true,
               "anim": {
                 "enable": false,
@@ -242,14 +252,14 @@ export default function ParticlesBackground() {
             },
             "line_linked": {
               "enable": true,
-              "distance": 150,
+              "distance": lineDistance,
               "color": "#7c3aed",
-              "opacity": 0.25,
-              "width": 1.2
+              "opacity": lineOpacity,
+              "width": isMobile ? 0.8 : 1.2
             },
             "move": {
               "enable": true,
-              "speed": 2,
+              "speed": moveSpeed,
               "direction": "none",
               "random": false,
               "straight": false,
@@ -277,13 +287,13 @@ export default function ParticlesBackground() {
             },
             "modes": {
               "grab": {
-                "distance": 150,
+                "distance": isMobile ? 100 : 150,
                 "line_linked": {
-                  "opacity": 1
+                  "opacity": isMobile ? 0.7 : 1
                 }
               },
               "push": {
-                "particles_nb": 6
+                "particles_nb": isMobile ? 3 : 6
               }
             }
           },
@@ -294,9 +304,134 @@ export default function ParticlesBackground() {
       loadParticles();
     }
     
+    // Update particles on window resize
+    const handleResize = () => {
+      // Re-initialize particles when window size changes between mobile/desktop breakpoints
+      const wasMobile = window.innerWidth < 768;
+      setTimeout(() => {
+        const isMobile = window.innerWidth < 768;
+        if (wasMobile !== isMobile) {
+          // Only reinitialize if crossing the mobile/desktop threshold
+          if (typeof window !== 'undefined') {
+            const initParticles = () => {
+              if (!(window as any).particlesJS) return;
+              
+              // Check if we're on a mobile device
+              const isMobile = window.innerWidth < 768;
+              
+              // Adjust particle settings based on device type
+              const particleCount = isMobile ? 40 : 120; // Fewer particles on mobile
+              const particleSize = isMobile ? 3 : 4.5; // Smaller particles on mobile
+              const moveSpeed = isMobile ? 1 : 2; // Slower movement on mobile
+              const lineOpacity = isMobile ? 0.15 : 0.25; // Less visible lines on mobile
+              const lineDistance = isMobile ? 120 : 150; // Shorter connection distance on mobile
+              
+              (window as any).particlesJS('particles-js', {
+                "particles": {
+                  "number": {
+                    "value": particleCount,
+                    "density": {
+                      "enable": true,
+                      "value_area": 800
+                    }
+                  },
+                  "color": {
+                    "value": "#7c3aed" // Indigo color matching your theme
+                  },
+                  "shape": {
+                    "type": "circle",
+                    "stroke": {
+                      "width": 0,
+                      "color": "#000000"
+                    }
+                  },
+                  "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                      "enable": false,
+                      "speed": 1,
+                      "opacity_min": 0.1,
+                      "sync": false
+                    }
+                  },
+                  "size": {
+                    "value": particleSize,
+                    "random": true,
+                    "anim": {
+                      "enable": false,
+                      "speed": 40,
+                      "size_min": 0.1,
+                      "sync": false
+                    }
+                  },
+                  "line_linked": {
+                    "enable": true,
+                    "distance": lineDistance,
+                    "color": "#7c3aed",
+                    "opacity": lineOpacity,
+                    "width": isMobile ? 0.8 : 1.2
+                  },
+                  "move": {
+                    "enable": true,
+                    "speed": moveSpeed,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                      "enable": false,
+                      "rotateX": 600,
+                      "rotateY": 1200
+                    }
+                  }
+                },
+                "interactivity": {
+                  "detect_on": "canvas",
+                  "events": {
+                    "onhover": {
+                      "enable": true,
+                      "mode": "grab"
+                    },
+                    "onclick": {
+                      "enable": true,
+                      "mode": "push"
+                    },
+                    "resize": true
+                  },
+                  "modes": {
+                    "grab": {
+                      "distance": isMobile ? 100 : 150,
+                      "line_linked": {
+                        "opacity": isMobile ? 0.7 : 1
+                      }
+                    },
+                    "push": {
+                      "particles_nb": isMobile ? 3 : 6
+                    }
+                  }
+                },
+                "retina_detect": true
+              });
+            };
+            
+            initParticles();
+          }
+        }
+      }, 250); // Small timeout to avoid too many reinitializations during resize
+    };
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
+    
     // Cleanup function
     return () => {
       particlesLoaded.current = false;
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
 
