@@ -289,8 +289,8 @@ export default function BlogPage() {
 
         {/* Newsletter Signup */}
         <div className="mt-16 bg-gradient-primary rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Subscribe to my newsletter</h2>
-          <p className="text-white/90 max-w-2xl mx-auto mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Subscribe to my newsletter</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto mb-6">
             Get the latest data science articles, tutorials, and insights delivered directly to your inbox.
             No spam, unsubscribe anytime.
           </p>

@@ -19,10 +19,10 @@ export default function Home() {
               priority
             />
           </div>
-          <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
             Alex Labuda
           </h1>
-          <p className="mt-4 text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-gray-700 max-w-2xl mx-auto">
             Senior Data Scientist specializing in machine learning, predictive modeling, and MLOps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -214,8 +214,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-primary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Work Together?</h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Work Together?</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
             I'm currently available for new opportunities and collaborations
             in data science and machine learning.
           </p>

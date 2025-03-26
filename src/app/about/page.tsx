@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div className="lg:w-1/3">
             <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden bg-gray-100 mb-8">
               <Image
-                src={getAssetPath('/images/headshot-portfolio.jpeg')}
+                src={getAssetPath('/images/alex-labuda-portrait.jpg')}
                 alt="Alex Labuda"
                 width={600}
                 height={800}
