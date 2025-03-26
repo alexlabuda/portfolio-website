@@ -3,21 +3,19 @@
 import { createContext, useContext, useEffect } from 'react';
 
 // Define theme type (keeping for compatibility)
-type Theme = 'system' | 'light' | 'dark' | 'blue' | 'green' | 'purple' | 'orange';
+type Theme = 'light';
 
 // Create a theme configuration type (keeping for compatibility)
 interface ThemeConfig {
   name: Theme;
   label: string;
-  bgClass: string;
-  textClass: string;
-  accentClass: string;
+  primaryColor: string;
+  accentColor: string;
 }
 
 // Define theme context type
 type ThemeContextType = {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
   themeConfigs: ThemeConfig[];
 };
 
@@ -26,39 +24,31 @@ const themeConfigs: ThemeConfig[] = [
   { 
     name: 'light', 
     label: 'Light',
-    bgClass: 'bg-white',
-    textClass: 'text-gray-900',
-    accentClass: 'indigo'
+    primaryColor: '#6750A4', // Deep Purple
+    accentColor: '#FFD8E4', // Soft Pink
   },
 ];
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Always use light theme
+  // Fixed light theme
   const theme: Theme = 'light';
 
   // Apply the light theme on initial render
   useEffect(() => {
     const root = document.documentElement;
-    const body = document.body;
     
-    // Remove all theme classes first
-    root.classList.remove('dark');
-    root.classList.remove('blue', 'green', 'purple', 'orange');
+    // Ensure we're using light mode
+    if (root.classList.contains('dark')) {
+      root.classList.remove('dark');
+    }
     
-    // Set light theme classes
-    body.classList.remove('bg-gray-900', 'text-gray-100');
-    body.classList.add('bg-white', 'text-gray-900');
+    // No additional theme configurations needed as CSS variables are already defined in globals.css
   }, []);
 
-  // Dummy setter (maintained for compatibility but doesn't do anything)
-  const setTheme = () => {
-    // Does nothing - theme is fixed
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, themeConfigs }}>
+    <ThemeContext.Provider value={{ theme, themeConfigs }}>
       {children}
     </ThemeContext.Provider>
   );

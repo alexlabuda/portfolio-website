@@ -3,7 +3,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { ThemeProvider, useTheme } from './ThemeProvider';
-import ThemeSelector from './ThemeSelector';
 import { useState } from 'react';
 
 function Header() {
@@ -24,10 +23,7 @@ function Header() {
             </Link>
           </div>
           
-          <div className="flex items-center space-x-4">
-            {/* Theme selector */}
-            <ThemeSelector />
-          
+          <div className="flex items-center space-x-4">          
             {/* Mobile menu button */}
             <div className="flex md:hidden">
               <button

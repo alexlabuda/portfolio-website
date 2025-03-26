@@ -21,7 +21,7 @@ export default function ProjectsPage() {
 
         <div className="space-y-16">
           {/* Project 1 */}
-          <div className="lg:flex lg:items-center lg:space-x-8">
+          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
             <div className="lg:w-1/2">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 relative">
                 <Image 
@@ -41,16 +41,16 @@ export default function ProjectsPage() {
                 leveraging large language models for classification and entity extraction.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Vertex AI</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">LLMs</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">NLP</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">GCP</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Vertex AI</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">LLMs</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">NLP</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">GCP</span>
               </div>
               <div className="mt-6">
                 <Link 
                   href="#" 
-                  className="text-indigo-600 font-medium hover:text-indigo-500"
+                  className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   Read case study →
                 </Link>
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project 2 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse">
+          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6">
             <div className="lg:w-1/2">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
@@ -73,15 +73,15 @@ export default function ProjectsPage() {
                 engagement metrics, and demographic data, enabling personalized content recommendations.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Scikit-learn</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Clustering</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">BigQuery</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Scikit-learn</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Clustering</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">BigQuery</span>
               </div>
               <div className="mt-6">
                 <Link 
                   href="#" 
-                  className="text-indigo-600 font-medium hover:text-indigo-500"
+                  className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   View details →
                 </Link>
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project 3 */}
-          <div className="lg:flex lg:items-center lg:space-x-8">
+          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
             <div className="lg:w-1/2">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Tableau Dashboard Placeholder</p>
@@ -104,15 +104,15 @@ export default function ProjectsPage() {
                 techniques to measure the ROI of digital and traditional marketing campaigns.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">R</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Time Series</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Tableau</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Marketing Analytics</span>
+                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">R</span>
+                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Time Series</span>
+                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Tableau</span>
+                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Marketing Analytics</span>
               </div>
               <div className="mt-6">
                 <Link 
                   href="#" 
-                  className="text-indigo-600 font-medium hover:text-indigo-500"
+                  className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   Explore visualization →
                 </Link>
@@ -122,20 +122,20 @@ export default function ProjectsPage() {
         </div>
 
         {/* Tableau Visualization Section */}
-        <div className="mt-20">
+        <div className="mt-20 bg-accent-50 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Tableau Visualization Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-200 rounded-lg overflow-hidden h-80 flex items-center justify-center">
+            <div className="bg-white rounded-lg overflow-hidden h-80 flex items-center justify-center shadow-sm">
               <p className="text-gray-500">Tableau Dashboard 1 Placeholder</p>
             </div>
-            <div className="bg-gray-200 rounded-lg overflow-hidden h-80 flex items-center justify-center">
+            <div className="bg-white rounded-lg overflow-hidden h-80 flex items-center justify-center shadow-sm">
               <p className="text-gray-500">Tableau Dashboard 2 Placeholder</p>
             </div>
           </div>
           <div className="mt-6 text-center">
             <Link 
               href="https://public.tableau.com/" 
-              className="inline-block bg-indigo-600 px-6 py-3 text-white font-semibold rounded-md hover:bg-indigo-700 transition-colors"
+              className="btn-primary inline-block"
               target="_blank"
               rel="noopener noreferrer"
             >

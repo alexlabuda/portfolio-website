@@ -10,7 +10,7 @@ export default function ThemeTestPage() {
       <div className="mb-10">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Theme Test Page</h1>
         <p className="text-gray-700 dark:text-gray-300 max-w-3xl mb-8">
-          This page showcases how UI elements look in the selected theme: <span className="font-semibold">{theme}</span>
+          This page showcases how UI elements look with our color scheme: <span className="font-semibold">{theme}</span>
         </p>
         
         <div className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-8">
@@ -51,6 +51,20 @@ export default function ThemeTestPage() {
                 <div className="w-10 h-10 rounded bg-primary-800 border border-gray-200 dark:border-gray-700"></div>
                 <div className="w-10 h-10 rounded bg-primary-900 border border-gray-200 dark:border-gray-700"></div>
               </div>
+              
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-2">Accent Color Palette</h3>
+              <div className="flex flex-wrap gap-2">
+                <div className="w-10 h-10 rounded bg-accent-50 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-100 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-200 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-300 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-400 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-500 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-600 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-700 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-800 border border-gray-200 dark:border-gray-700"></div>
+                <div className="w-10 h-10 rounded bg-accent-900 border border-gray-200 dark:border-gray-700"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -61,20 +75,22 @@ export default function ThemeTestPage() {
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Buttons</h2>
           <div className="space-y-4">
             <div>
-              <button className="btn-primary">Primary Button</button>
+              <button className="btn-primary">
+                Primary Button
+              </button>
             </div>
             <div>
-              <button className="rounded-md bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 px-4 py-2 transition-colors">
+              <button className="btn-secondary">
                 Secondary Button
               </button>
             </div>
             <div>
-              <button className="rounded-md bg-white text-gray-800 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-600 px-4 py-2 transition-colors">
+              <button className="btn-outline">
                 Outline Button
               </button>
             </div>
             <div>
-              <button className="rounded-md bg-accent-500 text-white hover:bg-accent-600 px-4 py-2 transition-colors">
+              <button className="btn-accent">
                 Accent Button
               </button>
             </div>
@@ -98,6 +114,18 @@ export default function ThemeTestPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-10">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Gradient Background</h2>
+        <div className="space-y-4">
+          <div className="h-40 bg-gradient-primary rounded-lg flex items-center justify-center">
+            <span className="text-gray-800 font-semibold">Background Gradient</span>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300">
+            Use the <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded">bg-gradient-primary</code> utility class for the gradient background.
+          </p>
         </div>
       </div>
       
@@ -169,7 +197,7 @@ export default function ThemeTestPage() {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              className="btn-primary w-full flex justify-center"
             >
               Submit
             </button>

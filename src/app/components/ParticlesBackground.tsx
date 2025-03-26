@@ -22,7 +22,7 @@ export default function ParticlesBackground() {
             particlesContainer.style.zIndex = '1';
             
             // Insert the container as the first child of the hero section
-            const heroSection = document.querySelector('.relative.bg-gradient-to-r');
+            const heroSection = document.querySelector('.relative.bg-gradient-primary');
             if (heroSection) {
               heroSection.insertBefore(particlesContainer, heroSection.firstChild);
             }
@@ -221,7 +221,7 @@ export default function ParticlesBackground() {
               }
             },
             "color": {
-              "value": "#7c3aed" // Indigo color matching your theme
+              "value": "#6750A4" // Deep Purple matching our theme
             },
             "shape": {
               "type": "circle",
@@ -253,7 +253,7 @@ export default function ParticlesBackground() {
             "line_linked": {
               "enable": true,
               "distance": lineDistance,
-              "color": "#7c3aed",
+              "color": "#6750A4",
               "opacity": lineOpacity,
               "width": isMobile ? 0.8 : 1.2
             },
@@ -336,7 +336,7 @@ export default function ParticlesBackground() {
                     }
                   },
                   "color": {
-                    "value": "#7c3aed" // Indigo color matching your theme
+                    "value": "#6750A4" // Deep Purple matching our theme
                   },
                   "shape": {
                     "type": "circle",
@@ -368,7 +368,7 @@ export default function ParticlesBackground() {
                   "line_linked": {
                     "enable": true,
                     "distance": lineDistance,
-                    "color": "#7c3aed",
+                    "color": "#6750A4",
                     "opacity": lineOpacity,
                     "width": isMobile ? 0.8 : 1.2
                   },

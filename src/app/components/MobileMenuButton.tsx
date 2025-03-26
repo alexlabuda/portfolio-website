@@ -1,11 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function MobileMenuButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  // Only run client-side code after component is mounted
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const toggleMenu = () => {
+    if (!mounted) return;
+    
     setIsOpen(!isOpen);
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
@@ -16,7 +24,7 @@ export default function MobileMenuButton() {
   return (
     <button
       type="button"
-      className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+      className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
       aria-controls="mobile-menu"
       aria-expanded={isOpen}
       onClick={toggleMenu}
