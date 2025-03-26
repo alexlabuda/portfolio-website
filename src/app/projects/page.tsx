@@ -23,7 +23,7 @@ export default function ProjectsPage() {
           {/* Project 1 */}
           <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
             <div className="lg:w-1/2">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 relative">
+              <div className="rounded-lg overflow-hidden h-64 relative">
                 <Image 
                   src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
                   alt="Event-Driven ML Pipeline with Vertex AI"
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
           {/* Project 2 */}
           <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6">
             <div className="lg:w-1/2">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 flex items-center justify-center">
+              <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function ProjectsPage() {
           {/* Project 3 */}
           <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
             <div className="lg:w-1/2">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 flex items-center justify-center">
+              <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Tableau Dashboard Placeholder</p>
               </div>
             </div>
