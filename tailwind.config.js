@@ -36,6 +36,9 @@ module.exports = {
           950: 'var(--color-accent-950)',
         },
       },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to bottom right, var(--color-primary-50), var(--color-accent-100))',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

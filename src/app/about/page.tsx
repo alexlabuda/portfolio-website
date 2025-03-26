@@ -4,203 +4,172 @@ import { getAssetPath } from '../utils/paths';
 
 export const metadata = {
   title: 'About Me | Alex Labuda',
-  description: 'Learn about Alex Labuda - Senior Data Scientist, ML Engineer, and Tableau Developer',
+  description: 'Learn more about Alex Labuda, Senior Data Scientist with expertise in ML, predictive modeling, and MLOps',
 };
 
 export default function AboutPage() {
   return (
     <div className="bg-white py-12 sm:py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="mb-6 inline-block rounded-full overflow-hidden border-4 border-indigo-100 w-32 h-32 relative">
-            <Image 
-              src={getAssetPath('/images/headshot-portfolio.jpeg')}
-              alt="Alex Labuda"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">About Me</h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Senior Data Scientist with expertise in Python, R, SQL, and Tableau, 
-            specializing in machine learning, predictive modeling, and data visualization.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Professional Summary */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Professional Snapshot</h2>
-            <div className="prose prose-indigo max-w-none space-y-6">
-              <p>
-                I am a Senior Data Scientist with expertise in building and deploying machine learning 
-                models that solve real business problems. My experience spans predictive modeling, 
-                unsupervised learning, time-series forecasting, and media mix modeling, with a focus 
-                on creating end-to-end ML solutions from data processing to deployment.
-              </p>
-              
-              <p>
-                I have strong technical skills in Python, R, SQL, and Tableau, with practical experience 
-                implementing MLOps practices and working with cloud platforms like Google Cloud Platform 
-                and Vertex AI. Throughout my career, I&apos;ve worked on projects in marketing analytics, 
-                customer segmentation, and recommendation systems, delivering solutions that drive 
-                business value and improve decision-making.
-              </p>
-              
-              <p>
-                I&apos;m passionate about translating complex technical concepts into actionable insights 
-                and creating interactive visualizations that tell compelling data stories. I&apos;m currently 
-                open to new data science opportunities where I can leverage my expertise to solve 
-                challenging problems.
-              </p>
+        <div className="lg:flex lg:items-start lg:gap-12">
+          <div className="lg:w-1/3">
+            <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden bg-gray-100 mb-8">
+              <Image
+                src={getAssetPath('/images/headshot-portfolio.jpeg')}
+                alt="Alex Labuda"
+                width={600}
+                height={800}
+                className="object-cover"
+                priority
+              />
             </div>
-          </div>
 
-          {/* Skills List */}
-          <div className="mt-8 md:mt-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Skills</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">Languages & Tools</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Python</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">R</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">SQL</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Tableau</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">GCP</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Git</span>
+            <div className="bg-primary-50 p-6 rounded-lg mb-8">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Core Skills</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700">Python</span>
+                    <span className="text-primary-700 font-medium">95%</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-fill" style={{ width: '95%' }}></div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">ML & Data Science</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Scikit-learn</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">PyTorch</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">TensorFlow</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Pandas</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">NumPy</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Vertex AI</span>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700">R</span>
+                    <span className="text-primary-700 font-medium">85%</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-fill" style={{ width: '85%' }}></div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">Specializations</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">MLOps</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Time-Series</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">NLP</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Clustering</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Media Mix Modeling</span>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700">SQL</span>
+                    <span className="text-primary-700 font-medium">90%</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-fill" style={{ width: '90%' }}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700">Machine Learning</span>
+                    <span className="text-primary-700 font-medium">92%</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-fill" style={{ width: '92%' }}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700">Tableau</span>
+                    <span className="text-primary-700 font-medium">80%</span>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-fill" style={{ width: '80%' }}></div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div className="bg-accent-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Education</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-900">MS in Data Science</h4>
+                  <p className="text-gray-600">University of Technology</p>
+                  <p className="text-sm text-gray-500">2016 - 2018</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900">BS in Computer Science</h4>
+                  <p className="text-gray-600">State University</p>
+                  <p className="text-sm text-gray-500">2012 - 2016</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 lg:mt-0 lg:w-2/3">
+            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">About Me</h1>
             
-            <div className="mt-8">
-              <Link 
-                href="/documents/resume.pdf" 
-                className="inline-block bg-indigo-600 px-6 py-2 text-white font-semibold rounded-md hover:bg-indigo-700 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download Resume
+            <div className="prose prose-lg max-w-none text-gray-600">
+              <p>
+                I'm a Senior Data Scientist with 3+ years of experience building end-to-end machine learning solutions. 
+                My expertise spans predictive modeling, unsupervised learning, time-series forecasting, and MLOps 
+                implementation.
+              </p>
+              <p>
+                Currently, I develop and deploy ML solutions for enterprise clients, focusing on 
+                creating event-driven pipelines that deliver real-time insights from complex data. I'm passionate 
+                about translating business problems into data science solutions that drive measurable results.
+              </p>
+              <p>
+                When I'm not building models or wrangling data, I enjoy mentoring junior data scientists 
+                and sharing knowledge through internal workshops and technical blog posts.
+              </p>
+            </div>
+
+            <div className="mt-10 bg-primary-50 p-6 rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Work Experience</h2>
+              
+              <div className="space-y-8">
+                {/* Experience 1 */}
+                <div className="border-l-4 border-primary-500 pl-4">
+                  <h3 className="text-xl font-bold text-gray-900">Senior Data Scientist</h3>
+                  <p className="text-primary-700 font-medium">Analytics Innovations Inc.</p>
+                  <p className="text-gray-500 text-sm mb-3">January 2022 - Present</p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Lead data scientist for media clients, developing ML solutions from inception to production</li>
+                    <li>Created and deployed end-to-end ML pipelines for real-time sentiment analysis using GCP</li>
+                    <li>Designed automated MLOps workflows that reduced model deployment time by 60%</li>
+                    <li>Implemented unsupervised learning techniques to create customer segmentation models</li>
+                  </ul>
+                </div>
+
+                {/* Experience 2 */}
+                <div className="border-l-4 border-accent-500 pl-4">
+                  <h3 className="text-xl font-bold text-gray-900">Data Scientist</h3>
+                  <p className="text-accent-700 font-medium">DataTech Solutions</p>
+                  <p className="text-gray-500 text-sm mb-3">June 2020 - December 2021</p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Developed time-series forecasting models for retail sales prediction</li>
+                    <li>Created interactive Tableau dashboards for stakeholder reporting</li>
+                    <li>Implemented A/B testing framework that improved conversion rates by 15%</li>
+                    <li>Collaborated with product teams to integrate ML models into customer-facing applications</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 bg-accent-50 p-6 rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Certifications</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-primary-100">
+                  <h3 className="font-bold text-gray-900">Google Cloud Professional Data Engineer</h3>
+                  <p className="text-gray-600 text-sm">Google Cloud</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-primary-100">
+                  <h3 className="font-bold text-gray-900">Tableau Desktop Specialist</h3>
+                  <p className="text-gray-600 text-sm">Tableau</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-accent-100">
+                  <h3 className="font-bold text-gray-900">Machine Learning with TensorFlow</h3>
+                  <p className="text-gray-600 text-sm">Coursera</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-accent-100">
+                  <h3 className="font-bold text-gray-900">Advanced SQL for Data Analysis</h3>
+                  <p className="text-gray-600 text-sm">Datacamp</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <Link href="/contact" className="btn-primary">
+                Get in touch
               </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Experience Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Experience</h2>
-          
-          <div className="space-y-12">
-            {/* Senior Data Scientist Role */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="md:text-right">
-                <p className="text-sm font-semibold text-gray-600">Dec 2024 - Present</p>
-              </div>
-              <div className="md:col-span-3">
-                <h3 className="text-xl font-bold text-gray-900">Senior Data Scientist</h3>
-                <p className="text-lg text-indigo-600">Zion & Zion</p>
-                <ul className="mt-4 space-y-3 text-gray-600 list-disc list-outside ml-5">
-                  <li>Architected and deployed event-driven ML pipelines using Vertex AI and LLMs, processing thousands of call transcripts daily for a national closet remodeling brand</li>
-                  <li>Spearheaded development of sophisticated customer segmentation solutions using unsupervised learning for a multi-billion-dollar sports streaming platform, powering CDPs, marketing campaigns, and personalization strategies</li>
-                  <li>Led technical mentorship initiatives, guiding junior team members in Python, R, Google Cloud, and MLOps best practices</li>
-                  <li>Established and conducted regular coding workshops to enhance team capabilities in data analytics and foster continuous learning culture</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Data Scientist Role */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="md:text-right">
-                <p className="text-sm font-semibold text-gray-600">Jan 2022 - Dec 2024</p>
-              </div>
-              <div className="md:col-span-3">
-                <h3 className="text-xl font-bold text-gray-900">Data Scientist</h3>
-                <p className="text-lg text-indigo-600">Zion & Zion</p>
-                <ul className="mt-4 space-y-3 text-gray-600 list-disc list-outside ml-5">
-                  <li>Engineered and deployed machine learning models on Google Vertex AI, implementing robust monitoring and optimization systems for production environments</li>
-                  <li>Developed real-time KPI dashboards in Tableau, providing critical insights for executive decision-making and marketing strategy</li>
-                  <li>Automated weekly Tableau report distribution system, resulting in thousands of hours saved annually across client organizations</li>
-                  <li>Conducted advanced analytics including time-series forecasting, Media Mix Modeling, and customer segmentation to drive data-informed marketing strategies</li>
-                  <li>Published thought leadership content through whitepapers and technical blogs, establishing authority in applied data science methodologies</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Education Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Education & Certifications</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="md:text-right">
-              <p className="text-sm font-semibold text-gray-600">Jan 2019 - Dec 2021</p>
-            </div>
-            <div className="md:col-span-3">
-              <h3 className="text-xl font-bold text-gray-900">BS, Double Major in Business Analytics & Finance</h3>
-              <p className="text-lg text-indigo-600">State University of New York at New Paltz</p>
-              <p className="mt-2 text-gray-600">Graduated with high honors (GPA: 3.97)</p>
-            </div>
-          </div>
-          
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="md:text-right">
-              <p className="text-sm font-semibold text-gray-600">Certifications</p>
-            </div>
-            <div className="md:col-span-3">
-              <ul className="space-y-4 text-gray-600">
-                {/* LLM & AI Certifications */}
-                <li>
-                  <h4 className="font-semibold text-gray-800">LLM & AI Development</h4>
-                  <ul className="mt-2 space-y-2">
-                    <li className="flex items-baseline">
-                      <span className="mr-2">•</span>
-                      <span>LangChain Certified: LangGraph & LangSmith (2025)</span>
-                    </li>
-                    <li className="flex items-baseline">
-                      <span className="mr-2">•</span>
-                      <span>DeepLearning.AI TensorFlow Developer Specialization (2021)</span>
-                    </li>
-                  </ul>
-                </li>
-
-                {/* Data Science & ML Certifications */}
-                <li>
-                  <h4 className="font-semibold text-gray-800">Data Science & Machine Learning</h4>
-                  <ul className="mt-2 space-y-2">
-                    <li className="flex items-baseline">
-                      <span className="mr-2">•</span>
-                      <span>Business Science: Data Science for Business (2023)</span>
-                    </li>
-                    <li className="flex items-baseline">
-                      <span className="mr-2">•</span>
-                      <span>Python for Data Science Automation Certification (2023)</span>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

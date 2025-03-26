@@ -5,134 +5,225 @@ import ParticlesBackground from '@/app/components/ParticlesBackground';
 
 export default function Home() {
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-50 to-indigo-50">
+    <main className="overflow-hidden">
+      {/* Hero Section with Particles */}
+      <section className="bg-gradient-primary relative py-20 sm:py-24">
         <ParticlesBackground />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
-          <div className="md:flex md:items-center md:space-x-12">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Alex Labuda</span>
-                <span className="block text-indigo-600 mt-2">Senior Data Scientist</span>
-              </h1>
-              <p className="mt-6 text-lg text-gray-600 max-w-3xl">
-                Specializing in machine learning, predictive modeling, unsupervised learning, 
-                time-series forecasting, media mix modeling, and MLOps.
-                Delivering end-to-end ML solutions from data to deployment.
-              </p>
-              <div className="mt-8 flex space-x-4">
-                <Link 
-                  href="/projects" 
-                  className="inline-block bg-indigo-600 px-6 py-3 text-white font-semibold rounded-md hover:bg-indigo-700 transition-colors"
-                >
-                  View My Work
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="inline-block bg-white px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-md hover:bg-gray-50 transition-colors"
-                >
-                  Get in Touch
-                </Link>
-              </div>
-            </div>
-            <div className="md:w-1/2 relative h-64 md:h-auto">
-              <div className="h-full w-full bg-gray-200 rounded-lg overflow-hidden shadow-md relative">
-                {/* Using Image component from Next.js for optimization */}
-                <Image
-                  src={getAssetPath('/images/alex-labuda-portrait.jpg')}
-                  alt="Alex Labuda - Senior Data Scientist & Machine Learning Engineer"
-                  width={800}
-                  height={800}
-                  priority
-                  className="w-full h-full object-cover"
-                  style={{ objectFit: "cover", objectPosition: "center top" }}
-                />
-              </div>
-            </div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          <div className="inline-block rounded-full overflow-hidden border-4 border-white/50 w-32 h-32 mb-6 relative">
+            <Image 
+              src={getAssetPath('/images/headshot-portfolio.jpeg')}
+              alt="Alex Labuda"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
           </div>
-        </div>
-      </div>
-
-      {/* Highlight/Teaser Blocks */}
-      <div className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900">Expertise & Experience</h2>
-            <p className="mt-4 text-xl text-gray-600">
-              3+ years of experience delivering scalable ML pipelines and interactive dashboards.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3">
-            {/* Expertise Card 1 */}
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="px-6 py-8">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 bg-indigo-500 rounded-md p-3">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-lg font-medium text-gray-900">Machine Learning</h3>
-                </div>
-                <p className="mt-4 text-base text-gray-600">
-                  Building predictive models, unsupervised learning solutions, and 
-                  time-series forecasting systems that deliver business value.
-                </p>
-              </div>
-            </div>
-
-            {/* Expertise Card 2 */}
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="px-6 py-8">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 bg-indigo-500 rounded-md p-3">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-lg font-medium text-gray-900">MLOps & Engineering</h3>
-                </div>
-                <p className="mt-4 text-base text-gray-600">
-                  Designing and implementing end-to-end ML pipelines with continuous integration 
-                  and deployment using modern cloud platforms.
-                </p>
-              </div>
-            </div>
-
-            {/* Expertise Card 3 */}
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="px-6 py-8">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 bg-indigo-500 rounded-md p-3">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-lg font-medium text-gray-900">Data Visualization</h3>
-                </div>
-                <p className="mt-4 text-base text-gray-600">
-                  Transforming complex data into interactive Tableau dashboards and 
-                  compelling visualizations that tell a story.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link 
-              href="/projects" 
-              className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-500"
-            >
-              See my recent projects
-              <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+          <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Alex Labuda
+          </h1>
+          <p className="mt-4 text-xl text-white/90 max-w-2xl mx-auto">
+            Senior Data Scientist specializing in machine learning, predictive modeling, and MLOps.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link href="/projects" className="btn-primary">
+              View Projects
+            </Link>
+            <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition-colors">
+              Get in Touch
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Areas of Expertise</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+              I build end-to-end machine learning solutions that drive measurable business results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Expertise Card 1 */}
+            <div className="bg-primary-50 rounded-lg p-6">
+              <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Machine Learning</h3>
+              <p className="text-gray-600">
+                Developing and deploying predictive models, unsupervised learning solutions, and 
+                recommendation systems using Python and scikit-learn.
+              </p>
+            </div>
+
+            {/* Expertise Card 2 */}
+            <div className="bg-accent-50 rounded-lg p-6">
+              <div className="h-12 w-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">MLOps</h3>
+              <p className="text-gray-600">
+                Building robust ML pipelines with automated testing, deployment, and monitoring 
+                using Google Cloud Platform and Vertex AI.
+              </p>
+            </div>
+
+            {/* Expertise Card 3 */}
+            <div className="bg-primary-50 rounded-lg p-6">
+              <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Data Visualization</h3>
+              <p className="text-gray-600">
+                Creating interactive dashboards and visualizations that communicate insights 
+                effectively using Tableau and Python visualization libraries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Featured Projects</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+              Some of my recent work in machine learning and data science.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Project Card 1 */}
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div className="bg-primary-50 h-48 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-primary-700 font-medium">Event-Driven ML Pipeline</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Event-Driven ML Pipeline with Vertex AI</h3>
+                <p className="text-gray-600 mb-4">
+                  Real-time machine learning pipeline for processing and analyzing call center transcripts.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">GCP</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">NLP</span>
+                </div>
+                <Link 
+                  href="/projects" 
+                  className="text-primary-600 font-medium hover:text-primary-700"
+                >
+                  View details →
+                </Link>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div className="bg-accent-50 h-48 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-accent-700 font-medium">Customer Segmentation</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Unsupervised Learning for Sports Streaming</h3>
+                <p className="text-gray-600 mb-4">
+                  Customer segmentation pipeline identifying distinct viewer personas for content recommendations.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Python</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Clustering</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">BigQuery</span>
+                </div>
+                <Link 
+                  href="/projects" 
+                  className="text-primary-600 font-medium hover:text-primary-700"
+                >
+                  View details →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/projects" className="btn-primary">
+              View All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Technical Skills</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+              The tools and technologies I use to build data science solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="bg-primary-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">Python</h3>
+              <p className="text-sm text-gray-600">scikit-learn, pandas, numpy</p>
+            </div>
+            <div className="bg-accent-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">R</h3>
+              <p className="text-sm text-gray-600">tidyverse, caret, ggplot2</p>
+            </div>
+            <div className="bg-primary-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">SQL</h3>
+              <p className="text-sm text-gray-600">BigQuery, PostgreSQL</p>
+            </div>
+            <div className="bg-accent-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">Tableau</h3>
+              <p className="text-sm text-gray-600">Dashboard design, ETL</p>
+            </div>
+            <div className="bg-accent-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">Google Cloud</h3>
+              <p className="text-sm text-gray-600">Vertex AI, BigQuery</p>
+            </div>
+            <div className="bg-primary-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">Machine Learning</h3>
+              <p className="text-sm text-gray-600">Supervised, Unsupervised</p>
+            </div>
+            <div className="bg-accent-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">NLP</h3>
+              <p className="text-sm text-gray-600">BERT, LLMs, Transformers</p>
+            </div>
+            <div className="bg-primary-50 p-4 rounded-lg text-center">
+              <h3 className="font-bold text-gray-900">MLOps</h3>
+              <p className="text-sm text-gray-600">CI/CD, Model Monitoring</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-primary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Work Together?</h2>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            I'm currently available for new opportunities and collaborations
+            in data science and machine learning.
+          </p>
+          <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors">
+            Get in Touch
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
