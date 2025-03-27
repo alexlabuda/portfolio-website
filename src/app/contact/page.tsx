@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Contact | Alex Labuda',
@@ -28,10 +28,10 @@ export default function ContactPage() {
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Email</p>
                     <a 
-                      href="mailto:alex@example.com" 
+                      href="mailto:alexlabuda@gmail.com" 
                       className="text-gray-600 hover:text-primary-600"
                     >
-                      alex@example.com
+                      alexlabuda@gmail.com
                     </a>
                   </div>
                 </div>
@@ -42,12 +42,12 @@ export default function ContactPage() {
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">LinkedIn</p>
                     <a 
-                      href="https://linkedin.com/in/alexlabuda" 
+                      href="https://linkedin.com/in/alex-labuda" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-primary-600"
                     >
-                      linkedin.com/in/alexlabuda
+                      linkedin.com/in/alex-labuda
                     </a>
                   </div>
                 </div>
@@ -64,22 +64,6 @@ export default function ContactPage() {
                       className="text-gray-600 hover:text-primary-600"
                     >
                       github.com/alexlabuda
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="bg-white p-3 rounded-full shadow-sm">
-                    <FaTwitter className="h-5 w-5 text-primary-600" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">Twitter</p>
-                    <a 
-                      href="https://twitter.com/alexlabuda" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary-600"
-                    >
-                      @alexlabuda
                     </a>
                   </div>
                 </div>
@@ -106,7 +90,7 @@ export default function ContactPage() {
           <div className="mt-12 lg:mt-0 lg:w-3/5">
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
               <h2 className="text-xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
-              <form className="space-y-6">
+              <form action="https://formspree.io/f/xnnpbnnz" method="POST" className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
@@ -114,8 +98,9 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="first-name"
+                      name="first_name"
                       id="first-name"
+                      required
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                     />
                   </div>
@@ -125,8 +110,9 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="last-name"
+                      name="last_name"
                       id="last-name"
+                      required
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                     />
                   </div>
@@ -140,6 +126,7 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     id="email"
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   />
                 </div>
@@ -152,6 +139,7 @@ export default function ContactPage() {
                     type="text"
                     name="subject"
                     id="subject"
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   />
                 </div>
@@ -164,8 +152,14 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={5}
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   ></textarea>
+                </div>
+
+                {/* Honeypot field to prevent spam */}
+                <div className="hidden">
+                  <input type="text" name="_gotcha" />
                 </div>
 
                 <div className="flex items-center">
@@ -173,6 +167,7 @@ export default function ContactPage() {
                     id="terms"
                     name="terms"
                     type="checkbox"
+                    required
                     className="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
                   />
                   <label htmlFor="terms" className="ml-2 block text-sm text-gray-600">
