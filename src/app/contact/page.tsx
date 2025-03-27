@@ -1,7 +1,20 @@
 "use client";
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useRef } from 'react';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+
+type FieldError = {
+  message: string;
+};
+
+type FormErrors = {
+  first_name?: FieldError;
+  last_name?: FieldError;
+  email?: FieldError;
+  subject?: FieldError;
+  message?: FieldError;
+  terms?: FieldError;
+};
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,8 +25,69 @@ export default function ContactPage() {
     email: '',
     subject: '',
     message: '',
-    terms: false
+    terms: true
   });
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const statusRef = useRef<HTMLDivElement>(null);
+
+  const validateForm = (): boolean => {
+    const errors: FormErrors = {};
+    let isValid = true;
+
+    // First name validation
+    if (!formData.first_name.trim()) {
+      errors.first_name = { message: 'First name is required' };
+      isValid = false;
+    } else if (formData.first_name.trim().length < 2) {
+      errors.first_name = { message: 'First name must be at least 2 characters' };
+      isValid = false;
+    }
+
+    // Last name validation
+    if (!formData.last_name.trim()) {
+      errors.last_name = { message: 'Last name is required' };
+      isValid = false;
+    } else if (formData.last_name.trim().length < 2) {
+      errors.last_name = { message: 'Last name must be at least 2 characters' };
+      isValid = false;
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      errors.email = { message: 'Email is required' };
+      isValid = false;
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+      errors.email = { message: 'Invalid email address' };
+      isValid = false;
+    }
+
+    // Subject validation
+    if (!formData.subject.trim()) {
+      errors.subject = { message: 'Subject is required' };
+      isValid = false;
+    } else if (formData.subject.trim().length < 3) {
+      errors.subject = { message: 'Subject must be at least 3 characters' };
+      isValid = false;
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      errors.message = { message: 'Message is required' };
+      isValid = false;
+    } else if (formData.message.trim().length < 10) {
+      errors.message = { message: 'Message must be at least 10 characters' };
+      isValid = false;
+    }
+
+    // Terms validation
+    if (!formData.terms) {
+      errors.terms = { message: 'You must agree to the terms' };
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -21,13 +95,104 @@ export default function ContactPage() {
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
       setFormData(prev => ({ ...prev, [name]: checked }));
+      
+      // Clear error for this field when changed
+      if (formErrors[name as keyof FormErrors]) {
+        setFormErrors(prev => ({
+          ...prev,
+          [name]: undefined
+        }));
+      }
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
+      
+      // Clear error for this field when changed
+      if (formErrors[name as keyof FormErrors]) {
+        setFormErrors(prev => ({
+          ...prev,
+          [name]: undefined
+        }));
+      }
     }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const errors: FormErrors = { ...formErrors };
+    
+    // Validate individual field on blur
+    switch (name) {
+      case 'first_name':
+        if (!value.trim()) {
+          errors.first_name = { message: 'First name is required' };
+        } else if (value.trim().length < 2) {
+          errors.first_name = { message: 'First name must be at least 2 characters' };
+        } else {
+          delete errors.first_name;
+        }
+        break;
+      case 'last_name':
+        if (!value.trim()) {
+          errors.last_name = { message: 'Last name is required' };
+        } else if (value.trim().length < 2) {
+          errors.last_name = { message: 'Last name must be at least 2 characters' };
+        } else {
+          delete errors.last_name;
+        }
+        break;
+      case 'email':
+        if (!value.trim()) {
+          errors.email = { message: 'Email is required' };
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+          errors.email = { message: 'Invalid email address' };
+        } else {
+          delete errors.email;
+        }
+        break;
+      case 'subject':
+        if (!value.trim()) {
+          errors.subject = { message: 'Subject is required' };
+        } else if (value.trim().length < 3) {
+          errors.subject = { message: 'Subject must be at least 3 characters' };
+        } else {
+          delete errors.subject;
+        }
+        break;
+      case 'message':
+        if (!value.trim()) {
+          errors.message = { message: 'Message is required' };
+        } else if (value.trim().length < 10) {
+          errors.message = { message: 'Message must be at least 10 characters' };
+        } else {
+          delete errors.message;
+        }
+        break;
+      case 'terms':
+        if (type === 'checkbox' && !(e.target as HTMLInputElement).checked) {
+          errors.terms = { message: 'You must agree to the terms' };
+        } else {
+          delete errors.terms;
+        }
+        break;
+    }
+    
+    setFormErrors(errors);
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate all fields before submission
+    if (!validateForm()) {
+      // Focus the first field with an error
+      const firstErrorField = Object.keys(formErrors)[0] as keyof FormErrors;
+      const element = document.getElementById(firstErrorField === 'terms' ? 'terms' : `${firstErrorField}`);
+      if (element) {
+        element.focus();
+      }
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -49,8 +214,9 @@ export default function ContactPage() {
           email: '',
           subject: '',
           message: '',
-          terms: false
+          terms: true
         });
+        setFormErrors({});
       } else {
         setSubmitStatus('error');
       }
@@ -58,6 +224,11 @@ export default function ContactPage() {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
+      
+      // Scroll status message into view and focus for screen readers
+      if (statusRef.current) {
+        statusRef.current.focus();
+      }
     }
   };
 
@@ -78,13 +249,13 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="bg-white p-3 rounded-full shadow-sm">
-                    <FaEnvelope className="h-5 w-5 text-primary-600" />
+                    <FaEnvelope className="h-5 w-5 text-primary-600" aria-hidden="true" />
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Email</p>
                     <a 
                       href="mailto:alexlabuda@gmail.com" 
-                      className="text-gray-600 hover:text-primary-600"
+                      className="text-gray-600 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:underline"
                     >
                       alexlabuda@gmail.com
                     </a>
@@ -92,7 +263,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center">
                   <div className="bg-white p-3 rounded-full shadow-sm">
-                    <FaLinkedin className="h-5 w-5 text-primary-600" />
+                    <FaLinkedin className="h-5 w-5 text-primary-600" aria-hidden="true" />
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">LinkedIn</p>
@@ -100,7 +271,8 @@ export default function ContactPage() {
                       href="https://linkedin.com/in/alex-labuda" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary-600"
+                      className="text-gray-600 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:underline"
+                      aria-label="LinkedIn profile, opens in a new tab"
                     >
                       linkedin.com/in/alex-labuda
                     </a>
@@ -108,7 +280,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center">
                   <div className="bg-white p-3 rounded-full shadow-sm">
-                    <FaGithub className="h-5 w-5 text-primary-600" />
+                    <FaGithub className="h-5 w-5 text-primary-600" aria-hidden="true" />
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">GitHub</p>
@@ -116,7 +288,8 @@ export default function ContactPage() {
                       href="https://github.com/alexlabuda" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary-600"
+                      className="text-gray-600 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:underline"
+                      aria-label="GitHub profile, opens in a new tab"
                     >
                       github.com/alexlabuda
                     </a>
@@ -144,55 +317,103 @@ export default function ContactPage() {
 
           <div className="mt-12 lg:mt-0 lg:w-3/5">
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-6" id="contact-form-heading">Send Me a Message</h2>
+              
+              <div 
+                ref={statusRef}
+                aria-live="polite" 
+                aria-atomic="true"
+                tabIndex={-1}
+                className="sr-only"
+              >
+                {submitStatus === 'success' ? 'Your message has been sent successfully.' : ''}
+                {submitStatus === 'error' ? 'There was an error sending your message.' : ''}
+              </div>
               
               {submitStatus === 'success' ? (
-                <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center">
+                <div 
+                  className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center"
+                  role="status"
+                >
                   <h3 className="text-lg font-semibold mb-2">Message Sent!</h3>
                   <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
                   <button 
                     onClick={() => setSubmitStatus('idle')}
-                    className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+                    className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form 
+                  onSubmit={handleSubmit} 
+                  className="space-y-6"
+                  aria-labelledby="contact-form-heading"
+                  noValidate
+                >
                   {submitStatus === 'error' && (
-                    <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-4">
+                    <div 
+                      className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-4" 
+                      role="alert"
+                    >
                       <p>There was a problem sending your message. Please try again or email me directly.</p>
                     </div>
                   )}
                   
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
                         First name
                       </label>
                       <input
                         type="text"
                         name="first_name"
-                        id="first-name"
+                        id="first_name"
                         value={formData.first_name}
                         onChange={handleChange}
+                        onBlur={handleBlur}
+                        aria-required="true"
+                        aria-invalid={formErrors.first_name ? "true" : "false"}
+                        aria-describedby={formErrors.first_name ? "first_name-error" : undefined}
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                        className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                          formErrors.first_name 
+                            ? 'border-red-300 text-red-900 placeholder-red-300' 
+                            : 'border-gray-300 focus:border-primary-500'
+                        }`}
                       />
+                      {formErrors.first_name && (
+                        <p className="mt-1 text-sm text-red-600" id="first_name-error">
+                          {formErrors.first_name.message}
+                        </p>
+                      )}
                     </div>
                     <div>
-                      <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
                         Last name
                       </label>
                       <input
                         type="text"
                         name="last_name"
-                        id="last-name"
+                        id="last_name"
                         value={formData.last_name}
                         onChange={handleChange}
+                        onBlur={handleBlur}
+                        aria-required="true"
+                        aria-invalid={formErrors.last_name ? "true" : "false"}
+                        aria-describedby={formErrors.last_name ? "last_name-error" : undefined}
                         required
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                        className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                          formErrors.last_name 
+                            ? 'border-red-300 text-red-900 placeholder-red-300' 
+                            : 'border-gray-300 focus:border-primary-500'
+                        }`}
                       />
+                      {formErrors.last_name && (
+                        <p className="mt-1 text-sm text-red-600" id="last_name-error">
+                          {formErrors.last_name.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -206,9 +427,22 @@ export default function ContactPage() {
                       id="email"
                       value={formData.email}
                       onChange={handleChange}
+                      onBlur={handleBlur}
+                      aria-required="true"
+                      aria-invalid={formErrors.email ? "true" : "false"}
+                      aria-describedby={formErrors.email ? "email-error" : undefined}
                       required
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                        formErrors.email 
+                          ? 'border-red-300 text-red-900 placeholder-red-300' 
+                          : 'border-gray-300 focus:border-primary-500'
+                      }`}
                     />
+                    {formErrors.email && (
+                      <p className="mt-1 text-sm text-red-600" id="email-error">
+                        {formErrors.email.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -221,9 +455,22 @@ export default function ContactPage() {
                       id="subject"
                       value={formData.subject}
                       onChange={handleChange}
+                      onBlur={handleBlur}
+                      aria-required="true"
+                      aria-invalid={formErrors.subject ? "true" : "false"}
+                      aria-describedby={formErrors.subject ? "subject-error" : undefined}
                       required
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                        formErrors.subject 
+                          ? 'border-red-300 text-red-900 placeholder-red-300' 
+                          : 'border-gray-300 focus:border-primary-500'
+                      }`}
                     />
+                    {formErrors.subject && (
+                      <p className="mt-1 text-sm text-red-600" id="subject-error">
+                        {formErrors.subject.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -236,44 +483,81 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
+                      onBlur={handleBlur}
+                      aria-required="true"
+                      aria-invalid={formErrors.message ? "true" : "false"}
+                      aria-describedby={formErrors.message ? "message-error" : undefined}
                       required
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                        formErrors.message 
+                          ? 'border-red-300 text-red-900 placeholder-red-300' 
+                          : 'border-gray-300 focus:border-primary-500'
+                      }`}
                     ></textarea>
+                    {formErrors.message && (
+                      <p className="mt-1 text-sm text-red-600" id="message-error">
+                        {formErrors.message.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* Honeypot field to prevent spam */}
-                  <div className="hidden">
-                    <input type="text" name="_gotcha" />
+                  <div className="hidden" aria-hidden="true">
+                    <input type="text" name="_gotcha" tabIndex={-1} />
                   </div>
 
-                  <div className="flex items-center">
-                    <input
-                      id="terms"
-                      name="terms"
-                      type="checkbox"
-                      checked={formData.terms}
-                      onChange={handleChange}
-                      required
-                      className="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
-                    />
-                    <label htmlFor="terms" className="ml-2 block text-sm text-gray-600">
-                      I agree to receiving communications from Alex Labuda
-                    </label>
+                  <div className="flex items-start">
+                    <div className="flex items-center h-5">
+                      <input
+                        id="terms"
+                        name="terms"
+                        type="checkbox"
+                        checked={formData.terms}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        aria-required="true"
+                        aria-invalid={formErrors.terms ? "true" : "false"}
+                        aria-describedby={formErrors.terms ? "terms-error" : undefined}
+                        required
+                        className={`h-4 w-4 rounded focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${
+                          formErrors.terms 
+                            ? 'border-red-300 text-red-600' 
+                            : 'border-gray-300 text-primary-600'
+                        }`}
+                      />
+                    </div>
+                    <div className="ml-3">
+                      <label htmlFor="terms" className={`text-sm ${formErrors.terms ? 'text-red-600' : 'text-gray-600'}`}>
+                        I agree to receiving communications from Alex Labuda
+                      </label>
+                      {formErrors.terms && (
+                        <p className="mt-1 text-sm text-red-600" id="terms-error">
+                          {formErrors.terms.message}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
                   <div>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`btn-primary w-full flex justify-center items-center ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                      aria-busy={isSubmitting}
+                      className={`btn-primary w-full flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                     >
                       {isSubmitting ? (
                         <>
-                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <svg 
+                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            fill="none" 
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Sending...
+                          <span>Sending...</span>
                         </>
                       ) : 'Send Message'}
                     </button>
