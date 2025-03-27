@@ -9,6 +9,13 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Define links array to ensure consistency
+  const socialLinks = [
+    { href: "https://www.linkedin.com/in/alex-labuda", label: "LinkedIn" },
+    { href: "https://github.com/alexlabuda", label: "GitHub" },
+    { href: "mailto:alexlabuda@gmail.com", label: "Email" }
+  ];
+
   return (
     <ThemeProvider>
       <div className="flex flex-col min-h-screen">
@@ -84,15 +91,13 @@ export default function ClientLayout({
                 <div>
                   <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Links</h3>
                   <ul className="mt-4 space-y-2">
-                    <li>
-                      <Link href="https://www.linkedin.com/in/alex-labuda" className="text-primary-200 hover:text-white">LinkedIn</Link>
-                    </li>
-                    <li>
-                      <Link href="https://github.com/yourgithub" className="text-primary-200 hover:text-white">GitHub</Link>
-                    </li>
-                    <li>
-                      <Link href="mailto:alexlabuda@gmail.com" className="text-primary-200 hover:text-white">Email</Link>
-                    </li>
+                    {socialLinks.map((link, index) => (
+                      <li key={index}>
+                        <Link href={link.href} className="text-primary-200 hover:text-white">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
