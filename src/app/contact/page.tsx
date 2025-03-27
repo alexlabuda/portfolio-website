@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent, useRef } from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaClock, FaCalendarAlt, FaInfoCircle } from 'react-icons/fa';
 
 type FieldError = {
   message: string;
@@ -298,20 +298,56 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-accent-50 p-6 rounded-lg">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Office Hours</h2>
-              <p className="text-gray-600 mb-4">
-                I'm available for virtual meetings during the following hours:
-              </p>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 5:00 PM EST</span>
-                </li>
-              </ul>
-              <p className="mt-4 text-gray-600">
-                For urgent inquiries outside of these hours, please email me directly.
-              </p>
+            <div className="bg-accent-50 p-6 rounded-lg shadow-sm">
+              <div className="flex items-center mb-6">
+                <FaCalendarAlt className="h-6 w-6 text-accent-600 mr-3" aria-hidden="true" />
+                <h2 className="text-xl font-bold text-gray-900">Office Hours</h2>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex items-center mb-3">
+                  <div className="bg-white p-2 rounded-full shadow-sm mr-3">
+                    <FaClock className="h-4 w-4 text-accent-600" aria-hidden="true" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">Available for virtual meetings:</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-4 shadow-sm border border-accent-100">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="col-span-2 border-b border-accent-100 pb-2 mb-2">
+                      <span className="font-medium text-accent-700">Weekly Schedule</span>
+                    </div>
+                    
+                    <div className="font-medium text-gray-900">Monday - Friday</div>
+                    <div className="text-gray-600">9:00 AM - 5:00 PM EST</div>
+                    
+                    <div className="col-span-2 pt-3 border-t border-accent-100 mt-2">
+                      <div className="bg-accent-50 rounded p-3 flex items-start">
+                        <FaInfoCircle className="h-4 w-4 text-accent-600 mt-0.5 mr-2 flex-shrink-0" aria-hidden="true" />
+                        <p className="text-xs text-gray-600">
+                          For urgent inquiries outside of these hours, please email me directly at{' '}
+                          <a 
+                            href="mailto:alexlabuda@gmail.com" 
+                            className="text-accent-600 hover:underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+                          >
+                            alexlabuda@gmail.com
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center mt-4">
+                <a 
+                  href="mailto:alexlabuda@gmail.com?subject=Meeting%20Request" 
+                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent-600 hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 transition-colors"
+                >
+                  <FaCalendarAlt className="mr-2 h-4 w-4" aria-hidden="true" />
+                  Schedule a Meeting
+                </a>
+              </div>
             </div>
           </div>
 
