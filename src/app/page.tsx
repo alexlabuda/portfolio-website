@@ -106,9 +106,13 @@ export default function Home() {
             {/* Project Card 1 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <div className="bg-primary-50 h-48 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-primary-700 font-medium">Event-Driven ML Pipeline</p>
-                </div>
+                <Image 
+                  src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
+                  alt="Event-Driven ML Pipeline"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Event-Driven ML Pipeline with Vertex AI</h3>
