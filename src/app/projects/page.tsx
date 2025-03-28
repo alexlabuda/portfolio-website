@@ -28,7 +28,7 @@ export default function ProjectsPage() {
                   src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
                   alt="Event-Driven ML Pipeline with Vertex AI"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                   priority
                 />
               </div>
