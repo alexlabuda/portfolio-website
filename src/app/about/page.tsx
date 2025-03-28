@@ -181,6 +181,34 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md border border-primary-100 mb-8">
+              <div className="flex items-center">
+                <span className="inline-block w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mr-3">
+                  <FaCheck className="text-primary-600 text-xl" />
+                </span>
+                <h3 className="text-lg font-bold text-gray-900">Download My Resume</h3>
+              </div>
+              
+              <div className="mt-4 mb-3">
+                <a 
+                  href={getAssetPath('/documents/resume.pdf')} 
+                  download="Alex_Labuda_Resume.pdf"
+                  className="px-4 py-2 bg-primary-600 text-white rounded-md flex items-center transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 w-full justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span className="text-sm font-medium">Download PDF</span>
+                </a>
+              </div>
+              
+              <p className="text-gray-600">
+                Get a copy of my full resume with detailed experience and qualifications.
+              </p>
+            </div>
           </div>
 
           <div className="mt-8 lg:mt-0 lg:w-2/3">
