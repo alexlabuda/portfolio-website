@@ -49,7 +49,7 @@ export default function ProjectsPage() {
               </div>
               <div className="mt-6">
                 <Link 
-                  href="#" 
+                  href="/projects/event-driven-ml-pipeline" 
                   className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   Read case study →

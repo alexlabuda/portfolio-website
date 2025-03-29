@@ -56,8 +56,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Machine Learning</h3>
               <p className="text-gray-600">
-                Developing and deploying predictive models, unsupervised learning solutions, and 
-                recommendation systems using Python and scikit-learn.
+                Developing and deploying predictive models, unsupervised learning solutions, time-series forecasting, and 
+                recommendation systems using modern data science frameworks and programming languages.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">MLOps</h3>
               <p className="text-gray-600">
-                Building robust ML pipelines with automated testing, deployment, and monitoring 
+                Building robust end-to-end ML pipelines with automated testing, deployment, and monitoring 
                 using Google Cloud Platform and Vertex AI.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-gray-900 mb-2">Data Visualization</h3>
               <p className="text-gray-600">
                 Creating interactive dashboards and visualizations that communicate insights 
-                effectively using Tableau and Python visualization libraries.
+                effectively using Tableau, Shiny and Quarto Dashboards.
               </p>
             </div>
           </div>
@@ -117,15 +117,17 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Event-Driven ML Pipeline with Vertex AI</h3>
                 <p className="text-gray-600 mb-4">
-                  Real-time machine learning pipeline for processing and analyzing call center transcripts.
+                  Real-time machine learning pipeline for processing and classifying call center transcripts for CDP activation.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
                   <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">GCP</span>
-                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">NLP</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Vertex AI</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Kubeflow</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Gemini</span>
                 </div>
                 <Link 
-                  href="/projects" 
+                  href="/projects/event-driven-ml-pipeline" 
                   className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   View details →
@@ -143,12 +145,14 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Unsupervised Learning for Sports Streaming</h3>
                 <p className="text-gray-600 mb-4">
-                  Customer segmentation pipeline identifying distinct viewer personas for content recommendations.
+                  Customer segmentation pipeline identifying distinct viewer personas for content recommendations and personalization.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Python</span>
-                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Clustering</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">scikit-learn</span>
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">BigQuery</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Kubeflow</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Vertex AI</span>
                 </div>
                 <Link 
                   href="/projects" 
@@ -181,31 +185,31 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-primary-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">Python</h3>
-              <p className="text-sm text-gray-600">scikit-learn, pandas, numpy</p>
+              <p className="text-sm text-gray-600">langchain, scikit-learn, pandas, numpy</p>
             </div>
             <div className="bg-accent-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">R</h3>
-              <p className="text-sm text-gray-600">tidyverse, caret, ggplot2</p>
+              <p className="text-sm text-gray-600">tidyverse, tidymodels, ggplot2, shiny</p>
             </div>
             <div className="bg-primary-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">SQL</h3>
-              <p className="text-sm text-gray-600">BigQuery, PostgreSQL</p>
+              <p className="text-sm text-gray-600">BigQuery, Snowflake</p>
             </div>
             <div className="bg-accent-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">Tableau</h3>
-              <p className="text-sm text-gray-600">Dashboard design, ETL</p>
+              <p className="text-sm text-gray-600">Dashboard design, ETL, data visualization</p>
             </div>
             <div className="bg-accent-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">Google Cloud</h3>
-              <p className="text-sm text-gray-600">Vertex AI, BigQuery</p>
+              <p className="text-sm text-gray-600">Vertex AI, BigQuery, Pub/Sub, Cloud Functions</p>
             </div>
             <div className="bg-primary-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">Machine Learning</h3>
-              <p className="text-sm text-gray-600">Supervised, Unsupervised</p>
+              <p className="text-sm text-gray-600">Supervised, Unsupervised, Time-Series Forecasting</p>
             </div>
             <div className="bg-accent-50 p-4 rounded-lg text-center">
-              <h3 className="font-bold text-gray-900">NLP</h3>
-              <p className="text-sm text-gray-600">BERT, LLMs, Transformers</p>
+              <h3 className="font-bold text-gray-900">AI</h3>
+              <p className="text-sm text-gray-600">LLMs, RAG, Embeddings, Agents</p>
             </div>
             <div className="bg-primary-50 p-4 rounded-lg text-center">
               <h3 className="font-bold text-gray-900">MLOps</h3>
