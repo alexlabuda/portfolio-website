@@ -14,7 +14,7 @@ export default function EventDrivenMLPipelinePage() {
       <div 
         className="relative w-full mb-16" 
         style={{
-          backgroundImage: "url('/images/0e2ddf79-1296-4c85-9ddd-822a1ccd7126.jpeg')",
+          backgroundImage: "url('/images/0e2ddf79-1296-4c85-9ddd-822a1ccd7126.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
