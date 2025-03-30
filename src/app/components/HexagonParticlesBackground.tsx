@@ -234,22 +234,22 @@ export default function HexagonParticlesBackground() {
               }
             },
             "opacity": {
-              "value": 0.18,
+              "value": 0.12,
               "random": true,
               "anim": {
                 "enable": false,
                 "speed": 1,
-                "opacity_min": 0.08,
+                "opacity_min": 0.05,
                 "sync": false
               }
             },
             "size": {
-              "value": 60,
+              "value": 40,
               "random": true,
               "anim": {
                 "enable": true,
                 "speed": 1,
-                "size_min": 25,
+                "size_min": 20,
                 "sync": false
               }
             },
