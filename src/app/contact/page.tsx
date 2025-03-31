@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, FormEvent, useRef } from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin, FaClock, FaCalendarAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaClock, FaCalendarAlt, FaInfoCircle, FaPaperPlane } from 'react-icons/fa';
+import { AnimatedButton } from '@/components/AnimatedButton';
 
 type FieldError = {
   message: string;
@@ -242,9 +243,9 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="lg:flex lg:gap-12 items-start">
-          <div className="lg:w-2/5">
-            <div className="mb-10 bg-primary-50 p-6 rounded-lg">
+        <div className="lg:grid lg:grid-cols-10 lg:gap-12">
+          <div className="lg:col-span-4 space-y-8">
+            <div className="bg-primary-50 p-6 rounded-lg">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h2>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -340,19 +341,18 @@ export default function ContactPage() {
               </div>
               
               <div className="text-center mt-4">
-                <a 
+                <AnimatedButton 
                   href="mailto:alexlabuda@gmail.com?subject=Meeting%20Request" 
-                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent-600 hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500 transition-colors"
-                >
-                  <FaCalendarAlt className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Schedule a Meeting
-                </a>
+                  text="Schedule a Meeting"
+                  icon={<FaCalendarAlt className="h-4 w-4" />}
+                  className="!bg-accent-500 hover:!bg-accent-600 !text-white"
+                />
               </div>
             </div>
           </div>
 
-          <div className="mt-12 lg:mt-0 lg:w-3/5">
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+          <div className="mt-12 lg:mt-0 lg:col-span-6">
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 lg:min-h-[696px]">
               <h2 className="text-xl font-bold text-gray-900 mb-6" id="contact-form-heading">Send Me a Message</h2>
               
               <div 
@@ -383,7 +383,7 @@ export default function ContactPage() {
               ) : (
                 <form 
                   onSubmit={handleSubmit} 
-                  className="space-y-6"
+                  className="flex flex-col h-full"
                   aria-labelledby="contact-form-heading"
                   noValidate
                 >
@@ -396,207 +396,220 @@ export default function ContactPage() {
                     </div>
                   )}
                   
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div className="space-y-6 flex-grow">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div>
+                        <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
+                          First name
+                        </label>
+                        <input
+                          type="text"
+                          name="first_name"
+                          id="first_name"
+                          value={formData.first_name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          aria-required="true"
+                          aria-invalid={formErrors.first_name ? "true" : "false"}
+                          aria-describedby={formErrors.first_name ? "first_name-error" : undefined}
+                          required
+                          className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                            formErrors.first_name 
+                              ? 'border-red-300 text-red-900 placeholder-red-300' 
+                              : 'border-gray-300 focus:border-primary-500'
+                          }`}
+                        />
+                        {formErrors.first_name && (
+                          <p className="mt-1 text-sm text-red-600" id="first_name-error">
+                            {formErrors.first_name.message}
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
+                          Last name
+                        </label>
+                        <input
+                          type="text"
+                          name="last_name"
+                          id="last_name"
+                          value={formData.last_name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          aria-required="true"
+                          aria-invalid={formErrors.last_name ? "true" : "false"}
+                          aria-describedby={formErrors.last_name ? "last_name-error" : undefined}
+                          required
+                          className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                            formErrors.last_name 
+                              ? 'border-red-300 text-red-900 placeholder-red-300' 
+                              : 'border-gray-300 focus:border-primary-500'
+                          }`}
+                        />
+                        {formErrors.last_name && (
+                          <p className="mt-1 text-sm text-red-600" id="last_name-error">
+                            {formErrors.last_name.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
                     <div>
-                      <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
-                        First name
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Email
                       </label>
                       <input
-                        type="text"
-                        name="first_name"
-                        id="first_name"
-                        value={formData.first_name}
+                        type="email"
+                        name="email"
+                        id="email"
+                        value={formData.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         aria-required="true"
-                        aria-invalid={formErrors.first_name ? "true" : "false"}
-                        aria-describedby={formErrors.first_name ? "first_name-error" : undefined}
+                        aria-invalid={formErrors.email ? "true" : "false"}
+                        aria-describedby={formErrors.email ? "email-error" : undefined}
                         required
                         className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                          formErrors.first_name 
+                          formErrors.email 
                             ? 'border-red-300 text-red-900 placeholder-red-300' 
                             : 'border-gray-300 focus:border-primary-500'
                         }`}
                       />
-                      {formErrors.first_name && (
-                        <p className="mt-1 text-sm text-red-600" id="first_name-error">
-                          {formErrors.first_name.message}
+                      {formErrors.email && (
+                        <p className="mt-1 text-sm text-red-600" id="email-error">
+                          {formErrors.email.message}
                         </p>
                       )}
                     </div>
+
                     <div>
-                      <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
-                        Last name
+                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                        Subject
                       </label>
                       <input
                         type="text"
-                        name="last_name"
-                        id="last_name"
-                        value={formData.last_name}
+                        name="subject"
+                        id="subject"
+                        value={formData.subject}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         aria-required="true"
-                        aria-invalid={formErrors.last_name ? "true" : "false"}
-                        aria-describedby={formErrors.last_name ? "last_name-error" : undefined}
+                        aria-invalid={formErrors.subject ? "true" : "false"}
+                        aria-describedby={formErrors.subject ? "subject-error" : undefined}
                         required
                         className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                          formErrors.last_name 
+                          formErrors.subject 
                             ? 'border-red-300 text-red-900 placeholder-red-300' 
                             : 'border-gray-300 focus:border-primary-500'
                         }`}
                       />
-                      {formErrors.last_name && (
-                        <p className="mt-1 text-sm text-red-600" id="last_name-error">
-                          {formErrors.last_name.message}
+                      {formErrors.subject && (
+                        <p className="mt-1 text-sm text-red-600" id="subject-error">
+                          {formErrors.subject.message}
                         </p>
                       )}
                     </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      aria-required="true"
-                      aria-invalid={formErrors.email ? "true" : "false"}
-                      aria-describedby={formErrors.email ? "email-error" : undefined}
-                      required
-                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                        formErrors.email 
-                          ? 'border-red-300 text-red-900 placeholder-red-300' 
-                          : 'border-gray-300 focus:border-primary-500'
-                      }`}
-                    />
-                    {formErrors.email && (
-                      <p className="mt-1 text-sm text-red-600" id="email-error">
-                        {formErrors.email.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      id="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      aria-required="true"
-                      aria-invalid={formErrors.subject ? "true" : "false"}
-                      aria-describedby={formErrors.subject ? "subject-error" : undefined}
-                      required
-                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                        formErrors.subject 
-                          ? 'border-red-300 text-red-900 placeholder-red-300' 
-                          : 'border-gray-300 focus:border-primary-500'
-                      }`}
-                    />
-                    {formErrors.subject && (
-                      <p className="mt-1 text-sm text-red-600" id="subject-error">
-                        {formErrors.subject.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      aria-required="true"
-                      aria-invalid={formErrors.message ? "true" : "false"}
-                      aria-describedby={formErrors.message ? "message-error" : undefined}
-                      required
-                      className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                        formErrors.message 
-                          ? 'border-red-300 text-red-900 placeholder-red-300' 
-                          : 'border-gray-300 focus:border-primary-500'
-                      }`}
-                    ></textarea>
-                    {formErrors.message && (
-                      <p className="mt-1 text-sm text-red-600" id="message-error">
-                        {formErrors.message.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Honeypot field to prevent spam */}
-                  <div className="hidden" aria-hidden="true">
-                    <input type="text" name="_gotcha" tabIndex={-1} />
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex items-center h-5">
-                      <input
-                        id="terms"
-                        name="terms"
-                        type="checkbox"
-                        checked={formData.terms}
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={8}
+                        value={formData.message}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         aria-required="true"
-                        aria-invalid={formErrors.terms ? "true" : "false"}
-                        aria-describedby={formErrors.terms ? "terms-error" : undefined}
+                        aria-invalid={formErrors.message ? "true" : "false"}
+                        aria-describedby={formErrors.message ? "message-error" : undefined}
                         required
-                        className={`h-4 w-4 rounded focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${
-                          formErrors.terms 
-                            ? 'border-red-300 text-red-600' 
-                            : 'border-gray-300 text-primary-600'
+                        className={`mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent h-[200px] ${
+                          formErrors.message 
+                            ? 'border-red-300 text-red-900 placeholder-red-300' 
+                            : 'border-gray-300 focus:border-primary-500'
                         }`}
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <label htmlFor="terms" className={`text-sm ${formErrors.terms ? 'text-red-600' : 'text-gray-600'}`}>
-                        I agree to receiving communications from Alex Labuda
-                      </label>
-                      {formErrors.terms && (
-                        <p className="mt-1 text-sm text-red-600" id="terms-error">
-                          {formErrors.terms.message}
+                      ></textarea>
+                      {formErrors.message && (
+                        <p className="mt-1 text-sm text-red-600" id="message-error">
+                          {formErrors.message.message}
                         </p>
                       )}
                     </div>
+
+                    {/* Honeypot field to prevent spam */}
+                    <div className="hidden" aria-hidden="true">
+                      <input type="text" name="_gotcha" tabIndex={-1} />
+                    </div>
                   </div>
 
-                  <div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      aria-busy={isSubmitting}
-                      className={`btn-primary w-full flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg 
-                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            fill="none" 
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          <span>Sending...</span>
-                        </>
-                      ) : 'Send Message'}
-                    </button>
+                  <div className="mt-auto pt-6">
+                    <div className="flex items-start mb-6">
+                      <div className="flex items-center h-5">
+                        <input
+                          id="terms"
+                          name="terms"
+                          type="checkbox"
+                          checked={formData.terms}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          aria-required="true"
+                          aria-invalid={formErrors.terms ? "true" : "false"}
+                          aria-describedby={formErrors.terms ? "terms-error" : undefined}
+                          required
+                          className={`h-4 w-4 rounded focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${
+                            formErrors.terms 
+                              ? 'border-red-300 text-red-600' 
+                              : 'border-gray-300 text-primary-600'
+                          }`}
+                        />
+                      </div>
+                      <div className="ml-3">
+                        <label htmlFor="terms" className={`text-sm ${formErrors.terms ? 'text-red-600' : 'text-gray-600'}`}>
+                          I agree to receiving communications from Alex Labuda
+                        </label>
+                        {formErrors.terms && (
+                          <p className="mt-1 text-sm text-red-600" id="terms-error">
+                            {formErrors.terms.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        aria-busy={isSubmitting}
+                        className={`group relative overflow-hidden btn-primary w-full flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <svg 
+                              className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              fill="none" 
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="absolute inset-y-0 left-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300"></span>
+                            <span className="relative flex items-center justify-center">
+                              <FaPaperPlane className="mr-2 h-4 w-4 transform group-hover:scale-110 transition-transform duration-300" />
+                              <span>Send Message</span>
+                            </span>
+                            <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-white group-hover:w-3/4 group-hover:left-[12.5%] transition-all duration-300"></span>
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </form>
               )}

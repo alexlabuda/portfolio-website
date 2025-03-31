@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '../utils/paths';
+import { AnimatedButton } from '@/components/AnimatedButton';
+import { FaChartBar } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Projects | Alex Labuda',
@@ -133,14 +135,14 @@ export default function ProjectsPage() {
             </div>
           </div>
           <div className="mt-6 text-center">
-            <Link 
-              href="https://public.tableau.com/" 
-              className="btn-primary inline-block"
+            <AnimatedButton 
+              href="https://public.tableau.com/app/profile/alexlabuda/vizzes" 
+              text="Visit my Tableau Public profile"
+              icon={<FaChartBar className="w-5 h-5" />}
+              className="max-w-[280px] mx-auto"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Visit my Tableau Public profile
-            </Link>
+            />
           </div>
         </div>
       </div>

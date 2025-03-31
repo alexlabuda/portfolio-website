@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from './utils/paths';
 import ParticlesBackground from '@/app/components/ParticlesBackground';
+import { AnimatedButton } from '@/components/AnimatedButton';
+import { FaCode, FaEnvelope } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -26,12 +28,18 @@ export default function Home() {
             Senior Data Scientist specializing in machine learning, predictive modeling, and MLOps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/projects" className="btn-primary">
-              View Projects
-            </Link>
-            <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition-colors">
-              Get in Touch
-            </Link>
+            <AnimatedButton 
+              href="/projects"
+              text="View Projects"
+              icon={<FaCode className="w-5 h-5" />}
+              className="max-w-[200px]"
+            />
+            <AnimatedButton 
+              href="/contact"
+              text="Get in Touch"
+              icon={<FaEnvelope className="w-5 h-5" />}
+              className="max-w-[200px] !bg-white !text-primary-600 hover:!bg-gray-100"
+            />
           </div>
         </div>
       </section>
@@ -165,9 +173,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/projects" className="btn-primary">
-              View All Projects
-            </Link>
+            <AnimatedButton 
+              href="/projects"
+              text="View All Projects"
+              icon={<FaCode className="w-5 h-5" />}
+              className="max-w-[200px] mx-auto"
+            />
           </div>
         </div>
       </section>
@@ -227,9 +238,12 @@ export default function Home() {
             I'm currently available for new opportunities and collaborations
             in data science and machine learning.
           </p>
-          <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors">
-            Get in Touch
-          </Link>
+          <AnimatedButton 
+            href="/contact"
+            text="Get in Touch"
+            icon={<FaEnvelope className="w-5 h-5" />}
+            className="max-w-[200px] mx-auto !bg-white !text-primary-600 hover:!bg-gray-100"
+          />
         </div>
       </section>
     </main>

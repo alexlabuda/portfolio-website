@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/app/utils/paths';
 import HexagonParticlesBackground from '../../components/HexagonParticlesBackground';
+import { AnimatedButton } from '@/components/AnimatedButton';
+import { FaEnvelope } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Event-Driven ML Pipeline with Vertex AI | Alex Labuda',
@@ -579,12 +581,12 @@ export default function EventDrivenMLPipelinePage() {
             </svg>
             Back to Projects
           </Link>
-          <a 
-            href="mailto:contact@alexlabuda.com?subject=Discussion%20about%20Event-Driven%20ML%20Pipeline%20Project" 
-            className="bg-primary-600 text-white hover:bg-primary-700 px-5 py-2 rounded font-medium transition-colors"
-          >
-            Discuss This Project
-          </a>
+          <AnimatedButton 
+            href="mailto:contact@alexlabuda.com?subject=Discussion%20about%20Event-Driven%20ML%20Pipeline%20Project"
+            text="Discuss This Project"
+            icon={<FaEnvelope className="w-5 h-5" />}
+            className="max-w-[200px]"
+          />
         </div>
       </div>
     </div>

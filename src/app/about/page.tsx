@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '../utils/paths';
-import { FaPython, FaDatabase, FaChartBar, FaGraduationCap, FaUniversity, FaCalendarAlt, FaMedal, FaBriefcase, FaCode, FaChartLine, FaTrophy, FaCertificate, FaCloudversify, FaTable, FaBrain, FaCheck } from 'react-icons/fa';
+import { FaPython, FaDatabase, FaChartBar, FaGraduationCap, FaUniversity, FaCalendarAlt, FaMedal, FaBriefcase, FaCode, FaChartLine, FaTrophy, FaCertificate, FaCloudversify, FaTable, FaBrain, FaCheck, FaEnvelope } from 'react-icons/fa';
 import { SiR, SiTensorflow, SiGooglecloud, SiTableau, SiCoursera, SiDatacamp } from 'react-icons/si';
+import { AnimatedButton } from '@/components/AnimatedButton';
 
 export const metadata = {
   title: 'About Me | Alex Labuda',
@@ -191,21 +192,27 @@ export default function AboutPage() {
               </div>
               
               <div className="mt-4 mb-3">
-                <a 
-                  href={getAssetPath('/documents/resume.pdf')} 
+                <AnimatedButton 
+                  href={getAssetPath('/documents/resume.pdf')}
+                  text="Download PDF"
                   download="Alex_Labuda_Resume.pdf"
-                  className="px-4 py-2 bg-primary-600 text-white rounded-md flex items-center transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 w-full justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <span className="text-sm font-medium">Download PDF</span>
-                </a>
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  }
+                />
               </div>
               
-              <p className="text-gray-600">
+              <div className="flex items-center justify-center mt-3 mb-1">
+                <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse mx-0.5"></span>
+                <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse delay-300 mx-0.5"></span>
+                <span className="w-2 h-2 bg-primary-600 rounded-full animate-pulse delay-600 mx-0.5"></span>
+              </div>
+              
+              <p className="text-gray-600 text-center">
                 Get a copy of my full resume with detailed experience and qualifications.
               </p>
             </div>
@@ -418,9 +425,12 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10">
-              <Link href="/contact" className="btn-primary">
-                Get in touch
-              </Link>
+              <AnimatedButton 
+                href="/contact"
+                text="Get in touch"
+                icon={<FaEnvelope className="w-5 h-5" />}
+                className="max-w-[200px]"
+              />
             </div>
           </div>
         </div>
