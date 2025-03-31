@@ -88,18 +88,17 @@ export default function EventDrivenMLPipelinePage() {
             </div>
 
             {/* Business Challenge */}
-            <div className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <div className="mb-8 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
                 <h2>Business Challenge</h2>
                 <p>
                   The client faced several challenges processing the high volume of inbound sales calls:
                 </p>
                 <ul>
-                  <li>Manual review of 5,000+ weekly call transcripts was time-consuming and inconsistent</li>
+                  <li>Inconsistent reporting quality and metrics from customer support representatives across locations</li>
                   <li>No automated way to extract actionable insights from customer conversations</li>
                   <li>Manual follow-up processes that missed key sales opportunities</li>
-                  <li>Inability to target marketing emails based on expressed customer interests from calls</li>
-                  <li>Lack of integration between call tracking data and customer relationship management systems</li>
+                  <li>Lack of flexibility in tailoring conversation insights to specific business types and customer segments</li>
                 </ul>
               </div>
             </div>
@@ -282,23 +281,7 @@ export default function EventDrivenMLPipelinePage() {
               </div>
             </div>
             
-            <h3 className="mt-8">Pipeline Workflow</h3>
-            <ol className="list-decimal pl-5">
-              <li>Call tracking platform captures inbound call audio and transcribes conversations</li>
-              <li>Webhook triggers send transcript data to Google Cloud Platform</li>
-              <li>Cloud Functions process the incoming webhook data and load it into BigQuery</li>
-              <li>New transcript records in BigQuery trigger a Pub/Sub notification</li>
-              <li>Pub/Sub message directly triggers Vertex AI processing</li>
-              <li>Vertex AI with Gemini 1.5 Pro classifies the transcripts:</li>
-              <ul className="list-disc pl-5">
-                <li>Business type (new vs. existing)</li>
-                <li>Product interest (closet type, home office, garage, etc.)</li>
-                <li>Purchase intent (information seeking vs. action taking)</li>
-                <li>Appointment status (including cancellations)</li>
-              </ul>
-              <li>Classification results are loaded back into BigQuery</li>
-              <li>Customer data platform accesses the enriched data to power personalized communications</li>
-            </ol>
+
           </div>
         </div>
 
@@ -310,15 +293,9 @@ export default function EventDrivenMLPipelinePage() {
               The core of the solution leveraged Vertex AI and Gemini large language models to analyze call transcripts:
             </p>
             <ul>
-              <li><strong className="text-gray-900">Model Selection:</strong> Utilized Gemini 1.5 Pro for its superior ability to understand conversational context and nuances in call transcripts</li>
-              <li><strong className="text-gray-900">Prompt Engineering:</strong> Designed specialized prompts for each classification task using LangChain to achieve high accuracy in transcript analysis</li>
-              <li><strong className="text-gray-900">Multi-label Classification:</strong> Developed four distinct classification chains:</li>
-              <ul className="list-disc pl-5">
-                <li>Business Type: Determining if calls represent new or existing business</li>
-                <li>Product Interest: Identifying specific product categories discussed (closets, home offices, garages, etc.)</li>
-                <li>Purchase Intent: Classifying intent as information-seeking or action-taking</li>
-                <li>Appointment Status: Detecting cancellations to trigger follow-up workflows</li>
-              </ul>
+              <li><strong className="text-gray-900">Model Selection:</strong> Utilized Gemini for its superior ability to understand conversational context and nuances in call transcripts</li>
+              <li><strong className="text-gray-900">Prompt Engineering:</strong> Designed specialized prompts for each classification task using LangChain optimized to achieve high performance in transcript analysis</li>
+              <li><strong className="text-gray-900">Multi-label Classification:</strong> Developed four distinct classification chains</li>
               <li><strong className="text-gray-900">Safety Mechanisms:</strong> Configured safety settings to enable business classification while preventing inappropriate content</li>
               <li><strong className="text-gray-900">Data Preprocessing:</strong> Implemented text normalization, special character removal, and standardization techniques</li>
               <li><strong className="text-gray-900">Validation System:</strong> Created a fuzzy matching validation process to correct classification outputs that didn't match predefined categories</li>
@@ -328,22 +305,22 @@ export default function EventDrivenMLPipelinePage() {
                 <li>Processes transcripts through classification models</li>
                 <li>Loads enriched data back to BigQuery for activation</li>
               </ol>
-              <li><strong className="text-gray-900">Model Versioning:</strong> Established CI/CD processes for prompt updates and model improvement with automated A/B testing</li>
+              <li><strong className="text-gray-900">Model Versioning:</strong> Established CI/CD processes for prompt updates</li>
             </ul>
             <p>
-              This approach allowed us to process thousands of call transcripts weekly with minimal human intervention, achieving high classification accuracy while maintaining flexibility to adapt to changing business needs.
+              This approach allowed us to process thousands of call transcripts weekly with minimal human intervention, achieving high classification performance while maintaining flexibility to adapt to changing business needs.
             </p>
           </div>
         </div>
 
         {/* Key Outcomes */}
         <div className="bg-accent-50 p-8 rounded-xl mb-16">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Key Outcomes</h2>
+          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Expected Outcomes</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Email Engagement Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold text-gray-800">Email Engagement</h3>
+                <h3 className="text-base font-semibold text-gray-800">Email Engagement</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -352,15 +329,15 @@ export default function EventDrivenMLPipelinePage() {
                 <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
-                <span className="font-medium text-accent-700">Significant Increase</span>
+                <span className="font-medium text-accent-700">Projected Increase</span>
               </div>
-              <p className="text-gray-700">Personalized email campaigns based on call transcript insights led to substantially higher open and click-through rates.</p>
+              <p className="text-gray-700">Personalized email campaigns based on call transcript insights designed to drive higher open and click-through rates.</p>
             </div>
 
             {/* Conversion Optimization Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold text-gray-800">Conversion Optimization</h3>
+                <h3 className="text-base font-semibold text-gray-800">Conversion Optimization</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -369,15 +346,15 @@ export default function EventDrivenMLPipelinePage() {
                 <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
-                <span className="font-medium text-accent-700">Notable Improvement</span>
+                <span className="font-medium text-accent-700">Targeted Improvement</span>
               </div>
-              <p className="text-gray-700">Enhanced follow-up processes and targeted content based on call intent classification improved website-to-appointment conversion rates.</p>
+              <p className="text-gray-700">Enhanced follow-up processes and targeted content based on call intent classification aimed at improving website-to-appointment conversion rates.</p>
             </div>
 
             {/* Opportunity Recovery Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold text-gray-800">Opportunity Recovery</h3>
+                <h3 className="text-base font-semibold text-gray-800">Opportunity Recovery</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -386,13 +363,13 @@ export default function EventDrivenMLPipelinePage() {
                 <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-                <span className="font-medium text-accent-700">Substantial Reduction</span>
+                <span className="font-medium text-accent-700">Expected Reduction</span>
               </div>
-              <p className="text-gray-700">Automated follow-up system for high-intent calls that didn't convert to appointments resulted in fewer missed sales opportunities.</p>
+              <p className="text-gray-700">Automated follow-up system for high-intent calls that don't convert to appointments designed to reduce missed sales opportunities.</p>
             </div>
           </div>
           <div className="text-center mt-6">
-            <p className="text-sm text-accent-300">Results projected based on initial implementation and pilot program data</p>
+            <p className="text-sm text-accent-300">Outcomes are projected based on solution design and industry benchmarks</p>
           </div>
         </div>
 
