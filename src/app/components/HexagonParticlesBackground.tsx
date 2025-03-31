@@ -217,7 +217,7 @@ export default function HexagonParticlesBackground() {
         (window as any).particlesJS('project-particles-js', {
           "particles": {
             "number": {
-              "value": 25,
+              "value": 22,
               "density": {
                 "enable": true,
                 "value_area": 900
@@ -234,22 +234,22 @@ export default function HexagonParticlesBackground() {
               }
             },
             "opacity": {
-              "value": 0.12,
+              "value": 0.15,
               "random": true,
               "anim": {
                 "enable": false,
                 "speed": 1,
-                "opacity_min": 0.05,
+                "opacity_min": 0.07,
                 "sync": false
               }
             },
             "size": {
-              "value": 40,
+              "value": 60,
               "random": true,
               "anim": {
                 "enable": true,
                 "speed": 1,
-                "size_min": 20,
+                "size_min": 30,
                 "sync": false
               }
             },
@@ -281,10 +281,10 @@ export default function HexagonParticlesBackground() {
             },
             "modes": {
               "bubble": {
-                "distance": 250,
-                "size": 80,
+                "distance": 300,
+                "size": 100,
                 "duration": 2,
-                "opacity": 0.3,
+                "opacity": 0.35,
                 "speed": 3
               },
               "push": {
