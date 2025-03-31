@@ -127,10 +127,10 @@ export default function ProjectsPage() {
         <div className="mt-20 bg-accent-50 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Tableau Visualization Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg overflow-hidden h-80 flex items-center justify-center shadow-sm">
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center">
               <p className="text-gray-500">Tableau Dashboard 1 Placeholder</p>
             </div>
-            <div className="bg-white rounded-lg overflow-hidden h-80 flex items-center justify-center shadow-sm">
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center">
               <p className="text-gray-500">Tableau Dashboard 2 Placeholder</p>
             </div>
           </div>
