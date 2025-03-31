@@ -25,7 +25,7 @@ export default function EventDrivenMLPipelinePage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header Section */}
             <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
-              <Link href="/projects" className="text-primary-600 hover:text-primary-700 mb-4 flex items-center">
+              <Link href={getAssetPath('/projects')} className="text-primary-600 hover:text-primary-700 mb-4 flex items-center">
                 <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -575,7 +575,7 @@ export default function EventDrivenMLPipelinePage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Navigation */}
         <div className="flex justify-between items-center pt-8 border-t border-gray-200">
-          <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
+          <Link href={getAssetPath('/projects')} className="text-primary-600 hover:text-primary-700 flex items-center">
             <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
