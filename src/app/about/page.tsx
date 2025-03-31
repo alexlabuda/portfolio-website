@@ -227,7 +227,8 @@ export default function AboutPage() {
               </p>
               <p>
                 When I'm not building models or wrangling data, I enjoy mentoring junior data scientists 
-                and sharing knowledge through internal workshops and technical blog posts.
+                and sharing knowledge through internal workshops and technical blog posts. Outside of work, 
+                you'll find me on the golf course or exploring trails in the Shawangunk Mountain ridge on my weekend runs.
               </p>
             </div>
 
@@ -346,15 +347,16 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
-                        <SiGooglecloud className="text-primary-600 text-xl" />
+                        <FaBrain className="text-primary-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
-                      <h3 className="font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Google Cloud Professional Data Engineer</h3>
+                      <h3 className="font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Introduction to LangGraph</h3>
                       <div className="flex items-center mt-1">
                         <FaCheck className="text-green-500 mr-1.5" />
-                        <p className="text-gray-600 text-sm">Google Cloud</p>
+                        <p className="text-gray-600 text-sm">LangChain</p>
                       </div>
+                      <p className="mt-2 text-xs text-gray-500">Skills: Large Language Models (LLM) · LLMOps</p>
                     </div>
                   </div>
                 </div>
@@ -363,15 +365,16 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
-                        <SiTableau className="text-primary-600 text-xl" />
+                        <FaCloudversify className="text-primary-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
-                      <h3 className="font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Tableau Desktop Specialist</h3>
+                      <h3 className="font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Introduction to LangSmith</h3>
                       <div className="flex items-center mt-1">
                         <FaCheck className="text-green-500 mr-1.5" />
-                        <p className="text-gray-600 text-sm">Tableau</p>
+                        <p className="text-gray-600 text-sm">LangChain</p>
                       </div>
+                      <p className="mt-2 text-xs text-gray-500">Skills: Large Language Model Operations (LLMOps)</p>
                     </div>
                   </div>
                 </div>
@@ -380,15 +383,16 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center">
-                        <SiCoursera className="text-accent-600 text-xl" />
+                        <SiTensorflow className="text-accent-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
-                      <h3 className="font-bold text-gray-900 group-hover:text-accent-700 transition-colors">Machine Learning with TensorFlow</h3>
+                      <h3 className="font-bold text-gray-900 group-hover:text-accent-700 transition-colors">DeepLearning.AI TensorFlow Developer</h3>
                       <div className="flex items-center mt-1">
                         <FaCheck className="text-green-500 mr-1.5" />
                         <p className="text-gray-600 text-sm">Coursera</p>
                       </div>
+                      <p className="mt-2 text-xs text-gray-500">Skills: CNN · NLP · Time Series Forecasting</p>
                     </div>
                   </div>
                 </div>
@@ -397,15 +401,16 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center">
-                        <SiDatacamp className="text-accent-600 text-xl" />
+                        <FaChartLine className="text-accent-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
-                      <h3 className="font-bold text-gray-900 group-hover:text-accent-700 transition-colors">Advanced SQL for Data Analysis</h3>
+                      <h3 className="font-bold text-gray-900 group-hover:text-accent-700 transition-colors">Data Science for Business</h3>
                       <div className="flex items-center mt-1">
                         <FaCheck className="text-green-500 mr-1.5" />
-                        <p className="text-gray-600 text-sm">Datacamp</p>
+                        <p className="text-gray-600 text-sm">Business Science</p>
                       </div>
+                      <p className="mt-2 text-xs text-gray-500">Skills: Machine Learning · Cluster Analysis · R</p>
                     </div>
                   </div>
                 </div>
