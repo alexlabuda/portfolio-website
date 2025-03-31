@@ -49,7 +49,7 @@ export default function EventDrivenMLPipelinePage() {
                 <div className="relative rounded-lg overflow-hidden shadow-md bg-gradient-to-r from-slate-50 to-gray-100">
                   <div className="relative aspect-[21/9] w-full">
                     <Image 
-                      src="/images/2024_09-AI-Engineering-Sentiment-Analysis.png"
+                      src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
                       alt="Event-Driven ML Pipeline with Vertex AI visualization"
                       fill
                       style={{ 
