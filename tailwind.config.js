@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'roboto': ['var(--font-roboto)'],
+      },
       colors: {
         // Core theme colors that can be used throughout the site
         primary: {

@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -11,28 +14,49 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  
+  // Debug: Log the current pathname to see what's detected
+  useEffect(() => {
+    console.log('Current pathname:', pathname);
+  }, [pathname]);
+
+  // Helper function to determine if a link is active
+  const isLinkActive = (href: string): boolean => {
+    if (href === '/') {
+      // Special case for home page - must be exact match
+      return pathname === '/';
+    }
+    // For other pages, check if the pathname starts with the href
+    return pathname.startsWith(href);
+  };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-10">
+    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary-600">AL</span>
+              <span className="font-roboto text-3xl font-black text-primary-600 dark:text-primary-300 tracking-normal">
+                AL
+              </span>
             </Link>
           </div>
           
           <nav className="hidden md:ml-6 md:flex md:space-x-8">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = isLinkActive(link.href);
+              // Debug: Also log each link and whether it's active
+              if (process.env.NODE_ENV === 'development') {
+                console.log(`Link: ${link.href}, isActive: ${isActive}, pathname: ${pathname}`);
+              }
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? 'border-primary-500 text-gray-900'
-                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      ? 'border-primary-500 text-gray-900 dark:text-white dark:border-primary-400'
+                      : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-100'
                   }`}
                 >
                   {link.name}
@@ -46,7 +70,7 @@ export default function Header() {
               href="https://github.com/alexlabuda"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block text-gray-500 hover:text-gray-700 p-2"
+              className="hidden sm:block text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 p-2"
             >
               <span className="sr-only">GitHub</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -54,10 +78,10 @@ export default function Header() {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/alexlabuda"
+              href="https://www.linkedin.com/in/alex-labuda"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block text-gray-500 hover:text-gray-700 p-2"
+              className="hidden sm:block text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 p-2"
             >
               <span className="sr-only">LinkedIn</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -86,15 +110,15 @@ export default function Header() {
       <div className="hidden md:hidden">
         <div className="pt-2 pb-3 space-y-1">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = isLinkActive(link.href);
             return (
               <Link
                 key={link.name}
                 href={link.href}
                 className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
                   isActive
-                    ? 'bg-primary-50 border-primary-500 text-primary-700'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
+                    ? 'bg-primary-50 dark:bg-primary-900 border-primary-500 dark:border-primary-400 text-primary-700 dark:text-primary-300'
+                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 }`}
               >
                 {link.name}
