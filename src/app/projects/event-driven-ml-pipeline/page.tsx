@@ -368,9 +368,6 @@ export default function EventDrivenMLPipelinePage() {
               <p className="text-gray-700">Automated follow-up system for high-intent calls that don't convert to appointments designed to reduce missed sales opportunities.</p>
             </div>
           </div>
-          <div className="text-center mt-6">
-            <p className="text-sm text-accent-300">Outcomes are projected based on solution design and industry benchmarks</p>
-          </div>
         </div>
 
         {/* Technical Challenges */}
