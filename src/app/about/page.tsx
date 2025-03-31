@@ -426,7 +426,7 @@ export default function AboutPage() {
 
             <div className="mt-10">
               <AnimatedButton 
-                href={getAssetPath('/contact')}
+                href="/contact"
                 text="Get in touch"
                 icon={<FaEnvelope className="w-5 h-5" />}
                 className="max-w-[200px]"

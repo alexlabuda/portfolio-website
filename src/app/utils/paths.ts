@@ -10,13 +10,4 @@ export function getAssetPath(path: string): string {
   const basePath = process.env.NODE_ENV === 'production' ? '/portfolio-website' : '';
   
   return `${basePath}${normalizedPath}`;
-}
-
-/**
- * Returns the correct route path for navigation links
- * accounting for base path differences between environments
- * This is specifically for use with Next.js Link components
- */
-export function getRoutePath(path: string): string {
-  return getAssetPath(path);
 } 

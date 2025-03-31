@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ThemeProvider } from "./ThemeProvider";
 import MobileMenuButton from "./MobileMenuButton";
-import { getRoutePath } from "../utils/paths";
 
 export default function ClientLayout({
   children,
@@ -24,7 +23,7 @@ export default function ClientLayout({
           <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center">
-                <Link href={getRoutePath('/')} className="text-xl font-bold text-primary-600 dark:text-primary-300">
+                <Link href="/" className="text-xl font-bold text-primary-600 dark:text-primary-300">
                   Alex Labuda
                 </Link>
               </div>
@@ -38,19 +37,19 @@ export default function ClientLayout({
               
               {/* Desktop navigation */}
               <div className="hidden md:flex md:items-center md:space-x-8">
-                <Link href={getRoutePath('/')} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
+                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
                   Home
                 </Link>
-                <Link href={getRoutePath('/projects')} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
+                <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
                   Projects
                 </Link>
-                <Link href={getRoutePath('/about')} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
+                <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
                   About
                 </Link>
-                <Link href={getRoutePath('/blog')} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
+                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
                   Blog
                 </Link>
-                <Link href={getRoutePath('/contact')} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
+                <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300">
                   Contact
                 </Link>
               </div>
@@ -60,19 +59,19 @@ export default function ClientLayout({
           {/* Mobile menu, show/hide based on menu state */}
           <div className="hidden md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
-              <Link href={getRoutePath('/')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
                 Home
               </Link>
-              <Link href={getRoutePath('/projects')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              <Link href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
                 Projects
               </Link>
-              <Link href={getRoutePath('/about')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
                 About
               </Link>
-              <Link href={getRoutePath('/blog')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
                 Blog
               </Link>
-              <Link href={getRoutePath('/contact')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-gray-700">
                 Contact
               </Link>
             </div>

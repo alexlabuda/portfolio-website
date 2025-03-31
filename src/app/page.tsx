@@ -29,13 +29,13 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <AnimatedButton 
-              href={getAssetPath('/projects')}
+              href="/projects"
               text="View Projects"
               icon={<FaCode className="w-5 h-5" />}
               className="max-w-[200px]"
             />
             <AnimatedButton 
-              href={getAssetPath('/contact')}
+              href="/contact"
               text="Get in Touch"
               icon={<FaEnvelope className="w-5 h-5" />}
               className="max-w-[200px] !bg-white !text-primary-600 hover:!bg-gray-100"
@@ -135,7 +135,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Gemini</span>
                 </div>
                 <Link 
-                  href={getAssetPath('/projects/event-driven-ml-pipeline')}
+                  href="/projects/event-driven-ml-pipeline" 
                   className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   View details →
@@ -163,7 +163,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Vertex AI</span>
                 </div>
                 <Link 
-                  href={getAssetPath('/projects')}
+                  href="/projects" 
                   className="text-primary-600 font-medium hover:text-primary-700"
                 >
                   View details →
@@ -174,7 +174,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <AnimatedButton 
-              href={getAssetPath('/projects')}
+              href="/projects"
               text="View All Projects"
               icon={<FaCode className="w-5 h-5" />}
               className="max-w-[200px] mx-auto"
@@ -239,7 +239,7 @@ export default function Home() {
             in data science and machine learning.
           </p>
           <AnimatedButton 
-            href={getAssetPath('/contact')}
+            href="/contact"
             text="Get in Touch"
             icon={<FaEnvelope className="w-5 h-5" />}
             className="max-w-[200px] mx-auto !bg-white !text-primary-600 hover:!bg-gray-100"

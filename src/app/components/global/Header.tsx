@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getAssetPath } from '@/app/utils/paths';
 
 const navLinks = [
-  { name: 'Home', href: getAssetPath('/') },
-  { name: 'Projects', href: getAssetPath('/projects') },
-  { name: 'About', href: getAssetPath('/about') },
-  { name: 'Blog', href: getAssetPath('/blog') },
-  { name: 'Contact', href: getAssetPath('/contact') }
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'About', href: '/about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' }
 ];
 
 export default function Header() {

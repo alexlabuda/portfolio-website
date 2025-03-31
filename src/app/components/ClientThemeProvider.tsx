@@ -4,7 +4,6 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import { ThemeProvider, useTheme } from './ThemeProvider';
 import { useState } from 'react';
-import { getRoutePath } from '../utils/paths';
 
 function Header() {
   const { theme } = useTheme();
@@ -19,7 +18,7 @@ function Header() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href={getRoutePath('/')} className="text-xl font-bold text-gray-900 dark:text-white">
+            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
               Alex Labuda
             </Link>
           </div>
@@ -56,19 +55,19 @@ function Header() {
             
             {/* Desktop navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
-              <Link href={getRoutePath('/')} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+              <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                 Home
               </Link>
-              <Link href={getRoutePath('/projects')} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+              <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                 Projects
               </Link>
-              <Link href={getRoutePath('/about')} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+              <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                 About
               </Link>
-              <Link href={getRoutePath('/blog')} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+              <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                 Blog
               </Link>
-              <Link href={getRoutePath('/contact')} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+              <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                 Contact
               </Link>
             </div>
@@ -79,19 +78,19 @@ function Header() {
       {/* Mobile menu, show/hide based on menu state */}
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
-          <Link href={getRoutePath('/')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             Home
           </Link>
-          <Link href={getRoutePath('/projects')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <Link href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             Projects
           </Link>
-          <Link href={getRoutePath('/about')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             About
           </Link>
-          <Link href={getRoutePath('/blog')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             Blog
           </Link>
-          <Link href={getRoutePath('/contact')} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             Contact
           </Link>
         </div>
