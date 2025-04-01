@@ -74,16 +74,16 @@ export default function EventDrivenMLPipelinePage() {
                 <h2>Project Overview</h2>
                 <p>
                   This project involved designing and implementing an end-to-end event-driven machine learning 
-                  pipeline for a leading custom closet company with 65 retail locations across the United States. 
+                  pipeline for a leading custom closet company with retail locations across the United States. 
                   The system processes inbound call center transcripts by integrating a call tracking platform, 
-                  Google Cloud Platform services, and Vertex AI with large language models for sophisticated 
+                  Google Cloud Platform services, and Vertex AI with large language models for customized 
                   classification and analysis.
                 </p>
                 <p>
                   The solution captures call transcripts in real-time from a call center tracking platform, automatically 
-                  processes them using a Pub/Sub triggered pipeline, and classifies them according to business type, 
+                  processes them using a Pub/Sub triggered pipeline, and classifies them according to 
                   product interest, purchase intent, and appointment details. This enriched data fuels personalized 
-                  customer communications and recommendations across digital touchpoints, significantly improving 
+                  customer communications and recommendations across digital touchpoints, improving 
                   conversion rates and customer satisfaction.
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function EventDrivenMLPipelinePage() {
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2>Solution Architecture</h2>
             <p className="mb-8">
-              I designed and implemented a fully event-driven architecture on Google Cloud Platform that processes call transcripts in real-time:
+              We designed and implemented a fully event-driven architecture on Google Cloud Platform that processes call transcripts in real-time:
             </p>
 
             {/* Architecture Diagram */}
@@ -555,18 +555,16 @@ export default function EventDrivenMLPipelinePage() {
               to transform unstructured conversation data into actionable business intelligence. The solution successfully:
             </p>
             <ul>
-              <li>Automated the classification of 5,000+ weekly call transcripts with high accuracy</li>
-              <li>Reduced the time from call completion to data availability from days to minutes</li>
+              <li>Automated the classification of thousands of weekly call transcripts with high performance</li>
               <li>Enabled personalized marketing campaigns based on specific product interests expressed during calls</li>
               <li>Improved sales follow-up by automatically identifying high-intent prospects</li>
-              <li>Created a unified view of customer interactions across digital and voice channels</li>
+              <li>Created a unified view of customer interactions across channels</li>
               <li>Provided retail locations with better insights into customer needs and preferences</li>
             </ul>
             <p>
               Beyond the immediate business impact, this project showcases how modern cloud infrastructure, event-based 
               architectures, and large language models can be combined to solve complex business problems in a scalable, 
-              cost-effective manner. The fully automated pipeline continues to process thousands of calls weekly with 
-              minimal maintenance, delivering consistent value to the business.
+              cost-effective manner.
             </p>
           </div>
         </div>
