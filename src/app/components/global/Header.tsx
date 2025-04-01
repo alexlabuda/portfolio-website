@@ -37,8 +37,8 @@ export default function Header() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="font-roboto text-3xl font-black text-primary-600 dark:text-primary-300 tracking-normal">
-                AL
+              <span className="font-roboto text-xl font-black text-primary-600 dark:text-primary-300 tracking-normal">
+                Alex Labuda
               </span>
             </Link>
           </div>
