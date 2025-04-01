@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -14,12 +14,13 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // Debug: Log the current pathname to see what's detected
-  useEffect(() => {
-    console.log('Current pathname:', pathname);
-  }, [pathname]);
-
+  // Toggle mobile menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   // Helper function to determine if a link is active
   const isLinkActive = (href: string): boolean => {
     if (href === '/') {
@@ -45,10 +46,6 @@ export default function Header() {
           <nav className="hidden md:ml-6 md:flex md:space-x-8">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link.href);
-              // Debug: Also log each link and whether it's active
-              if (process.env.NODE_ENV === 'development') {
-                console.log(`Link: ${link.href}, isActive: ${isActive}, pathname: ${pathname}`);
-              }
               return (
                 <Link
                   key={link.name}
@@ -93,12 +90,18 @@ export default function Header() {
             <div className="flex items-center md:hidden ml-4">
               <button
                 type="button"
+                onClick={toggleMenu}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
-                aria-expanded="false"
+                aria-expanded={isMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2" 
+                    d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+                  />
                 </svg>
               </button>
             </div>
@@ -107,14 +110,15 @@ export default function Header() {
       </div>
       
       {/* Mobile menu, show/hide based on menu state */}
-      <div className="hidden md:hidden">
-        <div className="pt-2 pb-3 space-y-1">
+      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+        <div className="pt-2 pb-3 space-y-1 border-t border-gray-200 dark:border-gray-700">
           {navLinks.map((link) => {
             const isActive = isLinkActive(link.href);
             return (
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={() => setIsMenuOpen(false)}
                 className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
                   isActive
                     ? 'bg-primary-50 dark:bg-primary-900 border-primary-500 dark:border-primary-400 text-primary-700 dark:text-primary-300'
