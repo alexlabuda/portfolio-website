@@ -12,16 +12,16 @@ export const metadata = {
 
 export default function EventDrivenMLPipelinePage() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-16">
+    <div className="bg-gray-50 py-12 sm:py-16 mt-1">
       {/* Top section with Hexagon particles - only for header through Business Challenge */}
       <div className="relative w-full mb-16">
         <HexagonParticlesBackground />
         
         {/* Semi-transparent Overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-accent-900/90 via-accent-800/80 to-gray-900/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-accent-900/90 via-accent-800/80 to-gray-900/70 z-[1]"></div>
 
         {/* Content container */}
-        <div className="relative py-12 z-20">
+        <div className="relative py-12 z-[5]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header Section */}
             <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">

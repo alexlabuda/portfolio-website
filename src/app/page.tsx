@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       {/* Hero Section with Particles */}
-      <section className="bg-gradient-primary relative py-20 sm:py-24">
+      <section className="bg-gradient-primary relative py-20 sm:py-24 mt-1">
         <ParticlesBackground />
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-[5]">
           <div className="inline-block rounded-full overflow-hidden border-4 border-white/50 w-32 h-32 mb-6 relative">
             <Image 
               src={getAssetPath('/images/headshot-portfolio.jpeg')}
