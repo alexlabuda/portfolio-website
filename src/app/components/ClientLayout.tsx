@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ThemeProvider } from "./ThemeProvider";
-import MobileMenuButton from "./MobileMenuButton";
 import Header from "./global/Header";
 
 export default function ClientLayout({

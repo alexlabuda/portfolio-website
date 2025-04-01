@@ -61,7 +61,11 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project 2 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6">
+          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative">
+            {/* "Coming Soon" badge */}
+            <div className="absolute top-4 right-4">
+              <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
+            </div>
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
@@ -81,18 +85,17 @@ export default function ProjectsPage() {
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">BigQuery</span>
               </div>
               <div className="mt-6">
-                <Link 
-                  href="#" 
-                  className="text-primary-600 font-medium hover:text-primary-700"
-                >
-                  View details →
-                </Link>
+                <span className="text-gray-500 italic">Project details coming soon</span>
               </div>
             </div>
           </div>
 
           {/* Project 3 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
+          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 relative">
+            {/* "Coming Soon" badge */}
+            <div className="absolute top-4 right-4">
+              <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
+            </div>
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Tableau Dashboard Placeholder</p>
@@ -112,12 +115,7 @@ export default function ProjectsPage() {
                 <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Marketing Analytics</span>
               </div>
               <div className="mt-6">
-                <Link 
-                  href="#" 
-                  className="text-primary-600 font-medium hover:text-primary-700"
-                >
-                  Explore visualization →
-                </Link>
+                <span className="text-gray-500 italic">Project details coming soon</span>
               </div>
             </div>
           </div>
@@ -127,8 +125,15 @@ export default function ProjectsPage() {
         <div className="mt-20 bg-accent-50 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Tableau Visualization Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center">
-              <p className="text-gray-500">Tableau Dashboard 1 Placeholder</p>
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] relative">
+              <a href="https://public.tableau.com/app/profile/alexlabuda/viz/MappingDisease-CholeraOutbreak/WOW2021W24CholeraOutbreak" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={getAssetPath('/images/tableau_cholera.png')}
+                  alt="Cholera Outbreak Dashboard"
+                  fill
+                  className="object-contain"
+                />
+              </a>
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center">
               <p className="text-gray-500">Tableau Dashboard 2 Placeholder</p>

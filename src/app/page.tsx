@@ -144,11 +144,15 @@ export default function Home() {
             </div>
 
             {/* Project Card 2 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden relative">
               <div className="bg-accent-50 h-48 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-accent-700 font-medium">Customer Segmentation</p>
                 </div>
+              </div>
+              {/* "Coming Soon" badge */}
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Unsupervised Learning for Sports Streaming</h3>
@@ -162,12 +166,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Kubeflow</span>
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Vertex AI</span>
                 </div>
-                <Link 
-                  href="/projects" 
-                  className="text-primary-600 font-medium hover:text-primary-700"
-                >
-                  View details →
-                </Link>
+                <span className="text-gray-500 italic">Project details coming soon</span>
               </div>
             </div>
           </div>
