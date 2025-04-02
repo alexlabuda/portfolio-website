@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from './utils/paths';
 import ParticlesBackground from '@/app/components/ParticlesBackground';
-import { AnimatedButton } from '@/components/AnimatedButton';
+import { AnimatedButton } from '@/app/components/AnimatedButton';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 
 export default function Home() {

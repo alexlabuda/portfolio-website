@@ -2,7 +2,7 @@
 
 import { useState, FormEvent, useRef } from 'react';
 import { FaEnvelope, FaGithub, FaLinkedin, FaClock, FaCalendarAlt, FaInfoCircle, FaPaperPlane } from 'react-icons/fa';
-import { AnimatedButton } from '@/components/AnimatedButton';
+import { AnimatedButton } from '@/app/components/AnimatedButton';
 
 type FieldError = {
   message: string;

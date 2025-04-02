@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { getAssetPath } from '../utils/paths';
 import { FaPython, FaDatabase, FaChartBar, FaGraduationCap, FaUniversity, FaCalendarAlt, FaMedal, FaBriefcase, FaCode, FaChartLine, FaTrophy, FaCertificate, FaCloudversify, FaTable, FaBrain, FaCheck, FaEnvelope } from 'react-icons/fa';
 import { SiR, SiTensorflow, SiGooglecloud, SiTableau, SiCoursera, SiDatacamp } from 'react-icons/si';
-import { AnimatedButton } from '@/components/AnimatedButton';
+import { AnimatedButton } from '@/app/components/AnimatedButton';
 
 export const metadata = {
   title: 'About Me | Alex Labuda',

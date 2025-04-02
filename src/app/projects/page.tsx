@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '../utils/paths';
-import { AnimatedButton } from '@/components/AnimatedButton';
+import { AnimatedButton } from '@/app/components/AnimatedButton';
 import { FaChartBar } from 'react-icons/fa';
 
 export const metadata = {
@@ -135,8 +135,15 @@ export default function ProjectsPage() {
                 />
               </a>
             </div>
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center">
-              <p className="text-gray-500">Tableau Dashboard 2 Placeholder</p>
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] relative">
+              <a href="https://public.tableau.com/app/profile/alexlabuda/viz/GoogleCovid-19MobilityDashboard_16734798303240/GoogleCOVID-19MobilityDashboard" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={getAssetPath('/images/tableau_covid.png')}
+                  alt="COVID-19 Mobility Dashboard"
+                  fill
+                  className="object-contain"
+                />
+              </a>
             </div>
           </div>
           <div className="mt-6 text-center">

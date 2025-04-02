@@ -2,8 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/app/utils/paths';
 import HexagonParticlesBackground from '../../components/HexagonParticlesBackground';
-import { AnimatedButton } from '@/components/AnimatedButton';
+import { AnimatedButton } from '@/app/components/AnimatedButton';
 import { FaEnvelope } from 'react-icons/fa';
+import TableOfContents from '@/app/components/TableOfContents';
+import ScrollToTop from '@/app/components/ScrollToTop';
+import ReadingProgressBar from '@/app/components/ReadingProgressBar';
 
 export const metadata = {
   title: 'Event-Driven ML Pipeline with Vertex AI | Alex Labuda',
@@ -13,6 +16,15 @@ export const metadata = {
 export default function EventDrivenMLPipelinePage() {
   return (
     <div className="bg-gray-50 py-12 sm:py-16 mt-1">
+      {/* Reading Progress Bar */}
+      <ReadingProgressBar height={4} withShadow={true} color="var(--color-primary-600)" />
+      
+      {/* Table of Contents */}
+      <TableOfContents />
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
+      
       {/* Top section with Hexagon particles - only for header through Business Challenge */}
       <div className="relative w-full mb-16">
         <HexagonParticlesBackground />
@@ -22,7 +34,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Content container */}
         <div className="relative py-12 z-[5]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
             {/* Header Section */}
             <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
               <Link href="/projects" className="text-primary-600 hover:text-primary-700 mb-4 flex items-center">
@@ -71,7 +83,7 @@ export default function EventDrivenMLPipelinePage() {
             {/* Project Overview */}
             <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
-                <h2>Project Overview</h2>
+                <h2 id="project-overview">Project Overview</h2>
                 <p>
                   This project involved designing and implementing an end-to-end event-driven machine learning 
                   pipeline for a leading custom closet company with retail locations across the United States. 
@@ -89,10 +101,22 @@ export default function EventDrivenMLPipelinePage() {
               </div>
             </div>
 
+            {/* Project Overview */}
+            <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+              <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
+                <h2 id="role-impact">Role & Impact</h2>
+                <p>
+                Led end-to-end design and implementation of the real-time ML pipeline as the sole data scientist on a cross-functional team. 
+                Personally handled all ML design, prompt engineering, and infrastructure orchestration. 
+                Enabled automated classification of thousands of weekly call transcripts, reducing inconsistent manual processing.
+                </p>
+              </div>
+            </div>
+
             {/* Business Challenge */}
-            <div className="mb-8 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <div className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
-                <h2>Business Challenge</h2>
+                <h2 id="business-challenge">Business Challenge</h2>
                 <p>
                   The client faced several challenges processing the high volume of inbound sales calls:
                 </p>
@@ -109,11 +133,11 @@ export default function EventDrivenMLPipelinePage() {
       </div>
 
       {/* Rest of content without background image */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
         {/* Solution Architecture */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
-            <h2>Solution Architecture</h2>
+            <h2 id="solution-architecture">Solution Architecture</h2>
             <p className="mb-8">
               We designed and implemented a fully event-driven architecture on Google Cloud Platform that processes call transcripts in real-time:
             </p>
@@ -290,7 +314,7 @@ export default function EventDrivenMLPipelinePage() {
         {/* Machine Learning Implementation */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
-            <h2>Machine Learning Implementation</h2>
+            <h2 id="ml-implementation">Machine Learning Implementation</h2>
             <p>
               The core of the solution leveraged Vertex AI and Gemini large language models to analyze call transcripts:
             </p>
@@ -316,11 +340,11 @@ export default function EventDrivenMLPipelinePage() {
         </div>
 
         {/* Key Outcomes */}
-        <div className="bg-accent-50 p-8 rounded-xl mb-16">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Outcomes</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+        <div className="bg-accent-50 p-8 rounded-xl mb-16 shadow-lg">
+          <h2 id="outcomes" className="text-2xl font-bold text-center mb-8 text-gray-900">Outcomes</h2>
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Email Engagement Card */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Email Engagement</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -337,7 +361,7 @@ export default function EventDrivenMLPipelinePage() {
             </div>
 
             {/* Conversion Optimization Card */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Conversion Optimization</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -354,7 +378,7 @@ export default function EventDrivenMLPipelinePage() {
             </div>
 
             {/* Opportunity Recovery Card */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Opportunity Recovery</h3>
                 <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -375,7 +399,7 @@ export default function EventDrivenMLPipelinePage() {
         {/* Technical Challenges */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
-            <h2>Technical Challenges</h2>
+            <h2 id="technical-challenges">Technical Challenges</h2>
             <p>
               Implementing this event-driven ML solution required overcoming several complex technical hurdles:
             </p>
@@ -401,11 +425,11 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Technologies Used */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Technologies Used</h2>
+          <h2 id="technologies" className="text-2xl font-bold text-gray-900 mb-8">Technologies Used</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* GCP Core group */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
               <div className="bg-blue-600 text-white py-2 px-4">
                 <h3 className="text-base font-semibold">Cloud Infrastructure</h3>
               </div>
@@ -440,7 +464,7 @@ export default function EventDrivenMLPipelinePage() {
             </div>
 
             {/* ML Platform group */}
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-md overflow-hidden">
+            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
               <div className="bg-purple-600 text-white py-2 px-4">
                 <h3 className="text-base font-semibold">ML & AI</h3>
               </div>
@@ -475,7 +499,7 @@ export default function EventDrivenMLPipelinePage() {
             </div>
 
             {/* Development group */}
-            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-md overflow-hidden">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
               <div className="bg-green-600 text-white py-2 px-4">
                 <h3 className="text-base font-semibold">Development</h3>
               </div>
@@ -510,7 +534,7 @@ export default function EventDrivenMLPipelinePage() {
             </div>
             
             {/* Integration group */}
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl shadow-md overflow-hidden">
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
               <div className="bg-orange-600 text-white py-2 px-4">
                 <h3 className="text-base font-semibold">Integrations</h3>
               </div>
@@ -549,7 +573,7 @@ export default function EventDrivenMLPipelinePage() {
         {/* Conclusion */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
-            <h2>Conclusion</h2>
+            <h2 id="conclusion">Conclusion</h2>
             <p>
               This project demonstrates the power of combining event-driven architecture with advanced machine learning 
               to transform unstructured conversation data into actionable business intelligence. The solution successfully:
@@ -570,7 +594,7 @@ export default function EventDrivenMLPipelinePage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
         {/* Navigation */}
         <div className="flex justify-between items-center pt-8 border-t border-gray-200">
           <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
