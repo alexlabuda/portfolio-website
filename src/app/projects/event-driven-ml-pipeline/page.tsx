@@ -317,7 +317,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Key Outcomes */}
         <div className="bg-accent-50 p-8 rounded-xl mb-16">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Expected Outcomes</h2>
+          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Outcomes</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Email Engagement Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
