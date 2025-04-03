@@ -75,7 +75,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">
-              <h2 className="text-2xl font-bold text-gray-900">Customer Segmentation with K-Means and Feature Engineering for a Streaming Platform</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Customer Segmentation Pipeline with K-Means and Feature Engineering for a Streaming Platform</h2>
               <p className="mt-3 text-gray-600">
                 Developed a customer segmentation pipeline for a large sports streaming brand using unsupervised 
                 learning techniques. The solution identified distinct viewer personas based on viewing patterns, 

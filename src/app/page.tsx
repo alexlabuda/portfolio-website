@@ -126,7 +126,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Event-Driven ML Pipeline with Vertex AI</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini</h3>
                 <p className="text-gray-600 mb-4">
                   Real-time machine learning pipeline for processing and classifying call center transcripts for CDP activation.
                 </p>
@@ -157,7 +157,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Unsupervised Learning for Sports Streaming</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Customer Segmentation Pipeline with K-Means and Feature Engineering for a Streaming Platform</h3>
                 <p className="text-gray-600 mb-4">
                   Customer segmentation pipeline identifying distinct viewer personas for content recommendations and personalization.
                 </p>
