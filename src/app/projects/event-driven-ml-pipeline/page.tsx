@@ -6,7 +6,7 @@ import { AnimatedButton } from '@/app/components/AnimatedButton';
 import { FaEnvelope } from 'react-icons/fa';
 import TableOfContents from '@/app/components/TableOfContents';
 import ScrollToTop from '@/app/components/ScrollToTop';
-import ReadingProgressBar from '@/app/components/ReadingProgressBar';
+import GradientReadingProgressBar from '@/app/components/GradientReadingProgressBar';
 
 export const metadata = {
   title: 'Event-Driven ML Pipeline with Vertex AI | Alex Labuda',
@@ -17,7 +17,12 @@ export default function EventDrivenMLPipelinePage() {
   return (
     <div className="bg-gray-50 py-12 sm:py-16 mt-1">
       {/* Reading Progress Bar */}
-      <ReadingProgressBar height={4} withShadow={true} color="var(--color-primary-600)" />
+      <GradientReadingProgressBar 
+        height={4} 
+        gradientColors={['#4F46E5', '#8B5CF6', '#EC4899']} 
+        animate={true}
+        zIndex={100}
+      />
       
       {/* Table of Contents */}
       <TableOfContents />
@@ -55,7 +60,6 @@ export default function EventDrivenMLPipelinePage() {
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">KubeFlow</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">GCP</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Pub/Sub</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Cloud Functions</span>
               </div>
               
               {/* Project header image */}
@@ -419,6 +423,27 @@ export default function EventDrivenMLPipelinePage() {
               <li><strong className="text-gray-900">Cost Optimization:</strong> LLM inference at call volume scale could become expensive. I implemented batching and caching strategies to reduce API calls and optimize the overall solution cost.</li>
               
               <li><strong className="text-gray-900">Data Privacy Compliance:</strong> Call transcripts contained personally identifiable information (PII). The solution needed robust security measures to ensure GDPR and CCPA compliance throughout the data processing pipeline.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Design Tradeoffs & Decisions */}
+        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+          <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
+            <h2 id="design-tradeoffs">Design Tradeoffs & Decisions</h2>
+            <p>
+              Several key architectural and modeling decisions were made to ensure the solution was scalable, cost-effective, and optimized for real-world call data:
+            </p>
+            <ul>
+              <li><strong className="text-gray-900">Event-Driven Architecture:</strong> Chose an event-driven design using Pub/Sub and Cloud Functions to enable low-latency, real-time processing and avoid unnecessary compute costs associated with batch jobs.</li>
+              
+              <li><strong className="text-gray-900">Model Selection:</strong> Selected Gemini 1.5 Pro for its strong zero-shot performance and contextual understanding of noisy, real-world transcripts, outperforming traditional classification models in preliminary evaluations.</li>
+              
+              <li><strong className="text-gray-900">Prompt Design Strategy:</strong> Used LangChain to modularize and chain prompts, enabling rapid iteration, reusable templates, and better debugging across multiple classification tasks.</li>
+              
+              <li><strong className="text-gray-900">Pipeline Modularity:</strong> Structured the Vertex AI Pipeline with clearly separated steps for ingestion, classification, and enrichment to improve observability and maintainability.</li>
+              
+              <li><strong className="text-gray-900">Fallback Handling:</strong> Anticipated classification edge cases by integrating fuzzy matching and validation layers, trading minor recall for significantly improved precision and reliability.</li>
             </ul>
           </div>
         </div>
