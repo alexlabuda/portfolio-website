@@ -595,6 +595,49 @@ export default function EventDrivenMLPipelinePage() {
           </div>
         </div>
 
+                {/* Why It Matters Sidebar */}
+                <div className="mb-16 bg-gradient-to-br from-gray-50 to-slate-100 p-8 rounded-xl shadow-lg border border-slate-200">
+          <h2 id="why-it-matters" className="text-2xl font-bold text-gray-900 mb-6">Why It Matters</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Business Perspective */}
+            <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-800">Business Perspective</h3>
+                <svg className="w-7 h-7 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <div className="prose prose-md max-w-none prose-p:text-gray-700">
+                <p>
+                  Businesses often overlook unstructured data in customer support—this project proves how conversation data can be mined in real time for revenue opportunities.
+                </p>
+                <p className="mt-3 text-sm italic text-gray-600 border-l-4 border-primary-200 pl-3">
+                  The most valuable insights often exist in places where companies aren't looking—the space between formal data points, in the conversations and interactions that happen every day.
+                </p>
+              </div>
+            </div>
+
+            {/* ML/Data Science Perspective */}
+            <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-800">ML/DS Perspective</h3>
+                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <div className="prose prose-md max-w-none prose-p:text-gray-700">
+                <p>
+                  LLMs can't just "plug and play"—they require thoughtful prompt engineering, validation systems, and downstream integration to work in real-world production.
+                </p>
+                <p className="mt-3 text-sm italic text-gray-600 border-l-4 border-accent-200 pl-3">
+                  The difference between a demo and production-ready ML is immense. Robust solutions require meticulous attention to edge cases, validation chains, and integration points that are invisible in controlled environments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Conclusion */}
         <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
@@ -617,6 +660,8 @@ export default function EventDrivenMLPipelinePage() {
             </p>
           </div>
         </div>
+
+
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
