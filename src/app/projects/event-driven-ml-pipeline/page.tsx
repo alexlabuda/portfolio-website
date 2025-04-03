@@ -9,7 +9,7 @@ import ScrollToTop from '@/app/components/ScrollToTop';
 import GradientReadingProgressBar from '@/app/components/GradientReadingProgressBar';
 
 export const metadata = {
-  title: 'Event-Driven ML Pipeline with Vertex AI | Alex Labuda',
+  title: 'Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini | Alex Labuda',
   description: 'Case study on building an event-driven machine learning pipeline with Vertex AI and LLMs for real-time call transcript analysis for a custom closet company',
 };
 
@@ -48,7 +48,7 @@ export default function EventDrivenMLPipelinePage() {
                 </svg>
                 Back to Projects
               </Link>
-              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mt-6">Event-Driven ML Pipeline with Vertex AI and LLMs</h1>
+              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mt-6">Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini</h1>
               <p className="mt-4 text-lg text-gray-700">
                 A real-time machine learning solution for processing and classifying call center transcripts to drive personalized customer experiences for a leading custom closet company.
               </p>

@@ -23,7 +23,7 @@ export default function ProjectsPage() {
 
         <div className="space-y-16">
           {/* Project 1 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6">
+          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 relative">
                 <Image 
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">
-              <h2 className="text-2xl font-bold text-gray-900">Event-Driven ML Pipeline with Vertex AI and LLMs</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini</h2>
               <p className="mt-3 text-gray-600">
                 Designed and implemented an end-to-end event-driven machine learning pipeline using 
                 Google Cloud Platform and Vertex AI. The system processes call transcripts in real-time, 
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project 2 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative">
+          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -92,7 +92,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project 3 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 relative">
+          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
         <div className="mt-20 bg-accent-50 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Tableau Visualization Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] relative">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg aspect-[16/10] relative transform transition duration-300 hover:scale-[1.02]">
               <a href="https://public.tableau.com/app/profile/alexlabuda/viz/MappingDisease-CholeraOutbreak/WOW2021W24CholeraOutbreak" target="_blank" rel="noopener noreferrer">
                 <Image
                   src={getAssetPath('/images/tableau_cholera.png')}
@@ -136,7 +136,7 @@ export default function ProjectsPage() {
                 />
               </a>
             </div>
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm aspect-[16/10] relative">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg aspect-[16/10] relative transform transition duration-300 hover:scale-[1.02]">
               <a href="https://public.tableau.com/app/profile/alexlabuda/viz/GoogleCovid-19MobilityDashboard_16734798303240/GoogleCOVID-19MobilityDashboard" target="_blank" rel="noopener noreferrer">
                 <Image
                   src={getAssetPath('/images/tableau_covid.png')}

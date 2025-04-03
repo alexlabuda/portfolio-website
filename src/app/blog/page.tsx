@@ -20,7 +20,7 @@ export default function BlogPage() {
 
         {/* Featured Post */}
         <div className="mb-16">
-          <div className="bg-primary-50 rounded-lg overflow-hidden shadow-sm relative">
+          <div className="bg-primary-50 rounded-lg overflow-hidden shadow-lg relative transform transition duration-300 hover:scale-[1.02]">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -69,7 +69,7 @@ export default function BlogPage() {
         {/* Blog Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Blog Post 1 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -98,7 +98,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Post 2 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -127,7 +127,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Post 3 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -156,7 +156,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Post 4 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -185,7 +185,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Post 5 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -214,7 +214,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Post 6 */}
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-[1.02] relative">
             {/* "Coming Soon" badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
@@ -271,7 +271,7 @@ export default function BlogPage() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-gradient-primary rounded-2xl p-8 text-center relative">
+        <div className="mt-16 bg-gradient-primary rounded-2xl p-8 text-center relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
           {/* "Coming Soon" badge */}
           <div className="absolute top-4 right-4">
             <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
