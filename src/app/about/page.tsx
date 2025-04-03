@@ -125,7 +125,7 @@ export default function AboutPage() {
                 Education
               </h3>
               <div className="space-y-6">
-                <div className="group bg-white p-4 rounded-lg border border-accent-100 transition-all duration-300 hover:shadow-md">
+                <div className="group bg-white p-4 rounded-lg border border-accent-100 transition-all duration-300 hover:shadow-lg transform hover:scale-[1.02]">
                   <div className="flex items-start mb-2">
                     <div className="flex-shrink-0 mt-1">
                       <span className="inline-block w-10 h-10 rounded-full bg-accent-50 flex items-center justify-center">
@@ -155,7 +155,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 
-                <div className="group bg-white p-4 rounded-lg border border-accent-100 transition-all duration-300 hover:shadow-md">
+                <div className="group bg-white p-4 rounded-lg border border-accent-100 transition-all duration-300 hover:shadow-lg transform hover:scale-[1.02]">
                   <div className="flex items-start mb-2">
                     <div className="flex-shrink-0 mt-1">
                       <span className="inline-block w-10 h-10 rounded-full bg-accent-50 flex items-center justify-center">
@@ -183,7 +183,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md border border-primary-100 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-primary-100 mb-8 transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
               <div className="flex items-center">
                 <span className="inline-block w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mr-3">
                   <FaCheck className="text-primary-600 text-xl" />
@@ -249,7 +249,7 @@ export default function AboutPage() {
               
               <div className="space-y-8">
                 {/* Experience 1 */}
-                <div className="group bg-white p-5 rounded-lg border-l-4 border-primary-500 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border-l-4 border-primary-500 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 hidden sm:block">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
@@ -291,7 +291,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Experience 2 */}
-                <div className="group bg-white p-5 rounded-lg border-l-4 border-accent-500 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border-l-4 border-accent-500 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 hidden sm:block">
                       <span className="inline-block w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center">
@@ -350,7 +350,7 @@ export default function AboutPage() {
                 Certifications
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="group bg-white p-5 rounded-lg border border-primary-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border border-primary-100 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
@@ -368,7 +368,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 
-                <div className="group bg-white p-5 rounded-lg border border-primary-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border border-primary-100 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
@@ -386,7 +386,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 
-                <div className="group bg-white p-5 rounded-lg border border-accent-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border border-accent-100 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center">
@@ -404,7 +404,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 
-                <div className="group bg-white p-5 rounded-lg border border-accent-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="group bg-white p-5 rounded-lg border border-accent-100 shadow-lg transform transition duration-300 hover:scale-[1.02]">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center">
