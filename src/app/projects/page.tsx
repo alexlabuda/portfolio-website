@@ -63,17 +63,13 @@ export default function ProjectsPage() {
 
           {/* Project 2 */}
           <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
-            {/* "Coming Soon" badge */}
-            <div className="absolute top-4 right-4">
-              <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
-            </div>
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">
-              <h2 className="text-2xl font-bold text-gray-900">Unsupervised Learning Pipeline for Sports Streaming</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Customer Segmentation with K-Means and Feature Engineering for a Streaming Platform</h2>
               <p className="mt-3 text-gray-600">
                 Developed a customer segmentation pipeline for a large sports streaming brand using unsupervised 
                 learning techniques. The solution identified distinct viewer personas based on viewing patterns, 
@@ -86,7 +82,12 @@ export default function ProjectsPage() {
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">BigQuery</span>
               </div>
               <div className="mt-6">
-                <span className="text-gray-500 italic">Project details coming soon</span>
+                <Link 
+                  href="/projects/unsupervised-learning-sports-streaming" 
+                  className="text-primary-600 font-medium hover:text-primary-700"
+                >
+                  Read case study →
+                </Link>
               </div>
             </div>
           </div>

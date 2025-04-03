@@ -150,10 +150,6 @@ export default function Home() {
                   <p className="text-accent-700 font-medium">Customer Segmentation</p>
                 </div>
               </div>
-              {/* "Coming Soon" badge */}
-              <div className="absolute top-4 right-4">
-                <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
-              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Unsupervised Learning for Sports Streaming</h3>
                 <p className="text-gray-600 mb-4">
@@ -166,7 +162,12 @@ export default function Home() {
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Kubeflow</span>
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Vertex AI</span>
                 </div>
-                <span className="text-gray-500 italic">Project details coming soon</span>
+                <Link 
+                  href="/projects/unsupervised-learning-sports-streaming" 
+                  className="text-primary-600 font-medium hover:text-primary-700"
+                >
+                  View details →
+                </Link>
               </div>
             </div>
           </div>
