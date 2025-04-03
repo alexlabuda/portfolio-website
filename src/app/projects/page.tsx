@@ -23,7 +23,10 @@ export default function ProjectsPage() {
 
         <div className="space-y-16">
           {/* Project 1 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+          <Link
+            href="/projects/event-driven-ml-pipeline"
+            className="group block lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 transform transition duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer"
+          >
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 relative">
                 <Image 
@@ -51,18 +54,21 @@ export default function ProjectsPage() {
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Pub/Sub</span>
               </div>
               <div className="mt-6">
-                <Link 
-                  href="/projects/event-driven-ml-pipeline" 
-                  className="text-primary-600 font-medium hover:text-primary-700"
-                >
-                  Read case study →
-                </Link>
+                <span className="text-primary-600 font-medium group-hover:text-primary-700 inline-flex items-center">
+                  Read case study
+                  <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Project 2 */}
-          <div className="lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+          <Link
+            href="/projects/unsupervised-learning-sports-streaming"
+            className="group block lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer"
+          >
             <div className="lg:w-1/2">
               <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
                 <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
@@ -82,15 +88,15 @@ export default function ProjectsPage() {
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">BigQuery</span>
               </div>
               <div className="mt-6">
-                <Link 
-                  href="/projects/unsupervised-learning-sports-streaming" 
-                  className="text-primary-600 font-medium hover:text-primary-700"
-                >
-                  Read case study →
-                </Link>
+                <span className="text-primary-600 font-medium group-hover:text-primary-700 inline-flex items-center">
+                  Read case study
+                  <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Project 3 */}
           <div className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
