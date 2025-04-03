@@ -70,8 +70,14 @@ export default function ProjectsPage() {
             className="group block lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse bg-accent-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer"
           >
             <div className="lg:w-1/2">
-              <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
-                <p className="text-gray-500">Unsupervised Learning Visualization Placeholder</p>
+              <div className="rounded-lg overflow-hidden h-64 relative">
+                <Image 
+                  src={getAssetPath('/images/customer-segmentation.png')}
+                  alt="Customer Segmentation for Sports Streaming"
+                  fill
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">

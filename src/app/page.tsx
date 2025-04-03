@@ -152,9 +152,13 @@ export default function Home() {
               className="group bg-white rounded-lg shadow-lg overflow-hidden relative transform transition duration-300 hover:scale-[1.02] cursor-pointer"
             >
               <div className="bg-accent-50 h-48 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-accent-700 font-medium">Customer Segmentation</p>
-                </div>
+                <Image 
+                  src={getAssetPath('/images/customer-segmentation.png')}
+                  alt="Customer Segmentation for Sports Streaming"
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Customer Segmentation Pipeline with K-Means and Feature Engineering for a Streaming Platform</h3>
