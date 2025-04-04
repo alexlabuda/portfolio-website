@@ -162,11 +162,11 @@
 }
 
 .react-flow__handle.source {
-  right: -10px;
+  bottom: 0px;
 }
 
 .react-flow__handle.target {
-  left: -10px;
+  top: 0px;
 }
 
 .react-flow__edge .react-flow__edge-path {

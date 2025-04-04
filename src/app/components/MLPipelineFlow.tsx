@@ -23,7 +23,7 @@ import { DataIcon, ProcessingIcon, ModelIcon } from './PipelineIcons';
 const initialNodes: Node[] = [
   {
     id: '1',
-    position: { x: 70, y: 50 },
+    position: { x: 70, y: 50-10 },
     data: { 
       icon: <DataIcon />, 
       title: 'extract-consumption-data', 
@@ -33,7 +33,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '2',
-    position: { x: 70, y: 150 },
+    position: { x: 70, y: 150-10 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'map-teams-to-features', 
@@ -43,7 +43,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '3',
-    position: { x: 70, y: 250 },
+    position: { x: 60, y: 250-10 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'clean-streaming-consumption', 
@@ -53,7 +53,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '4',
-    position: { x: 70, y: 350 },
+    position: { x: 65, y: 350-10 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'create-consumption-features', 
@@ -63,7 +63,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '5',
-    position: { x: 70, y: 450 },
+    position: { x: 70, y: 450-10 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'create-composite-features', 
@@ -73,7 +73,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '6',
-    position: { x: 70, y: 550 },
+    position: { x: 70, y: 550-10 },
     data: { 
       icon: <ModelIcon />, 
       title: 'clustering-component', 
@@ -84,7 +84,7 @@ const initialNodes: Node[] = [
   // Output nodes
   {
     id: '10',
-    position: { x: 430, y: 340 },
+    position: { x: -150, y: 720 },
     data: { 
       title: 'optimal_k_metrics', 
       subtitle: 'type: system.Dataset' 
@@ -93,7 +93,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '7',
-    position: { x: 430, y: 450 },
+    position: { x: 50, y: 720 },
     data: { 
       title: 'cluster_profiles', 
       subtitle: 'type: system.Dataset' 
@@ -102,7 +102,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '8',
-    position: { x: 430, y: 550 },
+    position: { x: 250, y: 720 },
     data: { 
       title: 'clustered_data', 
       subtitle: 'type: system.Dataset' 
@@ -111,7 +111,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '9',
-    position: { x: 430, y: 650 },
+    position: { x: 450, y: 720 },
     data: { 
       title: 'kmeans_model', 
       subtitle: 'type: system.Artifact' 
