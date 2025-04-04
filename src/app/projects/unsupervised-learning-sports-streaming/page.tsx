@@ -7,6 +7,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import TableOfContents from '@/app/components/TableOfContents';
 import ScrollToTop from '@/app/components/ScrollToTop';
 import GradientReadingProgressBar from '@/app/components/GradientReadingProgressBar';
+import MLPipelineFlowWrapper from '@/app/components/MLPipelineFlowWrapper';
 
 export const metadata = {
   title: 'Customer Segmentation with K-Means | Alex Labuda',
@@ -149,114 +150,9 @@ export default function UnsupervisedLearningPage() {
             <div className="w-full overflow-x-auto">
               <div className="min-w-full lg:min-w-0 py-4">
                 <div className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg border border-gray-100">
-                  {/* SVG Node-Arc Diagram */}
-                  <svg className="w-full h-auto" viewBox="0 0 600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Background grid pattern */}
-                    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(226, 232, 240, 0.6)" strokeWidth="1"/>
-                    </pattern>
-                    <rect width="600" height="900" fill="url(#grid)" />
-                    
-                    {/* Extract Consumption Data Node */}
-                    <rect x="140" y="50" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="80" r="12" fill="#4299E1"/>
-                    <text x="160" y="85" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">1</text>
-                    <text x="260" y="70" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">extract-consumption-data</text>
-                    <text x="260" y="90" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.10</text>
-                    
-                    {/* Connection dots to next node */}
-                    <line x1="260" y1="110" x2="260" y2="140" stroke="#A0AEC0" strokeWidth="2" strokeDasharray="2" />
-                    <rect x="255" y="140" width="10" height="10" rx="2" fill="#805AD5" />
-                    <line x1="260" y1="150" x2="260" y2="180" stroke="#805AD5" strokeWidth="2" />
-
-                    {/* Map Teams to Features Node */}
-                    <rect x="140" y="180" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="210" r="12" fill="#4299E1"/>
-                    <text x="160" y="215" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">2</text>
-                    <text x="260" y="200" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">map-teams-to-features</text>
-                    <text x="260" y="220" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.10</text>
-                    
-                    {/* Connection dots to next node */}
-                    <line x1="260" y1="240" x2="260" y2="270" stroke="#A0AEC0" strokeWidth="2" strokeDasharray="2" />
-                    <rect x="255" y="270" width="10" height="10" rx="2" fill="#805AD5" />
-                    <line x1="260" y1="280" x2="260" y2="310" stroke="#805AD5" strokeWidth="2" />
-
-                    {/* Clean Streaming Consumption Node */}
-                    <rect x="140" y="310" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="340" r="12" fill="#4299E1"/>
-                    <text x="160" y="345" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">3</text>
-                    <text x="260" y="330" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">clean-streaming-consumption</text>
-                    <text x="260" y="350" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.10</text>
-                    
-                    {/* Connection dots to next node */}
-                    <line x1="260" y1="370" x2="260" y2="400" stroke="#A0AEC0" strokeWidth="2" strokeDasharray="2" />
-                    <rect x="255" y="400" width="10" height="10" rx="2" fill="#805AD5" />
-                    <line x1="260" y1="410" x2="260" y2="440" stroke="#805AD5" strokeWidth="2" />
-
-                    {/* Create Consumption Features Node */}
-                    <rect x="140" y="440" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="470" r="12" fill="#4299E1"/>
-                    <text x="160" y="475" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">4</text>
-                    <text x="260" y="460" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">create-consumption-features</text>
-                    <text x="260" y="480" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.11</text>
-                    
-                    {/* Connection dots to next node */}
-                    <line x1="260" y1="500" x2="260" y2="530" stroke="#A0AEC0" strokeWidth="2" strokeDasharray="2" />
-                    <rect x="255" y="530" width="10" height="10" rx="2" fill="#805AD5" />
-                    <line x1="260" y1="540" x2="260" y2="570" stroke="#805AD5" strokeWidth="2" />
-
-                    {/* Create Composite Features Node */}
-                    <rect x="140" y="570" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="600" r="12" fill="#4299E1"/>
-                    <text x="160" y="605" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">5</text>
-                    <text x="260" y="590" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">create-composite-features</text>
-                    <text x="260" y="610" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.11</text>
-                    
-                    {/* Connection dots to clustering node with multiple connections */}
-                    <line x1="260" y1="630" x2="260" y2="660" stroke="#A0AEC0" strokeWidth="2" strokeDasharray="2" />
-                    <rect x="255" y="660" width="10" height="10" rx="2" fill="#805AD5" />
-                    <line x1="260" y1="670" x2="260" y2="700" stroke="#805AD5" strokeWidth="2" />
-
-                    {/* Clustering Component Node */}
-                    <rect x="140" y="700" width="240" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <circle cx="160" cy="730" r="12" fill="#4299E1"/>
-                    <text x="160" y="735" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">6</text>
-                    <text x="260" y="720" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="14">clustering-component</text>
-                    <text x="260" y="740" textAnchor="middle" fill="#2B6CB0" fontSize="12">python:3.11</text>
-                    
-                    {/* Multiple outputs from clustering node to labeled squares */}
-                    {/* Output 1: cluster_profiles */}
-                    <line x1="140" y1="760" x2="110" y2="780" stroke="#805AD5" strokeWidth="2" />
-                    <rect x="50" y="780" width="120" height="60" rx="2" fill="#FAF5FF" stroke="#E9D8FD" strokeWidth="2" />
-                    <text x="110" y="805" textAnchor="middle" fill="#805AD5" fontWeight="600" fontSize="11">cluster_profiles</text>
-                    <text x="110" y="825" textAnchor="middle" fill="#805AD5" fontSize="9">type: system.Dataset</text>
-                    
-                    {/* Output 2: clustered_data */}
-                    <line x1="220" y1="760" x2="250" y2="780" stroke="#805AD5" strokeWidth="2" />
-                    <rect x="190" y="780" width="120" height="60" rx="2" fill="#FAF5FF" stroke="#E9D8FD" strokeWidth="2" />
-                    <text x="250" y="805" textAnchor="middle" fill="#805AD5" fontWeight="600" fontSize="11">clustered_data</text>
-                    <text x="250" y="825" textAnchor="middle" fill="#805AD5" fontSize="9">type: system.Dataset</text>
-                    
-                    {/* Output 3: kmeans_model */}
-                    <line x1="280" y1="760" x2="390" y2="780" stroke="#F6AD55" strokeWidth="2" />
-                    <rect x="330" y="780" width="120" height="60" rx="2" fill="#FFFAF0" stroke="#FEEBC8" strokeWidth="2" />
-                    <text x="390" y="805" textAnchor="middle" fill="#DD6B20" fontWeight="600" fontSize="11">kmeans_model</text>
-                    <text x="390" y="825" textAnchor="middle" fill="#DD6B20" fontSize="9">type: system.Artifact</text>
-                    
-                    {/* Output 4: optimal_k_metrics */}
-                    <line x1="330" y1="760" x2="530" y2="780" stroke="#805AD5" strokeWidth="2" />
-                    <rect x="470" y="780" width="120" height="60" rx="2" fill="#FAF5FF" stroke="#E9D8FD" strokeWidth="2" />
-                    <text x="530" y="805" textAnchor="middle" fill="#805AD5" fontWeight="600" fontSize="11">optimal_k_metrics</text>
-                    <text x="530" y="825" textAnchor="middle" fill="#805AD5" fontSize="9">type: system.Dataset</text>
-                    
-                    {/* Arrowhead and filter definitions */}
-                    <defs>
-                      <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.1"/>
-                      </filter>
-                    </defs>
-                  </svg>
-
+                  {/* Use the MLPipelineFlowWrapper component */}
+                  <MLPipelineFlowWrapper />
+                  
                   {/* Enhanced Legend with Component Groups */}
                   <div className="mt-8 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                     <h4 className="text-gray-700 font-medium text-center mb-4">Pipeline Components</h4>

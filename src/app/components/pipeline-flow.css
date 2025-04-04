@@ -1,0 +1,198 @@
+.react-flow {
+  --bg-color: transparent;
+  --text-color: #1f2937;
+  --node-border-radius: 10px;
+  --node-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.react-flow__node-pipeline {
+  border-radius: var(--node-border-radius);
+  display: flex;
+  height: 70px;
+  min-width: 220px;
+  font-family: sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  box-shadow: var(--node-box-shadow);
+}
+
+.react-flow__node-output, .react-flow__node-model {
+  width: 120px;
+  padding: 2px;
+  font-family: sans-serif;
+  box-shadow: var(--node-box-shadow);
+  max-height: 60px;
+}
+
+.react-flow__node-output {
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  border-radius: var(--node-border-radius);
+}
+
+.react-flow__node-model {
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  border-radius: var(--node-border-radius);
+}
+
+.react-flow__node-output .inner, 
+.react-flow__node-model .inner {
+  background: white;
+  padding: 8px 10px;
+  border-radius: calc(var(--node-border-radius) - 2px);
+  position: relative;
+}
+
+.react-flow__node-output .title,
+.react-flow__node-model .title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.react-flow__node-output .subtitle,
+.react-flow__node-model .subtitle {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.react-flow__node-pipeline .wrapper {
+  overflow: hidden;
+  display: flex;
+  padding: 2px;
+  position: relative;
+  border-radius: var(--node-border-radius);
+  flex-grow: 1;
+}
+
+.gradient:before {
+  content: '';
+  position: absolute;
+  padding-bottom: calc(100% * 1.41421356237);
+  width: calc(100% * 1.41421356237);
+  background: conic-gradient(
+    from -160deg at 50% 50%,
+    #4F46E5 0deg,
+    #8B5CF6 120deg,
+    #EC4899 240deg,
+    #4F46E5 360deg
+  );
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+.react-flow__node-pipeline.selected .wrapper.gradient:before {
+  content: '';
+  background: conic-gradient(
+    from -160deg at 50% 50%,
+    #4F46E5 0deg,
+    #8B5CF6 120deg,
+    #EC4899 240deg,
+    rgba(79, 70, 229, 0) 360deg
+  );
+  animation: spinner 4s linear infinite;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: -1;
+}
+
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.react-flow__node-pipeline .inner {
+  background: white;
+  padding: 16px 20px;
+  border-radius: var(--node-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+.react-flow__node-pipeline .icon {
+  margin-right: 8px;
+}
+
+.react-flow__node-pipeline .body {
+  display: flex;
+}
+
+.react-flow__node-pipeline .title {
+  font-size: 14px;
+  margin-bottom: 2px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.react-flow__node-pipeline .subtitle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.react-flow__node-pipeline .cloud {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  transform: translate(50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center;
+  background: linear-gradient(135deg, #8B5CF6, #6366F1);
+  box-shadow: var(--node-box-shadow);
+  z-index: 1;
+  padding: 0;
+}
+
+.react-flow__node-pipeline .cloud div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow__handle.source {
+  right: -10px;
+}
+
+.react-flow__handle.target {
+  left: -10px;
+}
+
+.react-flow__edge .react-flow__edge-path {
+  stroke-width: 1.5;
+  stroke-opacity: 0.75;
+}
+
+/* Override for edges with custom style */
+.react-flow__edge[style] .react-flow__edge-path {
+  stroke: inherit !important;
+  stroke-dasharray: inherit !important;
+  stroke-width: inherit !important;
+}
+
+/* Add a style for the edge circle marker */
+#edge-circle circle {
+  fill: white;
+}
+
+.react-flow__controls button {
+  background-color: white;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-bottom: none;
+}
+
+.react-flow__controls button:hover {
+  background-color: #f9fafb;
+} 
