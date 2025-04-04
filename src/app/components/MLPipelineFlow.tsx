@@ -199,7 +199,7 @@ const edgeTypes = {
 const defaultEdgeOptions = {
   animated: true,
   markerEnd: 'edge-circle',
-  type: 'step'
+  type: 'smoothstep'
 };
 
 const MLPipelineFlow = () => {
@@ -226,7 +226,7 @@ const MLPipelineFlow = () => {
         nodesDraggable={false}
         zoomOnScroll={false}
         panOnScroll={false}
-        attributionPosition="bottom-left"
+        attributionPosition="bottom-right"
       >
         <Controls showInteractive={false} />
         <Background color="#f1f1f1" gap={16} />

@@ -153,54 +153,6 @@ export default function UnsupervisedLearningPage() {
                   {/* Use the MLPipelineFlowWrapper component */}
                   <MLPipelineFlowWrapper />
                   
-                  {/* Enhanced Legend with Component Groups */}
-                  <div className="mt-8 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
-                    <h4 className="text-gray-700 font-medium text-center mb-4">Pipeline Components</h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 bg-[#EBF8FF] border border-[#BEE3F8] rounded-sm mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">Processing Steps</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Data Extraction</li>
-                          <li>Feature Engineering</li>
-                          <li>Data Cleaning</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 rounded-full bg-[#4299E1] mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">Step Sequence</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Ordered Pipeline Flow</li>
-                          <li>Component Dependencies</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 rounded-sm bg-[#805AD5] mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">Connections</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Data Transfer</li>
-                          <li>Artifact Passing</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 rounded-sm bg-[#F6AD55] mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">Outputs</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Key Results</li>
-                          <li>Final Segments</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
                   {/* Flow sequence description */}
                   <div className="mt-6 text-sm text-gray-600 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg shadow-sm border border-blue-100">
                     <h4 className="font-medium text-gray-700 mb-2">Data Flow Sequence</h4>
