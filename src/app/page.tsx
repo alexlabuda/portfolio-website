@@ -121,8 +121,14 @@ export default function Home() {
                   src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
                   alt="Event-Driven ML Pipeline"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ 
+                    objectFit: "cover", 
+                    objectPosition: "center",
+                    maxWidth: "75%",
+                    maxHeight: "100%"
+                  }}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  className="p-4 m-auto"
                 />
               </div>
               <div className="p-6">
@@ -156,8 +162,14 @@ export default function Home() {
                   src={getAssetPath('/images/customer-segmentation.png')}
                   alt="Customer Segmentation for Sports Streaming"
                   fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{ 
+                    objectFit: "cover", 
+                    objectPosition: "center",
+                    maxWidth: "72%",
+                    maxHeight: "100%"
+                  }}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  className="p-4 m-auto"
                 />
               </div>
               <div className="p-6">
