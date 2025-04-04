@@ -18,7 +18,7 @@ export default function UnsupervisedLearningPage() {
     <div className="bg-gray-50 py-12 sm:py-16 mt-1">
       {/* Reading Progress Bar */}
       <GradientReadingProgressBar 
-        height={4} 
+        height={2} 
         gradientColors={['#4F46E5', '#8B5CF6', '#EC4899']} 
         animate={true}
         zIndex={100}
