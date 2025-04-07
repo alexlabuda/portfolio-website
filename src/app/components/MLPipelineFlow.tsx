@@ -23,7 +23,7 @@ import { DataIcon, ProcessingIcon, ModelIcon } from './PipelineIcons';
 const initialNodes: Node[] = [
   {
     id: '1',
-    position: { x: 70, y: 50 },
+    position: { x: -150, y: 50 },
     data: { 
       icon: <DataIcon />, 
       title: 'Extract Consumption Data', 
@@ -33,7 +33,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '2',
-    position: { x: 70, y: 150 },
+    position: { x: 150, y: 50 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'Map Categorical Features', 
@@ -43,7 +43,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '3',
-    position: { x: 70, y: 250 },
+    position: { x: 150, y: 150 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'Clean Streaming Consumption', 
@@ -53,7 +53,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '4',
-    position: { x: 70, y: 350 },
+    position: { x: 150, y: 250 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'Create Consumption Features', 
@@ -63,7 +63,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '5',
-    position: { x: 70, y: 450 },
+    position: { x: 150, y: 350 },
     data: { 
       icon: <ProcessingIcon />, 
       title: 'Create Composite Features', 
@@ -73,7 +73,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '6',
-    position: { x: 70, y: 550 },
+    position: { x: 150, y: 450 },
     data: { 
       icon: <ModelIcon />, 
       title: 'Clustering Component', 
@@ -84,7 +84,7 @@ const initialNodes: Node[] = [
   // Output nodes
   {
     id: '10',
-    position: { x: 430, y: 325 + 100 },
+    position: { x: 500, y: 300 },
     data: { 
       title: 'Optimal K Metrics', 
       subtitle: 'type: system.Dataset' 
@@ -93,7 +93,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '7',
-    position: { x: 430, y: 400 + 100 },
+    position: { x: 500, y: 400 },
     data: { 
       title: 'Cluster Profiles', 
       subtitle: 'type: system.Dataset' 
@@ -102,7 +102,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '8',
-    position: { x: 430, y: 475 + 100 },
+    position: { x: 500, y: 500 },
     data: { 
       title: 'Clustered Data', 
       subtitle: 'type: system.Dataset' 
@@ -111,7 +111,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '9',
-    position: { x: 430, y: 550 + 100 },
+    position: { x: 500, y: 600 },
     data: { 
       title: 'KMeans Model', 
       subtitle: 'type: system.Artifact' 
@@ -212,7 +212,7 @@ const MLPipelineFlow = () => {
   );
 
   return (
-    <div style={{ height: 700, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -226,7 +226,7 @@ const MLPipelineFlow = () => {
         nodesDraggable={true}
         zoomOnScroll={false}
         panOnScroll={false}
-        panOnDrag={false}
+        panOnDrag={true}
         selectNodesOnDrag={false}
         elementsSelectable={true}
         attributionPosition="bottom-right"
