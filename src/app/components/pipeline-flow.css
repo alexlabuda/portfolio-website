@@ -17,7 +17,7 @@
   }
   
   .react-flow__node-output, .react-flow__node-model {
-    width: 120px;
+    width: 150px;
     padding: 2px;
     font-family: sans-serif;
     box-shadow: var(--node-box-shadow);

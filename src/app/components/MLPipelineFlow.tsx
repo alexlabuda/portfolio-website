@@ -84,7 +84,7 @@ const initialNodes: Node[] = [
   // Output nodes
   {
     id: '10',
-    position: { x: 430, y: 300 },
+    position: { x: 430, y: 325 + 100 },
     data: { 
       title: 'Optimal K Metrics', 
       subtitle: 'type: system.Dataset' 
@@ -93,7 +93,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '7',
-    position: { x: 430, y: 420 },
+    position: { x: 430, y: 400 + 100 },
     data: { 
       title: 'Cluster Profiles', 
       subtitle: 'type: system.Dataset' 
@@ -102,7 +102,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '8',
-    position: { x: 430, y: 540 },
+    position: { x: 430, y: 475 + 100 },
     data: { 
       title: 'Clustered Data', 
       subtitle: 'type: system.Dataset' 
@@ -111,7 +111,7 @@ const initialNodes: Node[] = [
   },
   {
     id: '9',
-    position: { x: 430, y: 660 },
+    position: { x: 430, y: 550 + 100 },
     data: { 
       title: 'KMeans Model', 
       subtitle: 'type: system.Artifact' 
