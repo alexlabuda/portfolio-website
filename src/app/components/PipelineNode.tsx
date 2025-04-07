@@ -23,8 +23,8 @@ const PipelineNode = memo(({ data }: NodeProps<Node<PipelineNodeData>>) => {
               {data.subtitle && <div className="subtitle">{data.subtitle}</div>}
             </div>
           </div>
-          <Handle type="target" position={Position.Top} />
-          <Handle type="source" position={Position.Bottom} />
+          <Handle type="target" position={Position.Left} />
+          <Handle type="source" position={Position.Right} />
         </div>
       </div>
     </>

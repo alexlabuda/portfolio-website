@@ -23,60 +23,60 @@ import { DataIcon, ProcessingIcon, ModelIcon } from './PipelineIcons';
 const initialNodes: Node[] = [
   {
     id: '1',
-    position: { x: 70, y: 50-10 },
+    position: { x: 70, y: 50 },
     data: { 
       icon: <DataIcon />, 
-      title: 'extract-consumption-data', 
+      title: 'Extract Consumption Data', 
       subtitle: 'python:3.10' 
     },
     type: 'pipeline',
   },
   {
     id: '2',
-    position: { x: 70, y: 150-10 },
+    position: { x: 70, y: 150 },
     data: { 
       icon: <ProcessingIcon />, 
-      title: 'map-teams-to-features', 
+      title: 'Map Categorical Features', 
       subtitle: 'python:3.10' 
     },
     type: 'pipeline',
   },
   {
     id: '3',
-    position: { x: 60, y: 250-10 },
+    position: { x: 70, y: 250 },
     data: { 
       icon: <ProcessingIcon />, 
-      title: 'clean-streaming-consumption', 
+      title: 'Clean Streaming Consumption', 
       subtitle: 'python:3.10' 
     },
     type: 'pipeline',
   },
   {
     id: '4',
-    position: { x: 65, y: 350-10 },
+    position: { x: 70, y: 350 },
     data: { 
       icon: <ProcessingIcon />, 
-      title: 'create-consumption-features', 
+      title: 'Create Consumption Features', 
       subtitle: 'python:3.11' 
     },
     type: 'pipeline',
   },
   {
     id: '5',
-    position: { x: 70, y: 450-10 },
+    position: { x: 70, y: 450 },
     data: { 
       icon: <ProcessingIcon />, 
-      title: 'create-composite-features', 
+      title: 'Create Composite Features', 
       subtitle: 'python:3.11' 
     },
     type: 'pipeline',
   },
   {
     id: '6',
-    position: { x: 70, y: 550-10 },
+    position: { x: 70, y: 550 },
     data: { 
       icon: <ModelIcon />, 
-      title: 'clustering-component', 
+      title: 'Clustering Component', 
       subtitle: 'python:3.11' 
     },
     type: 'pipeline',
@@ -84,36 +84,36 @@ const initialNodes: Node[] = [
   // Output nodes
   {
     id: '10',
-    position: { x: -150, y: 720 },
+    position: { x: 430, y: 340 },
     data: { 
-      title: 'optimal_k_metrics', 
+      title: 'Optimal K Metrics', 
       subtitle: 'type: system.Dataset' 
     },
     type: 'output',
   },
   {
     id: '7',
-    position: { x: 50, y: 720 },
+    position: { x: 430, y: 450 },
     data: { 
-      title: 'cluster_profiles', 
+      title: 'Cluster Profiles', 
       subtitle: 'type: system.Dataset' 
     },
     type: 'output',
   },
   {
     id: '8',
-    position: { x: 250, y: 720 },
+    position: { x: 430, y: 550 },
     data: { 
-      title: 'clustered_data', 
+      title: 'Clustered Data', 
       subtitle: 'type: system.Dataset' 
     },
     type: 'output',
   },
   {
     id: '9',
-    position: { x: 450, y: 720 },
+    position: { x: 430, y: 650 },
     data: { 
-      title: 'kmeans_model', 
+      title: 'KMeans Model', 
       subtitle: 'type: system.Artifact' 
     },
     type: 'model',
