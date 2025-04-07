@@ -149,23 +149,8 @@ export default function UnsupervisedLearningPage() {
             {/* Architecture Diagram */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-full lg:min-w-0 py-4">
-                <div className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg border border-gray-100">
                   {/* Use the MLPipelineFlowWrapper component */}
                   <MLPipelineFlowWrapper />
-                  
-                  {/* Flow sequence description */}
-                  <div className="mt-6 text-sm text-gray-600 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg shadow-sm border border-blue-100">
-                    <h4 className="font-medium text-gray-700 mb-2">Data Flow Sequence</h4>
-                    <ol className="space-y-1 pl-5 list-decimal text-gray-600">
-                      <li>Aggregate streaming consumption behavior in <span className="text-blue-600 font-medium">BigQuery</span></li>
-                      <li>Export to <span className="text-green-600 font-medium">Cloud Storage</span> as input to ML pipeline</li>
-                      <li>Perform feature engineering and normalization in <span className="text-purple-600 font-medium">Vertex AI</span></li>
-                      <li>Run <span className="text-red-600 font-medium">K-Means clustering</span> with auto-selection of optimal k</li>
-                      <li>Store cluster assignments back in <span className="text-blue-600 font-medium">BigQuery</span></li>
-                      <li>Activate in <span className="text-orange-600 font-medium">Customer Data Platform</span> for lifecycle and churn interventions</li>
-                    </ol>
-                  </div>
-                </div>
               </div>
             </div>
 

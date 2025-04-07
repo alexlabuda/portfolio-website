@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@xyflow/react": "^12.5.4",
+    "@xyflow/react": "^12.5.5",
     "next": "15.2.4",
     "postcss-import": "^16.1.0",
     "react": "^19.0.0",

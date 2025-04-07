@@ -23,8 +23,10 @@ const PipelineNode = memo(({ data }: NodeProps<Node<PipelineNodeData>>) => {
               {data.subtitle && <div className="subtitle">{data.subtitle}</div>}
             </div>
           </div>
-          <Handle type="target" position={Position.Left} />
-          <Handle type="source" position={Position.Right} />
+          <Handle type="target" position={Position.Left} id="left" />
+          <Handle type="source" position={Position.Right} id="right" />
+          <Handle type="target" position={Position.Top} id="top" />
+          <Handle type="source" position={Position.Bottom} id="bottom" />
         </div>
       </div>
     </>
@@ -42,7 +44,10 @@ export const OutputNode = memo(({ data }: NodeProps<Node<PipelineNodeData>>) => 
       <div className="inner">
         <div className="title">{data.title}</div>
         {data.subtitle && <div className="subtitle">{data.subtitle}</div>}
-        <Handle type="target" position={Position.Left} />
+        <Handle type="target" position={Position.Left} id="left" />
+        <Handle type="target" position={Position.Top} id="top" />
+        <Handle type="target" position={Position.Right} id="right" />
+        <Handle type="target" position={Position.Bottom} id="bottom" />
       </div>
     </div>
   );
@@ -56,7 +61,10 @@ export const ModelNode = memo(({ data }: NodeProps<Node<PipelineNodeData>>) => {
       <div className="inner">
         <div className="title">{data.title}</div>
         {data.subtitle && <div className="subtitle">{data.subtitle}</div>}
-        <Handle type="target" position={Position.Left} />
+        <Handle type="target" position={Position.Left} id="left" />
+        <Handle type="target" position={Position.Top} id="top" />
+        <Handle type="target" position={Position.Right} id="right" />
+        <Handle type="target" position={Position.Bottom} id="bottom" />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import TableOfContents from '@/app/components/TableOfContents';
 import ScrollToTop from '@/app/components/ScrollToTop';
 import GradientReadingProgressBar from '@/app/components/GradientReadingProgressBar';
+import MLWorkflowDiagramWrapper from '@/app/components/MLWorkflowDiagramWrapper';
 
 export const metadata = {
   title: 'Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini | Alex Labuda',
@@ -149,165 +150,10 @@ export default function EventDrivenMLPipelinePage() {
             {/* Architecture Diagram */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-full lg:min-w-0 py-4">
-                <div className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg border border-gray-100">
-                  {/* SVG Node-Arc Diagram */}
-                  <svg className="w-full h-auto" viewBox="0 0 900 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Background grid pattern */}
-                    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(226, 232, 240, 0.6)" strokeWidth="1"/>
-                    </pattern>
-                    <rect width="900" height="400" fill="url(#grid)" />
-                    
-                    {/* Call Tracking Platform Node */}
-                    <rect x="40" y="150" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#F9FAFB" stroke="#E5E7EB" strokeWidth="2"/>
-                    <rect x="40" y="150" width="120" height="60" rx="10" fill="url(#callGradient)" fillOpacity="0.9"/>
-                    <text x="100" y="175" textAnchor="middle" fill="#4A5568" fontWeight="600" fontSize="13">Call Tracking</text>
-                    <text x="100" y="195" textAnchor="middle" fill="#4A5568" fontSize="12">Platform</text>
-                    
-                    {/* Cloud Functions Node */}
-                    <rect x="240" y="150" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF4FF" stroke="#C3DAFE" strokeWidth="2"/>
-                    <text x="300" y="175" textAnchor="middle" fill="#4C51BF" fontWeight="600" fontSize="13">Cloud</text>
-                    <text x="300" y="195" textAnchor="middle" fill="#4C51BF" fontSize="12">Functions</text>
-                    
-                    {/* BigQuery Node */}
-                    <rect x="240" y="270" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#EBF8FF" stroke="#BEE3F8" strokeWidth="2"/>
-                    <text x="300" y="295" textAnchor="middle" fill="#2B6CB0" fontWeight="600" fontSize="13">BigQuery</text>
-                    <text x="300" y="315" textAnchor="middle" fill="#2B6CB0" fontSize="12">Data Storage</text>
-                    
-                    {/* Pub/Sub Node */}
-                    <rect x="440" y="270" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#F0FFF4" stroke="#C6F6D5" strokeWidth="2"/>
-                    <text x="500" y="295" textAnchor="middle" fill="#276749" fontWeight="600" fontSize="13">Cloud</text>
-                    <text x="500" y="315" textAnchor="middle" fill="#276749" fontSize="12">Pub/Sub</text>
-                    
-                    {/* Vertex AI Node (replaces KubeFlow) */}
-                    <rect x="440" y="150" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#FFF5F5" stroke="#FED7D7" strokeWidth="2"/>
-                    <text x="500" y="175" textAnchor="middle" fill="#C53030" fontWeight="600" fontSize="13">Vertex AI</text>
-                    <text x="500" y="195" textAnchor="middle" fill="#C53030" fontSize="12">Gemini 1.5 Pro</text>
-                    
-                    {/* Customer Data Platform Node */}
-                    <rect x="640" y="270" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#FFFAF0" stroke="#FEEBC8" strokeWidth="2"/>
-                    <text x="700" y="295" textAnchor="middle" fill="#C05621" fontWeight="600" fontSize="13">Customer Data</text>
-                    <text x="700" y="315" textAnchor="middle" fill="#C05621" fontSize="12">Platform</text>
-                    
-                    {/* Email Marketing System Node */}
-                    <rect x="740" y="60" width="120" height="60" rx="10" filter="url(#dropShadow)" fill="#F0F4F8" stroke="#CBD5E0" strokeWidth="2"/>
-                    <text x="800" y="85" textAnchor="middle" fill="#2D3748" fontWeight="600" fontSize="13">Email Marketing</text>
-                    <text x="800" y="105" textAnchor="middle" fill="#2D3748" fontSize="12">System</text>
-                    
-                    {/* PRIMARY FLOW PATHS */}
-                    {/* Call Tracking to Cloud Functions - webhook trigger */}
-                    <path d="M 160 180 L 240 180" stroke="#4C51BF" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* Cloud Functions to BigQuery - store transcript */}
-                    <path d="M 300 210 L 300 270" stroke="#2B6CB0" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* BigQuery to Pub/Sub - new data notification */}
-                    <path d="M 360 300 L 440 300" stroke="#276749" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* Pub/Sub to Vertex AI - trigger ML processing */}
-                    <path d="M 500 270 L 500 210" stroke="#C53030" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* Vertex AI to BigQuery - write back enriched data */}
-                    <path d="M 440 180 C 400 180 370 220 360 270" stroke="#2B6CB0" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* BigQuery to Customer Data Platform - access enriched data */}
-                    <path d="M 360 310 C 400 350 600 350 640 300" stroke="#C05621" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* Customer Data Platform to Email Marketing - personalized campaigns */}
-                    <path d="M 700 270 C 730 230 750 150 800 120" stroke="#2D3748" strokeWidth="2.5" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* FEEDBACK/RESPONSE PATHS */}
-                    {/* Cloud Functions to Call Tracking - webhook acknowledgment */}
-                    <path d="M 240 160 C 200 150 180 150 160 160" stroke="#4A5568" strokeWidth="1.5" strokeDasharray="4" strokeLinecap="round" markerEnd="url(#arrowhead)"/>
-                    
-                    {/* Arrowhead and gradient definitions */}
-                    <defs>
-                      <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.1"/>
-                      </filter>
-                      
-                      <marker
-                        id="arrowhead"
-                        markerWidth="10"
-                        markerHeight="7"
-                        refX="9"
-                        refY="3.5"
-                        orient="auto"
-                      >
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280" />
-                      </marker>
-                      
-                      <linearGradient id="callGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#FFF5F7" />
-                        <stop offset="100%" stopColor="#FED7E2" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-
-                  {/* Enhanced Legend with Component Groups */}
-                  <div className="mt-8 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
-                    <h4 className="text-gray-700 font-medium text-center mb-4">Architecture Components</h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 bg-[#FFF5F7] border border-[#FED7E2] rounded-sm mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">External Systems</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Call Tracking Platform</li>
-                          <li>Email Marketing System</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 bg-[#EBF4FF] border border-[#C3DAFE] rounded-sm mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">GCP Services</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Cloud Functions</li>
-                          <li>BigQuery</li>
-                          <li>Pub/Sub</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 bg-[#FAF5FF] border border-[#E9D8FD] rounded-sm mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">ML Platform</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Vertex AI</li>
-                          <li>Gemini 1.5 Pro</li>
-                          <li>LangChain</li>
-                        </ul>
-                      </div>
-                      <div className="flex flex-col">
-                        <div className="flex items-center mb-1">
-                          <div className="w-4 h-4 bg-[#FFFAF0] border border-[#FEEBC8] rounded-sm mr-2"></div>
-                          <span className="text-xs text-gray-700 font-medium">Data Activation</span>
-                        </div>
-                        <ul className="text-xs text-gray-500 space-y-1 pl-6">
-                          <li>Customer Data Platform</li>
-                          <li>Personalized Marketing</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Flow sequence description */}
-                  <div className="mt-6 text-sm text-gray-600 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg shadow-sm border border-blue-100">
-                    <h4 className="font-medium text-gray-700 mb-2">Data Flow Sequence</h4>
-                    <ol className="space-y-1 pl-5 list-decimal text-gray-600">
-                      <li>Calls transcribed by <span className="text-pink-600 font-medium">Call Tracking Platform</span></li>
-                      <li>Transcripts sent to <span className="text-indigo-600 font-medium">Cloud Functions</span> via webhooks</li>
-                      <li>Data stored in <span className="text-blue-600 font-medium">BigQuery</span> for persistence</li>
-                      <li><span className="text-green-600 font-medium">Pub/Sub</span> notifies of new transcript data</li>
-                      <li><span className="text-red-600 font-medium">Vertex AI</span> directly processes and classifies transcripts</li>
-                      <li>Results stored back in <span className="text-blue-600 font-medium">BigQuery</span></li>
-                      <li><span className="text-orange-600 font-medium">Customer Data Platform</span> activates insights</li>
-                      <li>Personalized emails sent through <span className="text-gray-600 font-medium">Email Marketing System</span></li>
-                    </ol>
-                  </div>
-                </div>
+              
+                  {/* Replace the SVG Node-Arc Diagram with the interactive React Flow diagram */}
+                  <MLWorkflowDiagramWrapper />
+              
               </div>
             </div>
             
