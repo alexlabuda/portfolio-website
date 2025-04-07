@@ -195,4 +195,14 @@
   
   .react-flow__controls button:hover {
     background-color: #f9fafb;
+  }
+  
+  .output-node.gradient:before, .model-node.gradient:before {
+    display: none;
+  }
+  
+  .output-node, .model-node {
+    background: linear-gradient(to right, #8B5CF6, #EC4899);
+    border-radius: 8px;
+    padding: 2px;
   } 
