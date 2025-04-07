@@ -223,9 +223,12 @@ const MLPipelineFlow = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         defaultEdgeOptions={defaultEdgeOptions}
-        nodesDraggable={false}
+        nodesDraggable={true}
         zoomOnScroll={false}
         panOnScroll={false}
+        panOnDrag={false}
+        selectNodesOnDrag={false}
+        elementsSelectable={true}
         attributionPosition="bottom-right"
       >
         <Controls showInteractive={false} />
