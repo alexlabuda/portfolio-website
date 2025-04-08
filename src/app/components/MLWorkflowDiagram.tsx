@@ -16,7 +16,7 @@ import './ml-workflow.css';
 
 import WorkflowNode, { type WorkflowNodeData } from '@/app/components/WorkflowNode';
 import WorkflowEdge from '@/app/components/WorkflowEdge';
-import { CallTrackingIcon, BigQueryIcon, MLIcon, CDPIcon, ActivationIcon } from '@/app/components/WorkflowIcons';
+import { CallTrackingIcon, BigQueryIcon, MLIcon, CDPIcon } from '@/app/components/WorkflowIcons';
 
 // Define node types for the call transcript ML workflow
 const initialNodes: Node<WorkflowNodeData>[] = [

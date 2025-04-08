@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiPhone, FiDatabase, FiCpu, FiUsers, FiMail } from 'react-icons/fi';
+import { FiPhone, FiDatabase, FiCpu, FiUsers } from 'react-icons/fi';
 
 // Call Tracking System Icon
 export function CallTrackingIcon() {
@@ -19,9 +19,4 @@ export function MLIcon() {
 // CDP Platform Icon
 export function CDPIcon() {
   return <FiUsers className="w-8 h-8 text-pink-600" />;
-}
-
-// Activation Icon
-export function ActivationIcon() {
-  return <FiMail className="w-8 h-8 text-rose-600" />;
 } 
