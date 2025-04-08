@@ -150,10 +150,12 @@ export default function EventDrivenMLPipelinePage() {
             {/* Architecture Diagram */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-full lg:min-w-0 py-4">
-              
-                  {/* Replace the SVG Node-Arc Diagram with the interactive React Flow diagram */}
-                  <MLWorkflowDiagramWrapper />
-              
+                <MLWorkflowDiagramWrapper />
+                
+                {/* Diagram Caption */}
+                <div className="text-sm text-center text-gray-600 mt-2">
+                  Event-driven architecture for real-time call transcript classification
+                </div>
               </div>
             </div>
             

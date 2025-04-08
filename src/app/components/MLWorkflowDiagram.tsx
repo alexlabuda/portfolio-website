@@ -1,215 +1,99 @@
 'use client';
 
 import React, { useCallback } from 'react';
-import { 
-  ReactFlow, 
-  Controls, 
-  useNodesState, 
-  useEdgesState, 
-  addEdge, 
-  type Node, 
-  type Edge, 
+import {
+  ReactFlow,
+  Controls,
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  type Node,
+  type Edge,
   type OnConnect,
-  Background,
-  MarkerType,
-  Position
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import './pipeline-flow.css';
+import './ml-workflow.css';
 
-import PipelineNode, { OutputNode } from './PipelineNode';
-import PipelineEdge from './PipelineEdge';
-import BiDirectionalEdge from './BiDirectionalEdge';
-import DownwardEdge from './DownwardEdge';
-import AcknowledgmentEdge from './AcknowledgmentEdge';
-import ClassifiedDataEdge from './ClassifiedDataEdge';
-import { DataIcon, ProcessingIcon, ModelIcon } from './PipelineIcons';
+import WorkflowNode, { type WorkflowNodeData } from '@/app/components/WorkflowNode';
+import WorkflowEdge from '@/app/components/WorkflowEdge';
+import { CallTrackingIcon, BigQueryIcon, MLIcon, CDPIcon, ActivationIcon } from '@/app/components/WorkflowIcons';
 
-// Define node types for the ML workflow
-const initialNodes: Node[] = [
+// Define node types for the call transcript ML workflow
+const initialNodes: Node<WorkflowNodeData>[] = [
   {
     id: 'call-tracking',
-    position: { x: 50, y: 150 },
+    position: { x: 0, y: 150 },
     data: { 
-      icon: <DataIcon />, 
+      icon: <CallTrackingIcon />, 
       title: 'Call Tracking System', 
+      subtitle: 'Real-time transcripts' 
     },
-    type: 'pipeline',
-    sourcePosition: Position.Right,
-    targetPosition: Position.Left
+    type: 'workflow',
   },
   {
     id: 'bigquery',
-    position: { x: 350, y: 150 },
+    position: { x: 400, y: 150 },
     data: { 
-      icon: <ProcessingIcon />, 
+      icon: <BigQueryIcon />, 
       title: 'BigQuery', 
-      subtitle: 'Data Storage' 
+      subtitle: 'Data storage' 
     },
-    type: 'pipeline'
+    type: 'workflow',
   },
   {
-    id: 'pubsub',
-    position: { x: 350, y: 400 },
+    id: 'ml-classification',
+    position: { x: 800, y: 150 },
     data: { 
-      icon: <ProcessingIcon />, 
-      title: 'Pub/Sub', 
-      subtitle: 'Event Trigger' 
-    },
-    type: 'pipeline',
-    sourcePosition: Position.Right,
-    targetPosition: Position.Top
-  },
-  {
-    id: 'ml-workflow',
-    position: { x: 650, y: 400 },
-    data: { 
-      icon: <ModelIcon />, 
+      icon: <MLIcon />, 
       title: 'ML Classification', 
-      subtitle: 'Vertex AI + Gemini' 
+      subtitle: 'Vertex AI & Gemini' 
     },
-    type: 'pipeline'
+    type: 'workflow',
   },
   {
     id: 'cdp',
-    position: { x: 650, y: 150 },
+    position: { x: 1200, y: 150 },
     data: { 
-      title: 'Customer Data Platform', 
-      subtitle: 'Activation & Marketing'
+      icon: <CDPIcon />, 
+      title: 'CDP Platform', 
+      subtitle: 'Customer profiles' 
     },
-    type: 'output',
-    targetPosition: Position.Left
-  },
+    type: 'workflow',
+  }
 ];
 
-// Define edges for the ML workflow
 const initialEdges: Edge[] = [
-  // Call Tracking to BigQuery
-  { 
-    id: 'e-call-bigquery', 
-    source: 'call-tracking', 
-    target: 'bigquery', 
-    type: 'pipeline',
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-    style: { strokeWidth: 2, stroke: '#9333ea', strokeDasharray: '5 5' },
-    sourceHandle: 'right',
-    targetHandle: 'left',
-    zIndex: 1
+  {
+    id: 'e-call-bigquery',
+    source: 'call-tracking',
+    target: 'bigquery',
+    type: 'workflow',
   },
-  
-  // BigQuery to Pub/Sub
-  { 
-    id: 'e-bigquery-pubsub', 
-    source: 'bigquery', 
-    target: 'pubsub', 
-    type: 'downward',
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-    style: { strokeWidth: 2, stroke: '#9333ea', strokeDasharray: '5 5' },
-    sourceHandle: 'bottom',
-    targetHandle: 'top',
-    zIndex: 1
+  {
+    id: 'e-bigquery-ml',
+    source: 'bigquery',
+    target: 'ml-classification',
+    type: 'workflow',
   },
-  
-  // Pub/Sub to ML Workflow
-  { 
-    id: 'e-pubsub-ml', 
-    source: 'pubsub', 
-    target: 'ml-workflow', 
-    type: 'pipeline',
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-    style: { strokeWidth: 2, stroke: '#9333ea', strokeDasharray: '5 5' },
-    sourceHandle: 'right',
-    targetHandle: 'left',
-    zIndex: 1
-  },
-  
-  // ML Workflow back to BigQuery - using standard edge type for now
-  { 
-    id: 'e-ml-bigquery', 
-    source: 'ml-workflow', 
-    target: 'bigquery', 
-    type: 'straight',
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-    style: { strokeWidth: 3, stroke: '#9333ea' },
-    sourceHandle: 'top',
-    targetHandle: 'bottom',
-    label: 'classified data',
-    labelStyle: { fill: '#6366F1', fontWeight: 700, fontSize: 12 },
-    labelBgPadding: [6, 3],
-    labelBgBorderRadius: 4,
-    labelBgStyle: { fill: '#EEF2FF', fillOpacity: 0.9 },
-    zIndex: 5
-  },
-  
-  // ML Workflow acknowledgment to Pub/Sub
-  { 
-    id: 'e-ml-pubsub-ack', 
-    source: 'ml-workflow', 
-    target: 'pubsub', 
-    type: 'acknowledgment',
-    animated: false,
-    label: 'ack',
-    labelStyle: { fill: '#6366F1', fontWeight: 500, fontSize: 11 },
-    labelBgPadding: [4, 2],
-    labelBgBorderRadius: 4,
-    labelBgStyle: { fill: '#EEF2FF', fillOpacity: 0.8 },
-    style: { 
-      strokeWidth: 2, 
-      stroke: '#9333ea', 
-      strokeDasharray: '5 5' 
-    },
-    sourceHandle: 'left',
-    targetHandle: 'right',
-    zIndex: 1
-  },
-  
-  // BigQuery to CDP
-  { 
-    id: 'e-bigquery-cdp', 
-    source: 'bigquery', 
-    target: 'cdp', 
-    type: 'pipeline',
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
-    style: { strokeWidth: 2, stroke: '#9333ea', strokeDasharray: '5 5' },
-    sourceHandle: 'right',
-    targetHandle: 'left',
-    zIndex: 1
-  },
+  {
+    id: 'e-ml-cdp',
+    source: 'ml-classification',
+    target: 'cdp',
+    type: 'workflow',
+  }
 ];
 
 const nodeTypes = {
-  pipeline: PipelineNode,
-  output: OutputNode,
+  workflow: WorkflowNode,
 };
 
 const edgeTypes = {
-  pipeline: PipelineEdge,
-  bidirectional: BiDirectionalEdge,
-  downward: DownwardEdge,
-  acknowledgment: AcknowledgmentEdge,
-  classifiedData: ClassifiedDataEdge,
-  straight: PipelineEdge,
+  workflow: WorkflowEdge,
 };
 
 const defaultEdgeOptions = {
-  animated: true,
+  type: 'workflow',
   markerEnd: 'edge-circle',
-  type: 'smoothstep'
 };
 
 const MLWorkflowDiagram = () => {
@@ -222,10 +106,7 @@ const MLWorkflowDiagram = () => {
   );
 
   return (
-    <div style={{ height: 600, width: '100%' }} className="my-8">
-      <div className="w-full text-center mb-3 text-sm text-gray-500 font-medium">
-        Interactive ML Workflow Diagram
-      </div>
+    <div style={{ height: 350, width: '100%', background: 'white' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -242,12 +123,8 @@ const MLWorkflowDiagram = () => {
         panOnDrag={true}
         selectNodesOnDrag={false}
         elementsSelectable={true}
-        attributionPosition="bottom-right"
-        minZoom={0.5}
-        maxZoom={1.5}
       >
-        <Controls />
-        <Background color="#f1f1f1" gap={16} />
+        <Controls showInteractive={false} />
         <svg>
           <defs>
             <linearGradient id="edge-gradient">
@@ -261,11 +138,11 @@ const MLWorkflowDiagram = () => {
               refX="0"
               refY="0"
               markerUnits="strokeWidth"
-              markerWidth="10"
-              markerHeight="10"
+              markerWidth="15"
+              markerHeight="15"
               orient="auto"
             >
-              <circle stroke="#8B5CF6" strokeOpacity="0.75" r="2" cx="0" cy="0" fill="white" />
+              <circle stroke="#8B5CF6" strokeOpacity="0.90" r="2.2" cx="0" cy="0" fill="white" />
             </marker>
           </defs>
         </svg>
