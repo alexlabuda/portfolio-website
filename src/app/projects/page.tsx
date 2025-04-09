@@ -105,7 +105,9 @@ export default function ProjectsPage() {
                   src={getAssetPath('/images/customer-segmentation.png')}
                   alt="Customer Segmentation Pipeline with K-Means for Sports Streaming Platform"
                   fill
-                  style={{ objectFit: "contain" }}
+                  style={{ 
+                    objectFit: "contain" 
+                  }}
                   priority
                   itemProp="image"
                 />

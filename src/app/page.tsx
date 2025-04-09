@@ -177,7 +177,7 @@ export default function Home() {
                   style={{ 
                     objectFit: "cover", 
                     objectPosition: "center",
-                    maxWidth: "75%",
+                    maxWidth: "90%",
                     maxHeight: "100%"
                   }}
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -228,7 +228,7 @@ export default function Home() {
                   style={{ 
                     objectFit: "cover", 
                     objectPosition: "center",
-                    maxWidth: "72%",
+                    maxWidth: "90%",
                     maxHeight: "100%"
                   }}
                   sizes="(max-width: 768px) 100vw, 50vw"
