@@ -32,6 +32,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Alex Labuda",
+              "jobTitle": "Senior Data Scientist",
+              "url": "https://www.alex-labuda.com",
+              "sameAs": [
+                "https://github.com/alexlabuda",
+                "https://www.linkedin.com/in/alex-labuda"
+              ],
+              "knowsAbout": [
+                "Machine Learning",
+                "Python",
+                "R",
+                "Data Visualization",
+                "Predictive Modeling",
+                "MLOps",
+                "Tableau",
+                "Google Cloud Platform",
+                "Vertex AI"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased min-h-screen flex flex-col`}>
         <ClientLayout>
           {children}
