@@ -21,8 +21,39 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Labuda | Senior Data Scientist",
-  description: "Senior Data Scientist specializing in machine learning, predictive modeling, and advanced analytics",
+  title: "Alex Labuda | Senior Data Scientist & ML Engineer",
+  description: "Senior Data Scientist specializing in machine learning, predictive modeling, MLOps, and advanced analytics with expertise in Python, R, and Google Cloud Platform.",
+  keywords: "Data Scientist, Machine Learning Engineer, MLOps, Python, R, Tableau, Google Cloud Platform, Vertex AI, Predictive Modeling, Time Series Forecasting",
+  authors: [{ name: "Alex Labuda" }],
+  openGraph: {
+    title: "Alex Labuda | Senior Data Scientist & ML Engineer",
+    description: "Senior Data Scientist with expertise in end-to-end machine learning solutions, MLOps, and data visualization.",
+    url: "https://www.alex-labuda.com",
+    siteName: "Alex Labuda Portfolio",
+    images: [
+      {
+        url: "https://www.alex-labuda.com/images/headshot-portfolio.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Alex Labuda - Senior Data Scientist",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alex Labuda | Senior Data Scientist & ML Engineer",
+    description: "Senior Data Scientist with expertise in end-to-end machine learning solutions, MLOps, and data visualization.",
+    images: ["https://www.alex-labuda.com/images/headshot-portfolio.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.alex-labuda.com",
+  },
 };
 
 export default function RootLayout({
@@ -43,6 +74,7 @@ export default function RootLayout({
               "name": "Alex Labuda",
               "jobTitle": "Senior Data Scientist",
               "url": "https://www.alex-labuda.com",
+              "image": "https://www.alex-labuda.com/images/headshot-portfolio.jpeg",
               "sameAs": [
                 "https://github.com/alexlabuda",
                 "https://www.linkedin.com/in/alex-labuda"
@@ -57,7 +89,30 @@ export default function RootLayout({
                 "Tableau",
                 "Google Cloud Platform",
                 "Vertex AI"
-              ]
+              ],
+              "knowsLanguage": ["English"],
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "University"
+              },
+              "skills": [
+                "Machine Learning",
+                "Deep Learning",
+                "Time Series Forecasting",
+                "Media Mix Modeling",
+                "Python Development",
+                "R Programming",
+                "SQL",
+                "Data Visualization",
+                "MLOps",
+                "Cloud Architecture",
+                "Google Cloud Platform",
+                "Data Science Leadership"
+              ],
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Current Employer"
+              }
             })
           }}
         />
