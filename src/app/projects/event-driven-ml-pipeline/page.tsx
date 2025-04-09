@@ -8,15 +8,40 @@ import TableOfContents from '@/app/components/TableOfContents';
 import ScrollToTop from '@/app/components/ScrollToTop';
 import GradientReadingProgressBar from '@/app/components/GradientReadingProgressBar';
 import MLWorkflowDiagramWrapper from '@/app/components/MLWorkflowDiagramWrapper';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini | Alex Labuda',
-  description: 'Case study on building an event-driven machine learning pipeline with Vertex AI and LLMs for real-time call transcript analysis for a custom closet company',
+  description: 'Case study on building an event-driven machine learning pipeline using Google Cloud Platform, Vertex AI and Gemini for real-time call transcript analysis for a custom closet company',
+  keywords: 'Event-Driven Architecture, Machine Learning Pipeline, Vertex AI, Gemini, Call Transcript Analysis, MLOps, Python, GCP, Google Cloud Platform',
+  openGraph: {
+    title: 'Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini',
+    description: 'Case study on implementing an end-to-end ML pipeline for real-time call transcript classification using Google Cloud Platform',
+    url: 'https://www.alex-labuda.com/projects/event-driven-ml-pipeline',
+    images: [
+      {
+        url: 'https://www.alex-labuda.com/images/2024_09-AI-Engineering-Sentiment-Analysis.png',
+        width: 1200,
+        height: 630,
+        alt: 'Event-Driven ML Pipeline Architecture',
+      },
+    ],
+    type: 'article',
+  },
 };
 
 export default function EventDrivenMLPipelinePage() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 mt-1">
+    <main
+      className="bg-gray-50 py-12 sm:py-16 mt-1"
+      itemScope
+      itemType="https://schema.org/TechArticle"
+    >
+      <meta itemProp="author" content="Alex Labuda" />
+      <meta itemProp="datePublished" content="2024-04-01" />
+      <meta itemProp="headline" content="Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini" />
+      <meta itemProp="keywords" content="Event-Driven Architecture, Machine Learning Pipeline, Vertex AI, Gemini, Call Transcript Analysis, MLOps" />
+      
       {/* Reading Progress Bar */}
       <GradientReadingProgressBar 
         height={2} 
@@ -42,15 +67,25 @@ export default function EventDrivenMLPipelinePage() {
         <div className="relative py-12 z-[5]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
             {/* Header Section */}
-            <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
-              <Link href="/projects" className="text-primary-600 hover:text-primary-700 mb-4 flex items-center">
-                <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                Back to Projects
-              </Link>
-              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mt-6">Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini</h1>
-              <p className="mt-4 text-lg text-gray-700">
+            <header className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+              <nav aria-label="Breadcrumb">
+                <Link href="/projects" className="text-primary-600 hover:text-primary-700 mb-4 flex items-center">
+                  <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Back to Projects
+                </Link>
+              </nav>
+              <h1 
+                className="text-3xl font-bold text-gray-900 sm:text-4xl mt-6"
+                itemProp="name"
+              >
+                Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini
+              </h1>
+              <p 
+                className="mt-4 text-lg text-gray-700"
+                itemProp="abstract"
+              >
                 A real-time machine learning solution for processing and classifying call center transcripts to drive personalized customer experiences for a leading custom closet company.
               </p>
               
@@ -65,11 +100,11 @@ export default function EventDrivenMLPipelinePage() {
               
               {/* Project header image */}
               <div className="mt-6 mb-2">
-                <div className="relative rounded-lg overflow-hidden shadow-md bg-gradient-to-r from-slate-50 to-gray-100">
+                <figure className="relative rounded-lg overflow-hidden shadow-md bg-gradient-to-r from-slate-50 to-gray-100">
                   <div className="relative aspect-[21/9] w-full">
                     <Image 
                       src={getAssetPath('/images/2024_09-AI-Engineering-Sentiment-Analysis.png')}
-                      alt="Event-Driven ML Pipeline with Vertex AI visualization"
+                      alt="Event-Driven ML Pipeline with Vertex AI architecture diagram showing data flow from call center to processing pipeline"
                       fill
                       style={{ 
                         objectFit: 'contain',
@@ -79,60 +114,79 @@ export default function EventDrivenMLPipelinePage() {
                       priority
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
                       quality={100}
+                      itemProp="image"
                     />
                   </div>
-                </div>
+                </figure>
               </div>
-            </div>
+            </header>
 
             {/* Project Overview */}
-            <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <section 
+              className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl"
+              aria-labelledby="project-overview"
+              itemProp="articleSection"
+            >
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
                 <h2 id="project-overview">Project Overview</h2>
-                <p>
-                  This project involved designing and implementing an end-to-end event-driven machine learning 
-                  pipeline for a leading custom closet company with retail locations across the United States. 
-                  The system processes inbound call center transcripts by integrating a call tracking platform, 
-                  Google Cloud Platform services, and Vertex AI with large language models for customized 
-                  classification and analysis.
-                </p>
-                <p>
-                  The solution captures call transcripts in real-time from a call center tracking platform, automatically 
-                  processes them using a Pub/Sub triggered pipeline, and classifies them according to 
-                  product interest, purchase intent, and appointment details. This enriched data fuels personalized 
-                  customer communications and recommendations across digital touchpoints, improving 
-                  conversion rates and customer satisfaction.
-                </p>
+                <div itemProp="articleBody">
+                  <p>
+                    This project involved designing and implementing an end-to-end event-driven machine learning 
+                    pipeline for a leading custom closet company with retail locations across the United States. 
+                    The system processes inbound call center transcripts by integrating a call tracking platform, 
+                    Google Cloud Platform services, and Vertex AI with large language models for customized 
+                    classification and analysis.
+                  </p>
+                  <p>
+                    The solution captures call transcripts in real-time from a call center tracking platform, automatically 
+                    processes them using a Pub/Sub triggered pipeline, and classifies them according to 
+                    product interest, purchase intent, and appointment details. This enriched data fuels personalized 
+                    customer communications and recommendations across digital touchpoints, improving 
+                    conversion rates and customer satisfaction.
+                  </p>
+                </div>
               </div>
-            </div>
+            </section>
 
             {/* Project Overview */}
-            <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <section 
+              className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl"
+              aria-labelledby="role-impact"
+              itemProp="articleSection"
+            >
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
                 <h2 id="role-impact">Role & Impact</h2>
-                <p>
-                Led end-to-end design and implementation of the real-time ML pipeline as the sole data scientist on a cross-functional team. 
-                Personally handled all ML design, prompt engineering, and infrastructure orchestration. 
-                Enabled automated classification of thousands of weekly call transcripts, reducing inconsistent manual processing.
-                </p>
+                <div itemProp="articleBody">
+                  <p>
+                  Led end-to-end design and implementation of the real-time ML pipeline as the sole data scientist on a cross-functional team. 
+                  Personally handled all ML design, prompt engineering, and infrastructure orchestration. 
+                  Enabled automated classification of thousands of weekly call transcripts, reducing inconsistent manual processing.
+                  </p>
+                </div>
               </div>
-            </div>
+            </section>
 
             {/* Business Challenge */}
-            <div className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <section 
+              className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl"
+              aria-labelledby="business-challenge"
+              itemProp="articleSection"
+            >
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
                 <h2 id="business-challenge">Business Challenge</h2>
-                <p>
-                  The client faced several challenges processing the high volume of inbound sales calls:
-                </p>
-                <ul>
-                  <li>Inconsistent reporting quality and metrics from customer support representatives across locations</li>
-                  <li>No automated way to extract actionable insights from customer conversations</li>
-                  <li>Manual follow-up processes that missed key sales opportunities</li>
-                  <li>Lack of flexibility in tailoring conversation insights to specific business types and customer segments</li>
-                </ul>
+                <div itemProp="articleBody">
+                  <p>
+                    The client faced several challenges processing the high volume of inbound sales calls:
+                  </p>
+                  <ul>
+                    <li>Inconsistent reporting quality and metrics from customer support representatives across locations</li>
+                    <li>No automated way to extract actionable insights from customer conversations</li>
+                    <li>Manual follow-up processes that missed key sales opportunities</li>
+                    <li>Lack of flexibility in tailoring conversation insights to specific business types and customer segments</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
@@ -140,71 +194,85 @@ export default function EventDrivenMLPipelinePage() {
       {/* Rest of content without background image */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
         {/* Solution Architecture */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="solution-architecture"
+          itemProp="articleSection"
+        >
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="solution-architecture">Solution Architecture</h2>
-            <p className="mb-8">
-              We designed and implemented a fully event-driven architecture on Google Cloud Platform that processes call transcripts in real-time:
-            </p>
+            <div itemProp="articleBody">
+              <p className="mb-8">
+                We designed and implemented a fully event-driven architecture on Google Cloud Platform that processes call transcripts in real-time:
+              </p>
 
-            {/* Architecture Diagram */}
-            <div className="w-full overflow-x-auto">
-              <div className="min-w-full lg:min-w-0 py-4">
-                <MLWorkflowDiagramWrapper />
-                
-                {/* Diagram Caption */}
-                <div className="text-sm text-center text-gray-600 mt-2">
-                  Event-driven architecture for real-time call transcript classification
+              {/* Architecture Diagram */}
+              <figure className="w-full overflow-x-auto">
+                <div className="min-w-full lg:min-w-0 py-4">
+                  <MLWorkflowDiagramWrapper />
+                  
+                  {/* Diagram Caption */}
+                  <figcaption className="text-sm text-center text-gray-600 mt-2">
+                    Event-driven architecture for real-time call transcript classification and processing
+                  </figcaption>
                 </div>
-              </div>
+              </figure>
             </div>
-            
-
           </div>
-        </div>
+        </section>
 
         {/* Machine Learning Implementation */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="ml-implementation"
+          itemProp="articleSection"
+        >
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="ml-implementation">Machine Learning Implementation</h2>
-            <p>
-              The core of the solution leveraged Vertex AI and Gemini large language models to analyze call transcripts:
-            </p>
-            <ul>
-              <li><strong className="text-gray-900">Model Selection:</strong> Utilized Gemini for its superior ability to understand conversational context and nuances in call transcripts</li>
-              <li><strong className="text-gray-900">Prompt Engineering:</strong> Designed specialized prompts for each classification task using LangChain optimized to achieve high performance in transcript analysis</li>
-              <li><strong className="text-gray-900">Multi-label Classification:</strong> Developed four distinct classification chains</li>
-              <li><strong className="text-gray-900">Safety Mechanisms:</strong> Configured safety settings to enable business classification while preventing inappropriate content</li>
-              <li><strong className="text-gray-900">Data Preprocessing:</strong> Implemented text normalization, special character removal, and standardization techniques</li>
-              <li><strong className="text-gray-900">Validation System:</strong> Created a fuzzy matching validation process to correct classification outputs that didn't match predefined categories</li>
-              <li><strong className="text-gray-900">Pipeline Automation:</strong> Built a three-step Vertex AI Pipeline that:</li>
-              <ol className="list-decimal pl-5">
-                <li>Exports transcript data from BigQuery</li>
-                <li>Processes transcripts through classification models</li>
-                <li>Loads enriched data back to BigQuery for activation</li>
-              </ol>
-              <li><strong className="text-gray-900">Model Versioning:</strong> Established CI/CD processes for prompt updates</li>
-            </ul>
-            <p>
-              This approach allowed us to process thousands of call transcripts weekly with minimal human intervention, achieving high classification performance while maintaining flexibility to adapt to changing business needs.
-            </p>
+            <div itemProp="articleBody">
+              <p>
+                The core of the solution leveraged Vertex AI and Gemini large language models to analyze call transcripts:
+              </p>
+              <ul>
+                <li><strong className="text-gray-900">Model Selection:</strong> Utilized Gemini for its superior ability to understand conversational context and nuances in call transcripts</li>
+                <li><strong className="text-gray-900">Prompt Engineering:</strong> Designed specialized prompts for each classification task using LangChain optimized to achieve high performance in transcript analysis</li>
+                <li><strong className="text-gray-900">Multi-label Classification:</strong> Developed four distinct classification chains</li>
+                <li><strong className="text-gray-900">Safety Mechanisms:</strong> Configured safety settings to enable business classification while preventing inappropriate content</li>
+                <li><strong className="text-gray-900">Data Preprocessing:</strong> Implemented text normalization, special character removal, and standardization techniques</li>
+                <li><strong className="text-gray-900">Validation System:</strong> Created a fuzzy matching validation process to correct classification outputs that didn't match predefined categories</li>
+                <li><strong className="text-gray-900">Pipeline Automation:</strong> Built a three-step Vertex AI Pipeline that:</li>
+                <ol className="list-decimal pl-5">
+                  <li>Exports transcript data from BigQuery</li>
+                  <li>Processes transcripts through classification models</li>
+                  <li>Loads enriched data back to BigQuery for activation</li>
+                </ol>
+                <li><strong className="text-gray-900">Model Versioning:</strong> Established CI/CD processes for prompt updates</li>
+              </ul>
+              <p>
+                This approach allowed us to process thousands of call transcripts weekly with minimal human intervention, achieving high classification performance while maintaining flexibility to adapt to changing business needs.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Key Outcomes */}
-        <div className="bg-accent-50 p-8 rounded-xl mb-16 shadow-lg">
+        <section 
+          className="bg-accent-50 p-8 rounded-xl mb-16 shadow-lg"
+          aria-labelledby="outcomes"
+          itemProp="articleSection"
+        >
           <h2 id="outcomes" className="text-2xl font-bold text-center mb-8 text-gray-900">Outcomes</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8" itemProp="articleBody">
             {/* Email Engagement Card */}
             <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Email Engagement</h3>
-                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div className="flex items-center mb-3 bg-accent-50 py-1.5 px-2 rounded-md">
-                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
                 <span className="font-medium text-accent-700">Projected Increase</span>
@@ -216,12 +284,12 @@ export default function EventDrivenMLPipelinePage() {
             <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Conversion Optimization</h3>
-                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
               <div className="flex items-center mb-3 bg-accent-50 py-1.5 px-2 rounded-md">
-                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
                 <span className="font-medium text-accent-700">Targeted Improvement</span>
@@ -233,12 +301,12 @@ export default function EventDrivenMLPipelinePage() {
             <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold text-gray-800">Opportunity Recovery</h3>
-                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-7 h-7 text-accent-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
               <div className="flex items-center mb-3 bg-accent-50 py-1.5 px-2 rounded-md">
-                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-accent-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
                 <span className="font-medium text-accent-700">Expected Reduction</span>
@@ -246,61 +314,77 @@ export default function EventDrivenMLPipelinePage() {
               <p className="text-gray-700">Automated follow-up system for high-intent calls that don't convert to appointments designed to reduce missed sales opportunities.</p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Technical Challenges */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="technical-challenges"
+          itemProp="articleSection"
+        >
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="technical-challenges">Technical Challenges</h2>
-            <p>
-              Implementing this event-driven ML solution required overcoming several complex technical hurdles:
-            </p>
-            <ul>
-              <li><strong className="text-gray-900">Transcript Quality Issues:</strong> Call transcripts often contained noise, brand mentions, and speech disfluencies that reduced classification accuracy. I developed specialized preprocessing techniques to clean and normalize the text before analysis.</li>
-              
-              <li><strong className="text-gray-900">Event-Driven Architecture:</strong> Ensuring reliable real-time processing with minimal latency required careful design of the Pub/Sub topic configuration, subscription handling, and error management to prevent message loss.</li>
-              
-              <li><strong className="text-gray-900">Authentication & Security:</strong> The solution required secure authentication between multiple GCP services. I implemented service account management with appropriate IAM permissions and Secret Manager integration for API credentials.</li>
-              
-              <li><strong className="text-gray-900">Pipeline Orchestration:</strong> Building a reliable KubeFlow pipeline involved complex component design, artifact passing between steps, and ensuring consistent data formats throughout the workflow.</li>
-              
-              <li><strong className="text-gray-900">LLM Prompt Engineering:</strong> Developing effective prompts for the Gemini model required extensive testing and refinement to achieve high classification accuracy across diverse call scenarios and product types.</li>
-              
-              <li><strong className="text-gray-900">Validation & Error Handling:</strong> LLM outputs sometimes contained unexpected formats or classifications. I implemented a fuzzy matching system that could correct outputs to match predefined categories without human intervention.</li>
-              
-              <li><strong className="text-gray-900">Cost Optimization:</strong> LLM inference at call volume scale could become expensive. I implemented batching and caching strategies to reduce API calls and optimize the overall solution cost.</li>
-              
-              <li><strong className="text-gray-900">Data Privacy Compliance:</strong> Call transcripts contained personally identifiable information (PII). The solution needed robust security measures to ensure GDPR and CCPA compliance throughout the data processing pipeline.</li>
-            </ul>
+            <div itemProp="articleBody">
+              <p>
+                Implementing this event-driven ML solution required overcoming several complex technical hurdles:
+              </p>
+              <ul>
+                <li><strong className="text-gray-900">Transcript Quality Issues:</strong> Call transcripts often contained noise, brand mentions, and speech disfluencies that reduced classification accuracy. I developed specialized preprocessing techniques to clean and normalize the text before analysis.</li>
+                
+                <li><strong className="text-gray-900">Event-Driven Architecture:</strong> Ensuring reliable real-time processing with minimal latency required careful design of the Pub/Sub topic configuration, subscription handling, and error management to prevent message loss.</li>
+                
+                <li><strong className="text-gray-900">Authentication & Security:</strong> The solution required secure authentication between multiple GCP services. I implemented service account management with appropriate IAM permissions and Secret Manager integration for API credentials.</li>
+                
+                <li><strong className="text-gray-900">Pipeline Orchestration:</strong> Building a reliable KubeFlow pipeline involved complex component design, artifact passing between steps, and ensuring consistent data formats throughout the workflow.</li>
+                
+                <li><strong className="text-gray-900">LLM Prompt Engineering:</strong> Developing effective prompts for the Gemini model required extensive testing and refinement to achieve high classification accuracy across diverse call scenarios and product types.</li>
+                
+                <li><strong className="text-gray-900">Validation & Error Handling:</strong> LLM outputs sometimes contained unexpected formats or classifications. I implemented a fuzzy matching system that could correct outputs to match predefined categories without human intervention.</li>
+                
+                <li><strong className="text-gray-900">Cost Optimization:</strong> LLM inference at call volume scale could become expensive. I implemented batching and caching strategies to reduce API calls and optimize the overall solution cost.</li>
+                
+                <li><strong className="text-gray-900">Data Privacy Compliance:</strong> Call transcripts contained personally identifiable information (PII). The solution needed robust security measures to ensure GDPR and CCPA compliance throughout the data processing pipeline.</li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Design Tradeoffs & Decisions */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="design-tradeoffs"
+          itemProp="articleSection"
+        >
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="design-tradeoffs">Design Tradeoffs & Decisions</h2>
-            <p>
-              Several key architectural and modeling decisions were made to ensure the solution was scalable, cost-effective, and optimized for real-world call data:
-            </p>
-            <ul>
-              <li><strong className="text-gray-900">Event-Driven Architecture:</strong> Chose an event-driven design using Pub/Sub and Cloud Functions to enable low-latency, real-time processing and avoid unnecessary compute costs associated with batch jobs.</li>
-              
-              <li><strong className="text-gray-900">Model Selection:</strong> Selected Gemini 1.5 Pro for its strong zero-shot performance and contextual understanding of noisy, real-world transcripts, outperforming traditional classification models in preliminary evaluations.</li>
-              
-              <li><strong className="text-gray-900">Prompt Design Strategy:</strong> Used LangChain to modularize and chain prompts, enabling rapid iteration, reusable templates, and better debugging across multiple classification tasks.</li>
-              
-              <li><strong className="text-gray-900">Pipeline Modularity:</strong> Structured the Vertex AI Pipeline with clearly separated steps for ingestion, classification, and enrichment to improve observability and maintainability.</li>
-              
-              <li><strong className="text-gray-900">Fallback Handling:</strong> Anticipated classification edge cases by integrating fuzzy matching and validation layers, trading minor recall for significantly improved precision and reliability.</li>
-            </ul>
+            <div itemProp="articleBody">
+              <p>
+                Several key architectural and modeling decisions were made to ensure the solution was scalable, cost-effective, and optimized for real-world call data:
+              </p>
+              <ul>
+                <li><strong className="text-gray-900">Event-Driven Architecture:</strong> Chose an event-driven design using Pub/Sub and Cloud Functions to enable low-latency, real-time processing and avoid unnecessary compute costs associated with batch jobs.</li>
+                
+                <li><strong className="text-gray-900">Model Selection:</strong> Selected Gemini 1.5 Pro for its strong zero-shot performance and contextual understanding of noisy, real-world transcripts, outperforming traditional classification models in preliminary evaluations.</li>
+                
+                <li><strong className="text-gray-900">Prompt Design Strategy:</strong> Used LangChain to modularize and chain prompts, enabling rapid iteration, reusable templates, and better debugging across multiple classification tasks.</li>
+                
+                <li><strong className="text-gray-900">Pipeline Modularity:</strong> Structured the Vertex AI Pipeline with clearly separated steps for ingestion, classification, and enrichment to improve observability and maintainability.</li>
+                
+                <li><strong className="text-gray-900">Fallback Handling:</strong> Anticipated classification edge cases by integrating fuzzy matching and validation layers, trading minor recall for significantly improved precision and reliability.</li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Technologies Used */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="technologies"
+          itemProp="articleSection"
+        >
           <h2 id="technologies" className="text-2xl font-bold text-gray-900 mb-8">Technologies Used</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" itemProp="articleBody">
             {/* GCP Core group */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.02]">
               <div className="bg-blue-600 text-white py-2 px-4">
@@ -441,13 +525,17 @@ export default function EventDrivenMLPipelinePage() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-                {/* Why It Matters Sidebar */}
-                <div className="mb-16 bg-gradient-to-br from-gray-50 to-slate-100 p-8 rounded-xl shadow-lg border border-slate-200">
+        {/* Why It Matters Sidebar */}
+        <section 
+          className="mb-16 bg-gradient-to-br from-gray-50 to-slate-100 p-8 rounded-xl shadow-lg border border-slate-200"
+          aria-labelledby="why-it-matters"
+          itemProp="articleSection"
+        >
           <h2 id="why-it-matters" className="text-2xl font-bold text-gray-900 mb-6">Why It Matters</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8" itemProp="articleBody">
             {/* Business Perspective */}
             <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-4">
@@ -484,32 +572,36 @@ export default function EventDrivenMLPipelinePage() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Conclusion */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <section 
+          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          aria-labelledby="conclusion"
+          itemProp="articleSection"
+        >
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
             <h2 id="conclusion">Conclusion</h2>
-            <p>
-              This project demonstrates the power of combining event-driven architecture with advanced machine learning 
-              to transform unstructured conversation data into actionable business intelligence. The solution successfully:
-            </p>
-            <ul>
-              <li>Automated the classification of thousands of weekly call transcripts with high performance</li>
-              <li>Enabled personalized marketing campaigns based on specific product interests expressed during calls</li>
-              <li>Improved sales follow-up by automatically identifying high-intent prospects</li>
-              <li>Created a unified view of customer interactions across channels</li>
-              <li>Provided retail locations with better insights into customer needs and preferences</li>
-            </ul>
-            <p>
-              Beyond the immediate business impact, this project showcases how modern cloud infrastructure, event-based 
-              architectures, and large language models can be combined to solve complex business problems in a scalable, 
-              cost-effective manner.
-            </p>
+            <div itemProp="articleBody">
+              <p>
+                This project demonstrates the power of combining event-driven architecture with advanced machine learning 
+                to transform unstructured conversation data into actionable business intelligence. The solution successfully:
+              </p>
+              <ul>
+                <li>Automated the classification of thousands of weekly call transcripts with high performance</li>
+                <li>Enabled personalized marketing campaigns based on specific product interests expressed during calls</li>
+                <li>Improved sales follow-up by automatically identifying high-intent prospects</li>
+                <li>Created a unified view of customer interactions across channels</li>
+                <li>Provided retail locations with better insights into customer needs and preferences</li>
+              </ul>
+              <p>
+                Beyond the immediate business impact, this project showcases how modern cloud infrastructure, event-based 
+                architectures, and large language models can be combined to solve complex business problems in a scalable, 
+                cost-effective manner.
+              </p>
+            </div>
           </div>
-        </div>
-
-
+        </section>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
@@ -529,6 +621,6 @@ export default function EventDrivenMLPipelinePage() {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 } 

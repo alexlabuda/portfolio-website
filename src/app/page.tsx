@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { getAssetPath } from './utils/paths';
 import ParticlesBackground from '@/app/components/ParticlesBackground';
 import { AnimatedButton } from '@/app/components/AnimatedButton';
-import { FaCode, FaEnvelope } from 'react-icons/fa';
+import { FaCode, FaEnvelope, FaChartBar } from 'react-icons/fa';
+import { TableauFeature } from '@/app/components/TableauFeature';
 
 export default function Home() {
   return (
@@ -270,6 +271,14 @@ export default function Home() {
               icon={<FaCode className="w-5 h-5" />}
               className="max-w-[260px] mx-auto"
             />
+            <div className="mt-4">
+              <AnimatedButton 
+                href="/visualizations"
+                text="Explore Tableau Visualizations"
+                icon={<FaChartBar className="w-5 h-5" />}
+                className="max-w-[280px] mx-auto !bg-accent-500 hover:!bg-accent-600"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -319,16 +328,7 @@ export default function Home() {
               <h3 className="font-bold text-gray-900" itemProp="name">SQL</h3>
               <p className="text-sm text-gray-600" itemProp="description">BigQuery, Snowflake</p>
             </div>
-            <div 
-              className="bg-accent-50 p-4 rounded-lg text-center"
-              itemProp="itemListElement" 
-              itemScope 
-              itemType="https://schema.org/ListItem"
-            >
-              <meta itemProp="position" content="4" />
-              <h3 className="font-bold text-gray-900" itemProp="name">Tableau</h3>
-              <p className="text-sm text-gray-600" itemProp="description">Dashboard design, ETL, data visualization</p>
-            </div>
+            <TableauFeature />
             <div 
               className="bg-accent-50 p-4 rounded-lg text-center"
               itemProp="itemListElement" 
