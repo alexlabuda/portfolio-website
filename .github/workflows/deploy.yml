@@ -46,6 +46,8 @@ jobs:
         run: |
           cd out
           touch .nojekyll
+          # Create a CNAME file to enforce custom domain
+          echo "www.alex-labuda.com" > CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
