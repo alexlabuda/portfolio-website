@@ -1,6 +1,9 @@
-# Allow all web crawlers to access all content
+# *
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://www.alex-labuda.com/sitemap.xml 
+# Host
+Host: https://www.alex-labuda.com
+
+# Sitemaps
+Sitemap: https://www.alex-labuda.com/sitemap.xml
