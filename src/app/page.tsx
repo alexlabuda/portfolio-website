@@ -245,7 +245,7 @@ export default function Home() {
                   Customer Segmentation Pipeline with K-Means and Feature Engineering for a Streaming Platform
                 </h3>
                 <p className="text-gray-600 mb-4" itemProp="description">
-                  Advanced customer segmentation pipeline identifying distinct viewer personas for content recommendations and personalization. Implemented using unsupervised machine learning techniques.
+                  Advanced customer segmentation pipeline identifying distinct viewer personas for content recommendations and personalization. Implemented in GCP's Vertex AI pipelines.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Python</span>

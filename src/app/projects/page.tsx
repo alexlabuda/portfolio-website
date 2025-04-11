@@ -67,9 +67,9 @@ export default function ProjectsPage() {
             <div className="mt-6 lg:mt-0 lg:w-1/2">
               <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Event-Driven Call Transcript Classification Pipeline with Vertex AI and Gemini</h2>
               <p className="mt-3 text-gray-600" itemProp="description">
-                Designed and implemented an end-to-end event-driven machine learning pipeline using 
-                Google Cloud Platform and Vertex AI. The system processes call transcripts in real-time, 
-                leveraging large language models for classifying customer preferences and intent.
+              Developed a real-time machine learning pipeline for processing and classifying 
+              call center transcripts for CDP activation. This solution leverages 
+              GCP's event architecture for seamless processing, Vertex AI pipelines, and Gemini LLMs for classification.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Vertex AI</span>
@@ -115,15 +115,14 @@ export default function ProjectsPage() {
             <div className="mt-6 lg:mt-0 lg:w-1/2">
               <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Customer Segmentation Pipeline and Advanced Feature Engineering for a Sports Streaming Service</h2>
               <p className="mt-3 text-gray-600" itemProp="description">
-                Developed a customer segmentation pipeline for a large sports streaming brand using unsupervised 
-                learning techniques. The solution identified distinct viewer personas based on viewing patterns, 
-                engagement metrics, and demographic data, enabling personalized content recommendations.
+                Developed a customer segmentation pipeline for a large sports streaming brand using K-means clustering and sophisticated feature engineering. The solution identified distinct viewer personas based on viewing patterns, 
+                engagement metrics, and content preferences, enabling targeted marketing campaigns.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Scikit-learn</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Clustering</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">BigQuery</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">K-Means</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Vertex AI</span>
               </div>
               <meta itemProp="applicationCategory" content="Data Science" />
               <meta itemProp="operatingSystem" content="Cloud Platform" />

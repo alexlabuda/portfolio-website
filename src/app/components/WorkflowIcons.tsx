@@ -1,5 +1,8 @@
 import React from 'react';
 import { FiPhone, FiDatabase, FiCpu, FiUsers } from 'react-icons/fi';
+import { SiGooglebigquery } from "react-icons/si";
+import { LuBrain } from "react-icons/lu";
+import VertexAIIcon from './icons/vertexai.svg';
 
 // Call Tracking System Icon
 export function CallTrackingIcon() {
@@ -8,12 +11,12 @@ export function CallTrackingIcon() {
 
 // BigQuery Icon
 export function BigQueryIcon() {
-  return <FiDatabase className="w-8 h-8 text-blue-600" />;
-}
+    return <SiGooglebigquery className="w-8 h-8 text-blue-600" />;
+  }
 
 // ML Classification Icon
 export function MLIcon() {
-  return <FiCpu className="w-8 h-8 text-purple-600" />;
+  return <LuBrain className="w-8 h-8 text-purple-600" />;
 }
 
 // CDP Platform Icon

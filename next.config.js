@@ -12,6 +12,15 @@ const nextConfig = {
   
   // Disable asset prefix for custom domain
   assetPrefix: process.env.NODE_ENV === 'production' ? undefined : undefined,
+
+  // SVG support
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
+  },
 }
 
 module.exports = nextConfig 
