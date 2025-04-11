@@ -69,15 +69,14 @@ export default function ProjectsPage() {
               <p className="mt-3 text-gray-600" itemProp="description">
                 Designed and implemented an end-to-end event-driven machine learning pipeline using 
                 Google Cloud Platform and Vertex AI. The system processes call transcripts in real-time, 
-                leveraging large language models for classification and entity extraction.
+                leveraging large language models for classifying customer preferences and intent.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Python</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Vertex AI</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">LLMs</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Gemini</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">KubeFlow</span>
                 <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">GCP</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Pub/Sub</span>
               </div>
               <meta itemProp="applicationCategory" content="Machine Learning" />
               <meta itemProp="operatingSystem" content="Cloud Platform" />
@@ -114,7 +113,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">
-              <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Customer Segmentation Pipeline with K-Means and Feature Engineering for a Streaming Platform</h2>
+              <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Customer Segmentation Pipeline and Advanced Feature Engineering for a Sports Streaming Service</h2>
               <p className="mt-3 text-gray-600" itemProp="description">
                 Developed a customer segmentation pipeline for a large sports streaming brand using unsupervised 
                 learning techniques. The solution identified distinct viewer personas based on viewing patterns, 
