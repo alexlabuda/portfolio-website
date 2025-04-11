@@ -16,7 +16,9 @@ export const metadata = {
 
 export default function UnsupervisedLearningPage() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 mt-1">
+    <main
+      className="bg-gray-50/40 py-12 sm:py-16 mt-1 relative"
+    >
       {/* Reading Progress Bar */}
       <GradientReadingProgressBar 
         height={2} 
@@ -31,11 +33,12 @@ export default function UnsupervisedLearningPage() {
       {/* Scroll to Top Button */}
       <ScrollToTop />
       
-      {/* Top section with Hexagon particles - only for header through Business Challenge */}
-      <div className="relative w-full mb-16">
-        <HexagonParticlesBackground />
-        
-        {/* Semi-transparent Overlay for better text contrast */}
+      {/* Background particles for the entire page */}
+      <HexagonParticlesBackground />
+      
+      {/* Top section with gradient overlay */}
+      <div className="relative w-full mb-12">
+        {/* Semi-transparent Overlay for better text contrast - only for the top section */}
         <div className="absolute inset-0 bg-gradient-to-b from-accent-900/90 via-accent-800/80 to-gray-900/70 z-[1]"></div>
 
         {/* Content container */}
@@ -118,7 +121,7 @@ export default function UnsupervisedLearningPage() {
             </div>
 
             {/* Business Challenge */}
-            <div className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
+            <div className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl">
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
                 <h2 id="business-challenge">Business Challenge</h2>
                 <p>
@@ -137,9 +140,9 @@ export default function UnsupervisedLearningPage() {
       </div>
 
       {/* Rest of content without background image */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 relative z-[2]">
         {/* Solution Architecture */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="solution-architecture">Solution Architecture</h2>
             <p className="mb-8">
@@ -165,7 +168,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Machine Learning Implementation */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="ml-implementation">Machine Learning Implementation</h2>
             <p>
@@ -209,7 +212,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Key Outcomes */}
-        <div className="bg-accent-50 p-8 rounded-xl mb-16 shadow-lg">
+        <div className="bg-accent-50/95 backdrop-blur-sm p-8 rounded-xl mb-12 shadow-lg">
           <h2 id="outcomes" className="text-2xl font-bold text-center mb-8 text-gray-900">Outcomes</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Super User Identification Card */}
@@ -266,7 +269,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Technical Challenges */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="technical-challenges">Technical Challenges</h2>
             <p>
@@ -287,7 +290,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Design Tradeoffs & Decisions */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-li:text-gray-800">
             <h2 id="design-tradeoffs">Design Tradeoffs & Decisions</h2>
             <p>
@@ -308,7 +311,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Technologies Used */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <h2 id="technologies" className="text-2xl font-bold text-gray-900 mb-8">Technologies Used</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -444,7 +447,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Why It Matters Sidebar */}
-        <div className="mb-16 bg-gradient-to-br from-gray-50 to-slate-100 p-8 rounded-xl shadow-lg border border-slate-200">
+        <div className="mb-12 bg-gradient-to-br from-gray-50/95 to-slate-100/95 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-200">
           <h2 id="why-it-matters" className="text-2xl font-bold text-gray-900 mb-6">Why It Matters</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -487,7 +490,7 @@ export default function UnsupervisedLearningPage() {
         </div>
 
         {/* Conclusion */}
-        <div className="mb-16 bg-white p-8 rounded-xl shadow-lg">
+        <div className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800">
             <h2 id="conclusion">Conclusion</h2>
             <p>
@@ -507,12 +510,11 @@ export default function UnsupervisedLearningPage() {
             </p>
           </div>
         </div>
-
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 relative z-[2]">
         {/* Navigation */}
-        <div className="flex justify-between items-center pt-8 border-t border-gray-200">
+        <div className="flex justify-between items-center py-8 px-6 border-t border-gray-200 bg-white/90 backdrop-blur-sm rounded-lg shadow-md mb-8">
           <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
             <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -527,6 +529,6 @@ export default function UnsupervisedLearningPage() {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 } 

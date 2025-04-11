@@ -14,18 +14,15 @@ export default function HexagonParticlesBackground() {
           if (!document.getElementById('project-particles-js')) {
             const particlesContainer = document.createElement('div');
             particlesContainer.id = 'project-particles-js';
-            particlesContainer.style.position = 'absolute';
+            particlesContainer.style.position = 'fixed';
             particlesContainer.style.top = '0';
             particlesContainer.style.left = '0';
             particlesContainer.style.width = '100%';
             particlesContainer.style.height = '100%';
-            particlesContainer.style.zIndex = '1';
+            particlesContainer.style.zIndex = '-1';
+            particlesContainer.style.pointerEvents = 'none';
             
-            // Insert the container as the first child of the relative section at the top of the page
-            const projectSection = document.querySelector('.relative.w-full.mb-16');
-            if (projectSection) {
-              projectSection.insertBefore(particlesContainer, projectSection.firstChild);
-            }
+            document.body.prepend(particlesContainer);
           }
 
           // Instead of loading an external script, include the particles code directly
@@ -46,8 +43,8 @@ export default function HexagonParticlesBackground() {
               container.appendChild(canvas);
               
               // Set size
-              const width = container.offsetWidth;
-              const height = container.offsetHeight;
+              const width = window.innerWidth;
+              const height = window.innerHeight;
               canvas.width = width;
               canvas.height = height;
               
@@ -191,8 +188,10 @@ export default function HexagonParticlesBackground() {
               // Handle window resize
               if (params.interactivity.events.resize) {
                 window.addEventListener('resize', () => {
-                  canvas.width = container.offsetWidth;
-                  canvas.height = container.offsetHeight;
+                  const newWidth = window.innerWidth;
+                  const newHeight = window.innerHeight;
+                  canvas.width = newWidth;
+                  canvas.height = newHeight;
                 });
               }
               
@@ -217,10 +216,10 @@ export default function HexagonParticlesBackground() {
         (window as any).particlesJS('project-particles-js', {
           "particles": {
             "number": {
-              "value": 22,
+              "value": 32,
               "density": {
                 "enable": true,
-                "value_area": 900
+                "value_area": 1200
               }
             },
             "color": {
@@ -234,12 +233,12 @@ export default function HexagonParticlesBackground() {
               }
             },
             "opacity": {
-              "value": 0.15,
+              "value": 0.10,
               "random": true,
               "anim": {
                 "enable": false,
                 "speed": 1,
-                "opacity_min": 0.07,
+                "opacity_min": 0.05,
                 "sync": false
               }
             },
@@ -258,7 +257,7 @@ export default function HexagonParticlesBackground() {
             },
             "move": {
               "enable": true,
-              "speed": 1.2,
+              "speed": 0.8,
               "direction": "none",
               "random": true,
               "straight": false,
@@ -284,7 +283,7 @@ export default function HexagonParticlesBackground() {
                 "distance": 300,
                 "size": 100,
                 "duration": 2,
-                "opacity": 0.35,
+                "opacity": 0.25,
                 "speed": 3
               },
               "push": {

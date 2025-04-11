@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export default function EventDrivenMLPipelinePage() {
   return (
     <main
-      className="bg-gray-50 py-12 sm:py-16 mt-1"
+      className="bg-gray-50/40 py-12 sm:py-16 mt-1 relative"
       itemScope
       itemType="https://schema.org/TechArticle"
     >
@@ -67,11 +67,12 @@ export default function EventDrivenMLPipelinePage() {
       {/* Scroll to Top Button */}
       <ScrollToTop />
       
-      {/* Top section with Hexagon particles - only for header through Business Challenge */}
-      <div className="relative w-full mb-16">
-        <HexagonParticlesBackground />
-        
-        {/* Semi-transparent Overlay for better text contrast */}
+      {/* Background particles for the entire page */}
+      <HexagonParticlesBackground />
+      
+      {/* Top section with gradient overlay */}
+      <div className="relative w-full mb-12">
+        {/* Semi-transparent Overlay for better text contrast - only for the top section */}
         <div className="absolute inset-0 bg-gradient-to-b from-accent-900/90 via-accent-800/80 to-gray-900/70 z-[1]"></div>
 
         {/* Content container */}
@@ -179,7 +180,7 @@ export default function EventDrivenMLPipelinePage() {
 
             {/* Business Challenge */}
             <section 
-              className="mb-16 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl"
+              className="mb-12 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-xl"
               aria-labelledby="business-challenge"
               itemProp="articleSection"
             >
@@ -203,10 +204,10 @@ export default function EventDrivenMLPipelinePage() {
       </div>
 
       {/* Rest of content without background image */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 relative z-[2]">
         {/* Solution Architecture */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="solution-architecture"
           itemProp="articleSection"
         >
@@ -234,7 +235,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Machine Learning Implementation */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="ml-implementation"
           itemProp="articleSection"
         >
@@ -268,7 +269,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Key Outcomes */}
         <section 
-          className="bg-accent-50 p-8 rounded-xl mb-16 shadow-lg"
+          className="bg-accent-50/95 backdrop-blur-sm p-8 rounded-xl mb-12 shadow-lg"
           aria-labelledby="outcomes"
           itemProp="articleSection"
         >
@@ -329,7 +330,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Technical Challenges */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="technical-challenges"
           itemProp="articleSection"
         >
@@ -362,7 +363,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Design Tradeoffs & Decisions */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="design-tradeoffs"
           itemProp="articleSection"
         >
@@ -389,7 +390,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Technologies Used */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="technologies"
           itemProp="articleSection"
         >
@@ -540,7 +541,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Why It Matters Sidebar */}
         <section 
-          className="mb-16 bg-gradient-to-br from-gray-50 to-slate-100 p-8 rounded-xl shadow-lg border border-slate-200"
+          className="mb-12 bg-gradient-to-br from-gray-50/95 to-slate-100/95 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-200"
           aria-labelledby="why-it-matters"
           itemProp="articleSection"
         >
@@ -587,7 +588,7 @@ export default function EventDrivenMLPipelinePage() {
 
         {/* Conclusion */}
         <section 
-          className="mb-16 bg-white p-8 rounded-xl shadow-lg"
+          className="mb-12 bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg"
           aria-labelledby="conclusion"
           itemProp="articleSection"
         >
@@ -615,9 +616,9 @@ export default function EventDrivenMLPipelinePage() {
         </section>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 relative z-[2]">
         {/* Navigation */}
-        <div className="flex justify-between items-center pt-8 border-t border-gray-200">
+        <div className="flex justify-between items-center py-8 px-6 border-t border-gray-200 bg-white/90 backdrop-blur-sm rounded-lg shadow-md mb-8">
           <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
             <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
