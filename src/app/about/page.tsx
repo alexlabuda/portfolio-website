@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '../utils/paths';
-import { FaPython, FaDatabase, FaChartBar, FaGraduationCap, FaUniversity, FaCalendarAlt, FaMedal, FaBriefcase, FaCode, FaChartLine, FaTrophy, FaCertificate, FaCloudversify, FaTable, FaBrain, FaCheck, FaEnvelope } from 'react-icons/fa';
-import { SiR, SiTensorflow, SiGooglecloud, SiTableau, SiCoursera, SiDatacamp } from 'react-icons/si';
+import { FaPython, FaDatabase, FaChartBar, FaGraduationCap, FaUniversity, FaCalendarAlt, FaMedal, FaBriefcase, FaCode, FaChartLine, FaTrophy, FaCertificate, FaTable, FaCheck, FaEnvelope } from 'react-icons/fa';
+import { SiR, SiTensorflow, SiGooglecloud, SiTableau, SiCoursera, SiDatacamp, SiLangchain } from 'react-icons/si';
 import { AnimatedButton } from '@/app/components/AnimatedButton';
 
 export const metadata = {
@@ -354,7 +354,7 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
-                        <FaBrain className="text-primary-600 text-xl" />
+                        <SiLangchain className="text-primary-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
@@ -372,7 +372,7 @@ export default function AboutPage() {
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <span className="inline-block w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
-                        <FaCloudversify className="text-primary-600 text-xl" />
+                        <SiLangchain className="text-primary-600 text-xl" />
                       </span>
                     </div>
                     <div className="ml-4">
