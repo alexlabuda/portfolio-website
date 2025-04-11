@@ -54,6 +54,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.alex-labuda.com",
   },
+  icons: {
+    icon: '/favicon-hexagon.ico',
+    shortcut: '/favicon-hexagon.ico',
+    apple: '/favicon-hexagon.ico',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicon-hexagon.ico',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -64,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+        <link rel="icon" href="/favicon-hexagon.ico" type="image/x-icon" sizes="16x16" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
