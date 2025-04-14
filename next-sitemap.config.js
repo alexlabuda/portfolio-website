@@ -12,9 +12,6 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: [
-      'https://www.alex-labuda.com/sitemap.xml',
-    ],
   },
   exclude: [],
   outDir: './public',
