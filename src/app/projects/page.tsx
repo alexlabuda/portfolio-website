@@ -137,40 +137,44 @@ export default function ProjectsPage() {
             </div>
           </Link>
 
-          {/* Project 3 */}
-          <article 
-            className="lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 relative transform transition duration-300 hover:scale-[1.02] hover:shadow-lg"
+          {/* Project 3 - Media Mix Modeling */}
+          <Link
+            href="/projects/media-mix-modeling-home-services"
+            className="group block lg:flex lg:items-center lg:space-x-8 bg-primary-50 rounded-xl p-6 transform transition duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer"
             itemScope 
-            itemType="https://schema.org/CreativeWork"  
+            itemType="https://schema.org/SoftwareApplication"
           >
-            {/* "Coming Soon" badge */}
-            <div className="absolute top-4 right-4">
-              <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Coming Soon</span>
-            </div>
             <div className="lg:w-1/2">
-              <div className="rounded-lg overflow-hidden h-64 flex items-center justify-center">
-                <p className="text-gray-500">Tableau Dashboard Placeholder</p>
+              <div className="rounded-lg overflow-hidden h-64 relative flex items-center justify-center">
+                <div className="text-gray-500 text-center p-4">
+                  Media Mix Modeling Visualization Placeholder
+                </div>
               </div>
             </div>
             <div className="mt-6 lg:mt-0 lg:w-1/2">
-              <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Media Mix Modeling for Marketing Attribution</h2>
+              <h2 className="text-2xl font-bold text-gray-900" itemProp="name">Maximizing Marketing Effectiveness with Media Mix Modeling for a Home Services Leader</h2>
               <p className="mt-3 text-gray-600" itemProp="description">
-                Created a media mix model to analyze the effectiveness of marketing channels and optimize 
-                advertising spend. The solution integrated time-series forecasting and causal inference 
-                techniques to measure the ROI of digital and traditional marketing campaigns.
+                Used Meta's Robyn and custom data pipelines to uncover ROI-driving media channels, reduce inefficient TV spend, and improve lead volume by 44% YoY in optimized markets. This project delivered actionable insights that transformed the client's marketing strategy.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">R</span>
-                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Time Series</span>
-                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Tableau</span>
-                <span className="px-3 py-1 bg-accent-100 text-accent-800 rounded-full text-sm font-medium">Marketing Analytics</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">R</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Robyn (Meta)</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Prophet</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Time Series</span>
+                <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">Marketing Analytics</span>
               </div>
-              <meta itemProp="keywords" content="Media Mix Modeling, Marketing Attribution, Time Series, R, Tableau" />
+              <meta itemProp="applicationCategory" content="Data Science" />
+              <meta itemProp="operatingSystem" content="Cloud Platform" />
               <div className="mt-6">
-                <span className="text-gray-500 italic">Project details coming soon</span>
+                <span className="text-primary-600 font-medium group-hover:text-primary-700 inline-flex items-center">
+                  Read case study
+                  <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
               </div>
             </div>
-          </article>
+          </Link>
         </section>
 
         {/* Tableau Visualization Section */}

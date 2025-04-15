@@ -519,22 +519,21 @@ export default function UnsupervisedLearningPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 relative z-[2]">
-        {/* Navigation */}
-        <div className="flex justify-between items-center py-8 px-6 border-t border-gray-200 bg-white/90 backdrop-blur-sm rounded-lg shadow-md mb-8">
-          <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
-            <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            Back to Projects
-          </Link>
-          <AnimatedButton 
-            href="mailto:contact@alexlabuda.com?subject=Discussion%20about%20Unsupervised%20Learning%20Project"
-            text="Discuss This Project"
-            icon={<FaEnvelope className="w-5 h-5" />}
-            className="max-w-[200px]"
-          />
-        </div>
+      {/* Navigation - Back to Projects link and Discuss This Project button */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-24 flex justify-between items-center mb-8">
+        <Link href="/projects" className="text-primary-600 hover:text-primary-700 flex items-center">
+          <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+          Back to Projects
+        </Link>
+        
+        <AnimatedButton 
+          href="mailto:contact@alexlabuda.com?subject=Discussion%20about%20Unsupervised%20Learning%20Project"
+          text="Discuss This Project"
+          icon={<FaEnvelope className="w-5 h-5" />}
+          className="max-w-[200px]"
+        />
       </div>
     </main>
   );
