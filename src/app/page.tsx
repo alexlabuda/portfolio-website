@@ -177,7 +177,7 @@ export default function Home() {
                   style={{ 
                     objectFit: "cover", 
                     objectPosition: "center",
-                    maxWidth: "74%",
+                    maxWidth: "72%",
                     maxHeight: "100%"
                   }}
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -226,9 +226,9 @@ export default function Home() {
                   alt="K-Means Customer Segmentation Pipeline for Sports Streaming Platform"
                   fill
                   style={{ 
-                    objectFit: "cover", 
+                    objectFit: "contain", 
                     objectPosition: "center",
-                    maxWidth: "73%",
+                    maxWidth: "100%",
                     maxHeight: "100%"
                   }}
                   sizes="(max-width: 768px) 100vw, 50vw"
